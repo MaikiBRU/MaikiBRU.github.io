@@ -1,0 +1,570 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aaron Brumat | Portfolio</title>
+    <meta name="description" content="Full Stack Junior disponible full time y freelance. Diseño web en modalidad freelance. Portfolio y proyecto StockARG." />
+    <meta name="author" content="Aaron Brumat" />
+    <meta property="og:title" content="Aaron Brumat | Portfolio" />
+    <meta property="og:description" content="Full Stack Junior disponible full time y freelance. Diseño web en modalidad freelance. Proyecto StockARG." />
+    <meta property="og:image" content="assets/Imagen%20Principal.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aaron Brumat | Portfolio" />
+    <meta name="twitter:description" content="Full Stack Junior disponible full time y freelance. Diseño web en modalidad freelance." />
+    <meta name="twitter:image" content="assets/Imagen%20Principal.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">AB</div>
+        <div class="nav-links">
+          <a href="#about" data-i18n="nav_about">Sobre mi</a>
+          <a href="#services" data-i18n="nav_services">Servicios</a>
+          <a href="#process" data-i18n="nav_process">Proceso</a>
+          <a href="#skills" data-i18n="nav_skills">Habilidades</a>
+          <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+          <a href="#experience" data-i18n="nav_experience">Experiencia</a>
+          <a href="#education" data-i18n="nav_education">Educacion</a>
+          <a href="#notes" data-i18n="nav_notes">Notas</a>
+          <a href="#contact" data-i18n="nav_contact">Contacto</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn ghost" id="lang-toggle" type="button">EN</button>
+          <a class="btn primary" href="#contact" data-i18n="nav_cta">Hablemos</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content" data-reveal>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Portfolio profesional</p>
+          <h1 class="hero-title" data-i18n-html="hero_title">
+            Aaron Brumat
+            <span>Full Stack Junior</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero_sub">
+            Disponible full time para contrataciones en empresa y tambien para proyectos freelance. Como disenador web trabajo en modalidad freelance.
+          </p>
+          <div class="hero-actions">
+            <a class="btn secondary" href="#contact" data-i18n="hero_cta_freelance">Proyecto freelance</a>
+            <a class="btn ghost" href="#projects" data-i18n="hero_cta_primary">Ver proyectos</a>
+            <a class="btn ghost" href="cv.html" target="_blank" rel="noreferrer" data-i18n="hero_cta_cv">Ver CV</a>
+          </div>
+          <p class="hero-note" data-i18n="hero_response">Respuesta en 24-48h.</p>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span data-i18n="hero_meta_1_label">Enfoque</span>
+              <strong data-i18n="hero_meta_1_value">Calidad y detalle</strong>
+            </div>
+            <div class="meta-card">
+              <span data-i18n="hero_meta_2_label">Trabajo</span>
+              <strong data-i18n="hero_meta_2_value">Remoto o hibrido</strong>
+            </div>
+            <div class="meta-card">
+              <span data-i18n="hero_meta_3_label">Disponibilidad</span>
+              <strong data-i18n="hero_meta_3_value">Full time + freelance</strong>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" data-reveal>
+          <div class="profile-card">
+            <div class="profile-top">
+              <div>
+                <p data-i18n="profile_title">Perfil</p>
+                <h3 data-i18n="profile_name">Aaron Brumat</h3>
+              </div>
+              <span class="status" data-i18n="profile_status">Disponible</span>
+            </div>
+            <div class="profile-body">
+              <p data-i18n="profile_body">
+                Software Engineer Junior con disponibilidad full time para empresa y freelance. En diseño web trabajo como freelancer.
+              </p>
+              <div class="profile-tags">
+                <span data-i18n="profile_tag_1">Web</span>
+                <span data-i18n="profile_tag_2">Diseño web</span>
+                <span data-i18n="profile_tag_3">UI/UX</span>
+              </div>
+            </div>
+            <div class="profile-actions">
+              <a class="btn ghost" href="#contact" data-i18n="profile_cta">Agendar llamada</a>
+              <a class="btn ghost" href="#projects" data-i18n="profile_cta_secondary">Explorar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="about_eyebrow">Sobre mi</p>
+          <h2 data-i18n="about_title">Construyo experiencias digitales con impacto real</h2>
+          <p data-i18n="about_text">
+            Soy estudiante del ultimo año de Desarrollo de Software en el Instituto Belgrano (Rosario). Tengo
+            disponibilidad full time para contrataciones en empresa y tambien acepto proyectos freelance. En diseño web
+            trabajo como freelancer, con foco en construir productos claros, eficientes y escalables.
+          </p>
+        </div>
+        <div class="about-grid" data-reveal>
+          <div class="about-card">
+            <h3 data-i18n="about_card_1_title">Filosofia</h3>
+            <p data-i18n="about_card_1_text">
+              Diseño sistemas simples que pueden crecer sin perder claridad ni estabilidad.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3 data-i18n="about_card_2_title">Metodologia</h3>
+            <p data-i18n="about_card_2_text">
+              Iteracion rapida, validacion constante y entrega con estandares profesionales.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3 data-i18n="about_card_3_title">Valores</h3>
+            <p data-i18n="about_card_3_text">
+              Transparencia, ownership y una comunicacion clara en cada etapa del proyecto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="services_eyebrow">Servicios</p>
+          <h2 data-i18n="services_title">Soluciones completas para productos digitales</h2>
+          <p data-i18n="services_text">
+            Como perfil junior, me enfoco en entregar soluciones claras, con buenas practicas y compromiso de
+            aprendizaje continuo.
+          </p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <h3 data-i18n="services_card_1_title">Desarrollo web</h3>
+            <p data-i18n="services_card_1_text">
+              Landing o web completa, responsive, performance y deploy.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="services_card_2_title">Diseño web</h3>
+            <p data-i18n="services_card_2_text">
+              Diseño visual, estructura clara y UI consistente para web.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="services_card_3_title">Automatizacion</h3>
+            <p data-i18n="services_card_3_text">
+              Scripts, reportes y automatizaciones para ahorrar tiempo.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="process_eyebrow">Proceso</p>
+          <h2 data-i18n="process_title">Como trabajo en cada proyecto</h2>
+          <p data-i18n="process_text">Un flujo simple, claro y enfocado en resultados.</p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <h3 data-i18n="process_1_title">1. Descubrimiento</h3>
+            <p data-i18n="process_1_text">Objetivos, alcance y prioridades definidas desde el inicio.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="process_2_title">2. Diseño y desarrollo</h3>
+            <p data-i18n="process_2_text">Iteracion rapida con foco en claridad visual y funcional.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="process_3_title">3. Entrega y mejora</h3>
+            <p data-i18n="process_3_text">Entrega con testing basico y ajustes segun feedback.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="skills_eyebrow">Habilidades</p>
+          <h2 data-i18n="skills_title">Tecnologias y herramientas principales</h2>
+          <p data-i18n="skills_text">
+            Tecnologias aprendidas durante mi formacion.
+          </p>
+        </div>
+        <div class="skills-grid" data-reveal>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_1_title">Lenguajes</h3>
+            <p data-i18n="skills_block_1_list">Python, C#, JavaScript</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_2_title">Bases de datos</h3>
+            <p data-i18n="skills_block_2_list">MySQL Workbench</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_3_title">Herramientas</h3>
+            <p data-i18n="skills_block_3_list">MySQL Workbench</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_4_title">Herramientas actuales</h3>
+            <p data-i18n="skills_block_4_list">VS Code, MySQL Workbench</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_5_title">Aprendiendo</h3>
+            <p data-i18n="skills_block_5_list">Haskell, desarrollo de videojuegos en Unity, frameworks Django, Flask y FastAPI.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="projects_eyebrow">Proyectos</p>
+          <h2 data-i18n="projects_title">Trabajo seleccionado</h2>
+          <p data-i18n="projects_text">
+            Prefiero enfocarme en un proyecto grande y bien hecho antes que en varios proyectos pequeños.
+          </p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card project-card">
+            <div class="project-gallery">
+              <button class="project-hero-frame project-media" type="button">
+                <img class="project-hero-img" src="assets/Imagen%20Principal.png" alt="Imagen Principal" data-caption="Imagen Principal" data-lightbox="stockarg" />
+              </button>
+              <div class="project-shots">
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Login.png" alt="Login" data-caption="Login" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Login</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Menu%20Administrador.png" alt="Menu Administrador" data-caption="Menu Administrador" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Menu Administrador</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Menu%20Usuario.png" alt="Menu Usuario" data-caption="Menu Usuario" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Menu Usuario</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Modulo%20Clientes.png" alt="Modulo Clientes" data-caption="Modulo Clientes" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Modulo Clientes</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Modulo%20Productos.png" alt="Modulo Productos" data-caption="Modulo Productos" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Modulo Productos</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Modulo%20Proveedores.png" alt="Modulo Proveedores" data-caption="Modulo Proveedores" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Modulo Proveedores</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Modulo%20Ventas.png" alt="Modulo Ventas" data-caption="Modulo Ventas" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Modulo Ventas</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Movimientos%20en%20Stock.png" alt="Movimientos en Stock" data-caption="Movimientos en Stock" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Movimientos en Stock</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Reportes%20de%20Stock.png" alt="Reportes de Stock" data-caption="Reportes de Stock" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Reportes de Stock</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-btn project-media" type="button">
+                    <img src="assets/Stock%20Principal.png" alt="Stock Principal" data-caption="Stock Principal" data-lightbox="stockarg" loading="lazy" />
+                  </button>
+                  <figcaption class="shot-caption">Stock Principal</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="project-header">
+              <h3 data-i18n="project_1_title">StockARG</h3>
+              <span class="tag" data-i18n="project_1_tag">Finanzas</span>
+            </div>
+            <p data-i18n="project_1_text">
+              Sistema de gestion de stock, ventas y clientes con interfaz moderna en Tkinter. Desarrollado en 2 semanas.
+            </p>
+            <ul class="project-list">
+              <li data-i18n="project_1_feature_1">Login con email/contrasena y opcion Google (opcional).</li>
+              <li data-i18n="project_1_feature_2">ABM de clientes, proveedores y productos.</li>
+              <li data-i18n="project_1_feature_3">Ventas con control de stock y reportes exportables.</li>
+              <li data-i18n="project_1_feature_4">Modulo de stock con alertas, movimientos y panel de estado.</li>
+            </ul>
+            <div class="project-meta">
+              <span class="tag" data-i18n="project_1_stack_1">Python</span>
+              <span class="tag" data-i18n="project_1_stack_2">Tkinter</span>
+              <span class="tag" data-i18n="project_1_stack_3">MySQL</span>
+              <span class="tag" data-i18n="project_1_stack_4">2 semanas</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn ghost" href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noreferrer" data-i18n="project_btn_code">Ver codigo</a>
+            </div>
+          </article>
+        </div>
+        <div class="case-study" data-reveal>
+          <div class="case-header">
+            <p class="eyebrow" data-i18n="case_eyebrow">Caso de estudio</p>
+            <h3 data-i18n="case_title">StockARG en 2 semanas</h3>
+            <p data-i18n="case_intro">
+              Proyecto individual para centralizar clientes, productos, stock y ventas en un solo sistema.
+            </p>
+          </div>
+          <div class="case-grid">
+            <div class="case-card">
+              <h4 data-i18n="case_1_title">Problema</h4>
+              <p data-i18n="case_1_text">
+                Gestion dispersa de clientes, stock y ventas sin reportes claros.
+              </p>
+            </div>
+            <div class="case-card">
+              <h4 data-i18n="case_2_title">Solucion</h4>
+              <p data-i18n="case_2_text">
+                App de escritorio en Python + Tkinter + MySQL con login y modulos clave.
+              </p>
+            </div>
+            <div class="case-card">
+              <h4 data-i18n="case_3_title">Resultados</h4>
+              <ul class="case-list">
+                <li data-i18n="case_3_item_1">Flujos completos de ventas y stock con reportes.</li>
+                <li data-i18n="case_3_item_2">Exportacion a CSV/PDF y panel de estado.</li>
+                <li data-i18n="case_3_item_3">UI consistente y facil de usar.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-meta">
+            <span class="tag" data-i18n="case_tag_1">Proyecto individual</span>
+            <span class="tag" data-i18n="case_tag_2">2 semanas</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="experience_eyebrow">Experiencia</p>
+          <h2 data-i18n="experience_title">Trayectoria profesional</h2>
+          <p data-i18n="experience_text">
+            Experiencia laboral convencional con foco en procesos, datos y atencion al cliente. Busco mi primera experiencia IT y aportar responsabilidad, puntualidad y trabajo en equipo.
+          </p>
+        </div>
+        <div class="timeline" data-reveal>
+          <div class="timeline-item">
+            <h3 data-i18n="exp_1_title">Vendedor y atencion al cliente</h3>
+            <p class="muted" data-i18n="exp_1_company">Local de Ropa \"KINGU\" | 03/2025 - 11/2025</p>
+            <p data-i18n="exp_1_text">Atencion al cliente, manejo de caja y cierres. Orden operativo, puntualidad y trabajo en equipo.</p>
+          </div>
+          <div class="timeline-item">
+            <h3 data-i18n="exp_2_title">Vendedor y control de stock</h3>
+            <p class="muted" data-i18n="exp_2_company">Almacen \"Tina\" | 02/2024 - 12/2024</p>
+            <p data-i18n="exp_2_text">Control de stock y registro de mercaderia. Orden, responsabilidad y consistencia diaria.</p>
+          </div>
+          <div class="timeline-item">
+            <h3 data-i18n="exp_3_title">Pasantia administrativa</h3>
+            <p class="muted" data-i18n="exp_3_company">S.I.S.O SRL | 11/2023 - 12/2023</p>
+            <p data-i18n="exp_3_text">Carga y correccion de datos en software contable. Cumplimiento de procesos y atencion al detalle.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <h3 data-i18n="experience_transfer_title">Transferencias a IT</h3>
+          <ul class="transfer-grid">
+            <li data-i18n="experience_transfer_item_1">Procesos y orden</li>
+            <li data-i18n="experience_transfer_item_2">Calidad de datos y registros</li>
+            <li data-i18n="experience_transfer_item_3">Trabajo en equipo y atencion al detalle</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="education_eyebrow">Educacion</p>
+          <h2 data-i18n="education_title">Formacion</h2>
+          <p data-i18n="education_text">
+            Estudiante en el ultimo año de Desarrollo de Software.
+          </p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <h3 data-i18n="edu_1_title">Desarrollo de Software</h3>
+            <p class="muted" data-i18n="edu_1_place">Instituto Belgrano, Rosario | Ultimo año</p>
+            <p data-i18n="edu_1_text">Formacion tecnica con foco en desarrollo y buenas practicas.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="edu_2_title">En formacion continua</h3>
+            <p class="muted" data-i18n="edu_2_place">Cursos y practicas personales</p>
+            <p data-i18n="edu_2_text">Refuerzo constante en lenguajes y herramientas.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="edu_3_title">Aprendizaje autodidacta</h3>
+            <p class="muted" data-i18n="edu_3_place">Proyectos personales</p>
+            <p data-i18n="edu_3_text">Aplicacion de conceptos en proyectos reales.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="testimonials_eyebrow">Referencias</p>
+          <h2 data-i18n="testimonials_title">Referencias disponibles</h2>
+          <p data-i18n="testimonials_text">Referencias disponibles a pedido.</p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card testimonial">
+            <p data-i18n="test_ref_text">Referencias disponibles a pedido.</p>
+          </article>
+        </div>
+      </section>
+      
+      <section class="section" id="notes">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="notes_eyebrow">Notas</p>
+          <h2 data-i18n="notes_title">Ideas, procesos y aprendizajes</h2>
+          <p data-i18n="notes_text">
+            Espacio para compartir insights sobre tecnologia y producto.
+          </p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <h3 data-i18n="note_1_title">Como optimizar un flujo de trabajo</h3>
+            <p data-i18n="note_1_text">Guia breve sobre automatizacion y productividad.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="note_2_title">Checklist para lanzar un producto</h3>
+            <p data-i18n="note_2_text">Puntos clave para asegurar calidad y coherencia.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="note_3_title">UI moderna sin perder performance</h3>
+            <p data-i18n="note_3_text">Equilibrio entre estetica y velocidad de carga.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
+          <h2 data-i18n="contact_title">Trabajemos juntos</h2>
+          <p data-i18n="contact_text">
+            Contame sobre tu idea y te respondo con una propuesta clara.
+          </p>
+        </div>
+        <div class="contact-grid" data-reveal>
+          <div class="contact-info">
+            <div class="info-block">
+              <span data-i18n="contact_email_label">Email</span>
+              <a href="mailto:aaronbru.dev@gmail.com" data-mail-link>aaronbru.dev@gmail.com</a>
+            </div>
+            <div class="info-block">
+              <span data-i18n="contact_call_label">Agendar llamada</span>
+              <a class="btn secondary" href="https://wa.me/543417202830" target="_blank" rel="noreferrer" data-i18n="contact_call_cta">Abrir WhatsApp</a>
+            </div>
+            <div class="info-block">
+              <span data-i18n="contact_availability_label">Disponibilidad</span>
+              <p class="muted" data-i18n="contact_availability_text">
+                Full time en empresa + proyectos freelance. Diseño web siempre freelance.
+              </p>
+            </div>
+            <div class="info-block">
+              <span data-i18n="contact_response_label">Tiempo de respuesta</span>
+              <p class="muted" data-i18n="contact_response_text">Respondo en 24-48h.</p>
+            </div>
+            <div class="info-block">
+              <span data-i18n="contact_linkedin_label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noreferrer">Perfil profesional</a>
+            </div>
+            <div class="info-block">
+              <span data-i18n="contact_github_label">GitHub</span>
+              <a href="https://github.com/MaikiBRU" target="_blank" rel="noreferrer">Repositorio</a>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <label>
+              <span data-i18n="form_name">Nombre</span>
+              <input type="text" name="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required />
+            </label>
+            <label>
+              <span data-i18n="form_email">Email</span>
+              <input type="email" name="email" placeholder="tucorreo@email.com" data-i18n-placeholder="form_email_placeholder" required />
+            </label>
+            <label>
+              <span data-i18n="form_message">Mensaje</span>
+              <textarea name="message" rows="4" placeholder="Contame sobre tu proyecto" data-i18n-placeholder="form_message_placeholder" required></textarea>
+            </label>
+            <button class="btn primary" type="submit" data-i18n="form_submit">Enviar mensaje</button>
+            <p class="muted" data-i18n="form_disclaimer">Se abrira tu cliente de email con el mensaje listo.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Aaron Brumat</strong>
+        <p data-i18n="footer_text">Desarrollador de software - Portfolio 2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home" data-i18n="footer_back">Volver arriba</a>
+      </div>
+    </footer>
+
+    <div class="mail-picker" id="mail-picker" aria-hidden="true">
+      <div class="mail-picker-backdrop" data-mail-close></div>
+      <div class="mail-picker-panel" role="dialog" aria-modal="true" aria-label="Enviar mensaje">
+        <button class="mail-picker-close" type="button" data-mail-close aria-label="Cerrar">×</button>
+        <h3 data-i18n="mail_picker_title">Elegi como enviar</h3>
+        <p data-i18n="mail_picker_text">Podes abrir Gmail o Outlook Web con el mensaje listo.</p>
+        <div class="mail-picker-actions">
+          <button class="btn primary" type="button" data-mail-open="gmail" data-i18n="mail_picker_gmail">Abrir Gmail</button>
+          <button class="btn secondary" type="button" data-mail-open="outlook" data-i18n="mail_picker_outlook">Abrir Outlook</button>
+          <button class="btn ghost" type="button" data-mail-copy data-i18n="mail_picker_copy">Copiar mensaje</button>
+        </div>
+        <p class="muted" data-i18n="mail_picker_note">Si tenes un cliente de correo configurado, tambien podes usar mailto.</p>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Vista de imagen">
+        <button class="lightbox-close" type="button" data-lightbox-close aria-label="Cerrar">Ã—</button>
+        <button class="lightbox-nav prev" type="button" data-lightbox-prev aria-label="Anterior">â€¹</button>
+        <button class="lightbox-nav next" type="button" data-lightbox-next aria-label="Siguiente">â€º</button>
+        <div class="lightbox-stage">
+          <img id="lightbox-image" alt="" draggable="false" />
+        </div>
+        <div class="lightbox-meta">
+          <p id="lightbox-caption"></p>
+          <div class="lightbox-zoom">
+            <button class="btn ghost" type="button" data-lightbox-zoom="out">-</button>
+            <button class="btn ghost" type="button" data-lightbox-zoom="reset">100%</button>
+            <button class="btn ghost" type="button" data-lightbox-zoom="in">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
