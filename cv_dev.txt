@@ -1,0 +1,36 @@
+PERFIL
+Soy Aaron Brumat, tengo 19 años y vivo en Rosario, Santa Fe, Argentina. Actualmente estudio en el área de desarrollo de software, el lenguaje en el que trabajo es Python y SQL para Data Bases, pero estoy dispuesto a aprender muchas herramientas más y fortalecer los conocimientos de las anteriormente mencionadas. Estoy en busca de una oportunidad de Pasantía o Trabajo ya sea presencial o remoto. Mi meta es adquirir experiencia y mejorar en todos los aspectos posibles para así dar lo mejor de mí, en la tarea que se solicite.
+PROYECTOS
+Desarrolle un programa utilizando el lenguaje Python, el cual consta en un control de stock y datos, para un comercio o negocio. El programa permite agregar, leer, modificar y eliminar datos, como, por ejemplo, Id's, Numero de Ventas, Precios, Fechas de las ventas, Nombres y Apellidos de Clientes o Proveedores, etc. Estos datos se almacenan en una base de datos creada en MySQL WorkBench subida a una nube.
+CONTACTO
+TELÉFONO: +54 3417202830
+CORREO ELECTRÓNICO: brumataaron@gmail.com
+
+AARON
+BRUMAT
+19 AÑOS
+
+EDUCACIÓN
+
+PADRE CANTILO - PABLO RICHERI (PRIMARIA) COMPLETA
+
+2011 ­ 2012
+
+2012 - 2018
+
+MARIA BICECCI (SECUNDARIA) COMPLETA 2019 ­ 2023
+
+INSTITUTO BELGRANO (TERCIARIO) CARRERA ­ DESARROLLO DE SOFTWARE
+2024 ­ EN CURSO
+
+EXPERIENCIA LABORAL Pasantías laborales en S.I.S.O SRL "SERVICIO INTEGRAL DE SALUD OCUPACIONAL"
+01/11/23 ­ 01/12/23 0341 437-6610
+Me desarrolle en el área administrativa utilizando software de contabilidad que se basaba en la regularización de deudas, y en la corrección de datos de clientes. Estando en contacto con el ambiente empresarial desdeel sistema que se utilizaba en la empresa SISO.
+
+Puesto de vendedor y control de stock en "Almacén Tina" 01/02/24 ­ 01/12/24 0341 280-6682
+Trabajé en el área de vendedor teniendo constante contacto con los clientes fortaleciendo la atención al cliente, y control de mercadería fortaleciendo el orden de los productos y del establecimiento
+
+HABILIDADES
+Python MySQL WorkBench Html y Css basico Responsabilidad Atención al Cliente Resolución de Problemas Microsoft 365 Conocimiento tecnológico amplio Control de stock
+
+
