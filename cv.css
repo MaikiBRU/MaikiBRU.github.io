@@ -47,6 +47,12 @@
   text-decoration: none;
 }
 
+.cv-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .cv-lang {
   justify-self: end;
 }
@@ -155,7 +161,100 @@ ul li::before {
     text-align: left;
   }
 
+  .cv-actions {
+    justify-content: flex-start;
+  }
+
   .cv-lang {
     justify-self: start;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  .bg-orb,
+  .bg-grid {
+    display: none;
+  }
+
+  .cv {
+    box-shadow: none;
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    max-width: 100%;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .btn,
+  .cv-actions {
+    display: none !important;
+  }
+
+  a {
+    color: #111111 !important;
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 11px;
+    color: #444444;
+  }
+
+  body,
+  .cv {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .cv-header {
+    gap: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cv-header h1 {
+    font-size: 24px;
+  }
+
+  .role {
+    margin-bottom: 4px;
+  }
+
+  .cv-section {
+    margin-bottom: 12px;
+  }
+
+  .cv-section h2 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .grid {
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  ul {
+    gap: 4px;
+  }
+
+  .project,
+  .exp-item {
+    padding: 10px;
+  }
+
+  .project p {
+    margin-bottom: 6px;
+  }
+
+  .project-meta span {
+    font-size: 10px;
+    padding: 2px 8px;
   }
 }

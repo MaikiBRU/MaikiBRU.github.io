@@ -27,10 +27,15 @@ const translations = {
     profile_title: "Perfil",
     profile_name: "Aaron Brumat",
     profile_status: "Disponible",
-    profile_body: "Software Engineer Junior con disponibilidad full time para empresa y freelance. En diseño web trabajo como freelancer.",
-    profile_tag_1: "Web",
-    profile_tag_2: "Diseño web",
-    profile_tag_3: "UI/UX",
+    profile_summary: "Full Stack Junior disponible full time y freelance. Diseño web freelance.",
+    profile_tag_design: "Diseño web",
+    profile_tag_uiux: "UI/UX",
+    profile_tag_python: "Python",
+    profile_tag_csharp: "C#",
+    profile_tag_js: "JavaScript",
+    profile_tag_django: "Django",
+    profile_tag_flask: "Flask",
+    profile_tag_fastapi: "FastAPI",
     profile_cta: "Agendar llamada",
     profile_cta_secondary: "Explorar",
     about_eyebrow: "Sobre mi",
@@ -67,12 +72,10 @@ const translations = {
     skills_block_1_list: "Python, C#, JavaScript",
     skills_block_2_title: "Bases de datos",
     skills_block_2_list: "MySQL Workbench",
-    skills_block_3_title: "Herramientas",
-    skills_block_3_list: "MySQL Workbench",
-    skills_block_4_title: "Herramientas actuales",
-    skills_block_4_list: "VS Code, MySQL Workbench",
-    skills_block_5_title: "Aprendiendo",
-    skills_block_5_list: "Haskell, desarrollo de videojuegos en Unity, frameworks Django, Flask y FastAPI.",
+    skills_block_3_title: "Frameworks",
+    skills_block_3_list: "Django, Flask, FastAPI",
+    skills_block_4_title: "Aprendiendo",
+    skills_block_4_list: "Haskell y Unity.",
     projects_eyebrow: "Proyectos",
     projects_title: "Trabajo seleccionado",
     projects_text: "Prefiero enfocarme en un proyecto grande y bien hecho antes que en varios proyectos pequeños.",
@@ -203,10 +206,15 @@ const translations = {
     profile_title: "Profile",
     profile_name: "Aaron Brumat",
     profile_status: "Available",
-    profile_body: "Junior Software Engineer available full time for companies and freelance. As a web designer, I work freelance.",
-    profile_tag_1: "Web",
-    profile_tag_2: "Web design",
-    profile_tag_3: "UI/UX",
+    profile_summary: "Junior Full Stack available full time and freelance. Freelance web design.",
+    profile_tag_design: "Web design",
+    profile_tag_uiux: "UI/UX",
+    profile_tag_python: "Python",
+    profile_tag_csharp: "C#",
+    profile_tag_js: "JavaScript",
+    profile_tag_django: "Django",
+    profile_tag_flask: "Flask",
+    profile_tag_fastapi: "FastAPI",
     profile_cta: "Schedule a call",
     profile_cta_secondary: "Explore",
     about_eyebrow: "About",
@@ -243,12 +251,10 @@ const translations = {
     skills_block_1_list: "Python, C#, JavaScript",
     skills_block_2_title: "Databases",
     skills_block_2_list: "MySQL Workbench",
-    skills_block_3_title: "Tools",
-    skills_block_3_list: "MySQL Workbench",
-    skills_block_4_title: "Current tools",
-    skills_block_4_list: "VS Code, MySQL Workbench",
-    skills_block_5_title: "Learning",
-    skills_block_5_list: "Haskell, game development in Unity, frameworks Django, Flask, and FastAPI.",
+    skills_block_3_title: "Frameworks",
+    skills_block_3_list: "Django, Flask, FastAPI",
+    skills_block_4_title: "Learning",
+    skills_block_4_list: "Haskell and Unity.",
     projects_eyebrow: "Projects",
     projects_title: "Selected work",
     projects_text: "I prefer to focus on one solid, well-built project rather than many small ones.",
@@ -512,6 +518,7 @@ if (lightbox) {
   const nextButton = lightbox.querySelector("[data-lightbox-next]");
   const closeButtons = lightbox.querySelectorAll("[data-lightbox-close]");
   const zoomButtons = lightbox.querySelectorAll("[data-lightbox-zoom]");
+  const zoomValue = document.getElementById("lightbox-zoom-value");
   const stage = lightbox.querySelector(".lightbox-stage");
   let currentIndex = 0;
   let zoom = 1;
@@ -519,8 +526,11 @@ if (lightbox) {
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   const setZoom = (value) => {
-    zoom = clamp(value, 1, 3);
+    zoom = clamp(value, 0.5, 3);
     lightboxImage.style.transform = `scale(${zoom})`;
+    if (zoomValue) {
+      zoomValue.textContent = `${Math.round(zoom * 100)}%`;
+    }
   };
 
   const updateImage = () => {
