@@ -18,6 +18,7 @@
   border-bottom: 1px solid var(--line);
   padding-bottom: 20px;
   margin-bottom: 24px;
+  position: relative;
 }
 
 .cv-header h1 {
@@ -39,8 +40,18 @@
 .contact {
   display: grid;
   gap: 6px;
-  text-align: right;
+  text-align: left;
   color: var(--muted);
+  justify-items: start;
+}
+
+.cv-photo {
+  display: none;
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(90, 166, 255, 0.2);
 }
 
 .contact a {
@@ -202,6 +213,19 @@ ul li::before {
 
   .cv-availability {
     display: none !important;
+  }
+
+  .cv-photo {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 186px;
+    height: 186px;
+  }
+
+  .contact {
+    padding-right: 204px;
   }
 
   a {
