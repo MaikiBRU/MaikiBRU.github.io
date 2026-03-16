@@ -4,15 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aaron Brumat | Portfolio</title>
-    <meta name="description" content="Full Stack Junior disponible full time y freelance. Diseño web en modalidad freelance. Portfolio y proyecto StockARG." />
     <meta name="author" content="Aaron Brumat" />
     <meta property="og:title" content="Aaron Brumat | Portfolio" />
-    <meta property="og:description" content="Full Stack Junior disponible full time y freelance. Diseño web en modalidad freelance. Proyecto StockARG." />
     <meta property="og:image" content="assets/Imagen%20Principal.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aaron Brumat | Portfolio" />
-    <meta name="twitter:description" content="Full Stack Junior disponible full time y freelance. Diseño web en modalidad freelance." />
     <meta name="twitter:image" content="assets/Imagen%20Principal.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,6 +30,7 @@
         <div class="nav-links">
           <a href="#skills" data-i18n="nav_skills">Habilidades</a>
           <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+          <a href="#certificates" data-i18n="nav_certificates">Certificados</a>
           <a href="#about" data-i18n="nav_about">Sobre mi</a>
           <a href="#services" data-i18n="nav_services">Servicios</a>
           <a href="#process" data-i18n="nav_process">Proceso</a>
@@ -56,9 +54,6 @@
             Aaron Brumat
             <span>Full Stack Junior</span>
           </h1>
-          <p class="hero-sub" data-i18n="hero_sub">
-            Disponible full time para contrataciones en empresa y tambien para proyectos freelance. Como disenador web trabajo en modalidad freelance.
-          </p>
           <div class="hero-actions">
             <a class="btn secondary" href="#contact" data-i18n="hero_cta_freelance">Proyecto freelance</a>
             <a class="btn ghost" href="#projects" data-i18n="hero_cta_primary">Ver proyectos</a>
@@ -90,12 +85,12 @@
               <span class="status" data-i18n="profile_status">Disponible</span>
             </div>
             <div class="profile-body">
-              <p class="muted" data-i18n="profile_summary">Full Stack Junior disponible full time y freelance. Diseño web freelance.</p>
               <div class="profile-tags">
                 <span data-i18n="profile_tag_design">Diseño web</span>
                 <span data-i18n="profile_tag_uiux">UI/UX</span>
                 <span data-i18n="profile_tag_python">Python</span>
                 <span data-i18n="profile_tag_csharp">C#</span>
+                <span data-i18n="profile_tag_csharp">CSS</span>
                 <span data-i18n="profile_tag_js">JavaScript</span>
                 <span data-i18n="profile_tag_django">Django</span>
                 <span data-i18n="profile_tag_flask">Flask</span>
@@ -225,7 +220,7 @@
               Sistema de gestion de stock, ventas y clientes con interfaz moderna en Tkinter. Desarrollado en 2 semanas.
             </p>
             <ul class="project-list">
-              <li data-i18n="project_1_feature_1">Login con email/contrasena y opcion Google (opcional).</li>
+              <li data-i18n="project_1_feature_1">Login con email/contraseña y opcion Google (opcional).</li>
               <li data-i18n="project_1_feature_2">ABM de clientes, proveedores y productos.</li>
               <li data-i18n="project_1_feature_3">Ventas con control de stock y reportes exportables.</li>
               <li data-i18n="project_1_feature_4">Modulo de stock con alertas, movimientos y panel de estado.</li>
@@ -278,14 +273,41 @@
         </div>
       </section>
 
+      <section class="section" id="certificates">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="cert_eyebrow">Certificados</p>
+          <h2 data-i18n="cert_title">Certificaciones</h2>
+          <p data-i18n="cert_text">
+            Cursos finalizados que respaldan mi formacion en inteligencia artificial.
+          </p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card certificate-card">
+            <button class="certificate-media project-media" type="button">
+              <img
+                src="assets/Certificado-Aaron-Brumat.png"
+                alt="Certificado de Inteligencia Artificial"
+                data-caption="Certificado de Inteligencia Artificial"
+                data-lightbox="certificates"
+                loading="lazy"
+              />
+            </button>
+            <h3 data-i18n="cert_1_title">Certificado de Inteligencia Artificial</h3>
+            <p data-i18n="cert_1_text">
+              Finalizacion de un curso de IA centrado en fundamentos, modelos basicos y aplicaciones practicas.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="about">
         <div class="section-header" data-reveal>
           <p class="eyebrow" data-i18n="about_eyebrow">Sobre mi</p>
           <h2 data-i18n="about_title">Construyo experiencias digitales con impacto real</h2>
           <p data-i18n="about_text">
             Soy estudiante del ultimo año de Desarrollo de Software en el Instituto Belgrano (Rosario). Tengo
-            disponibilidad full time para contrataciones en empresa y tambien acepto proyectos freelance. En diseño web
-            trabajo como freelancer, con foco en construir productos claros, eficientes y escalables.
+            disponibilidad full time para contrataciones en empresa y tambien acepto proyectos freelance.
+            Con foco en construir productos claros, eficientes y escalables.
           </p>
         </div>
         <div class="about-grid" data-reveal>
@@ -304,7 +326,7 @@
           <div class="about-card">
             <h3 data-i18n="about_card_3_title">Valores</h3>
             <p data-i18n="about_card_3_text">
-              Transparencia, ownership y una comunicacion clara en cada etapa del proyecto.
+              Transparencia, codigo propio y una comunicación clara en cada etapa del proyecto.
             </p>
           </div>
         </div>
@@ -432,13 +454,7 @@
       <section class="section" id="testimonials">
         <div class="section-header" data-reveal>
           <p class="eyebrow" data-i18n="testimonials_eyebrow">Referencias</p>
-          <h2 data-i18n="testimonials_title">Referencias disponibles</h2>
-          <p data-i18n="testimonials_text">Referencias disponibles a pedido.</p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card testimonial">
-            <p data-i18n="test_ref_text">Referencias disponibles a pedido.</p>
-          </article>
+          <h2 data-i18n="testimonials_title">Referencias disponibles a pedido</h2>
         </div>
       </section>
       
@@ -487,7 +503,7 @@
             <div class="info-block">
               <span data-i18n="contact_availability_label">Disponibilidad</span>
               <p class="muted" data-i18n="contact_availability_text">
-                Full time en empresa + proyectos freelance. Diseño web siempre freelance.
+                Full time en empresa + proyectos freelance.
               </p>
             </div>
             <div class="info-block">
@@ -553,7 +569,7 @@
       <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Vista de imagen">
         <button class="lightbox-close" type="button" data-lightbox-close aria-label="Cerrar">&times;</button>
         <div class="lightbox-stage">
-          <img id="lightbox-image" alt="" draggable="false" />
+          <div class="lightbox-media" id="lightbox-media"></div>
           <button class="lightbox-nav prev" type="button" data-lightbox-prev aria-label="Anterior">&lsaquo;</button>
           <button class="lightbox-nav next" type="button" data-lightbox-next aria-label="Siguiente">&rsaquo;</button>
         </div>

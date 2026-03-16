@@ -520,6 +520,35 @@ img {
   font-size: 12px;
 }
 
+.certificate-card {
+  display: grid;
+  gap: 12px;
+}
+
+.certificate-media {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: rgba(10, 16, 26, 0.5);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+}
+
+.certificate-media:focus-visible {
+  outline: 2px solid rgba(90, 166, 255, 0.5);
+  outline-offset: 3px;
+  border-radius: 18px;
+}
+
+.certificate-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
 .project-list {
   list-style: none;
   display: grid;
@@ -879,11 +908,23 @@ textarea:focus,
   z-index: 1;
 }
 
-.lightbox-stage img {
+.lightbox-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 68vh;
+}
+
+.lightbox-media > * {
   max-width: 100%;
   max-height: 68vh;
   transition: transform 0.2s ease;
   transform-origin: center center;
+}
+
+.lightbox-media img {
+  display: block;
 }
 
 .lightbox-meta {

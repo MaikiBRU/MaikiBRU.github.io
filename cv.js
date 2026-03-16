@@ -1,7 +1,6 @@
 ﻿const translations = {
   es: {
-    cv_role: "Full Stack Junior - Diseño Web Freelance",
-    cv_summary: "Disponible full time para empresas y también para proyectos freelance.",
+    cv_role: "Full Stack Junior - Software | Webs",
     cv_pdf: "Descargar PDF",
     cv_portfolio: "Portfolio",
     cv_location: "Rosario, Santa Fe",

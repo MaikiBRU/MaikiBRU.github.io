@@ -5,6 +5,7 @@ const translations = {
     nav_process: "Proceso",
     nav_skills: "Habilidades",
     nav_projects: "Proyectos",
+    nav_certificates: "Certificados",
     nav_experience: "Experiencia",
     nav_education: "Educacion",
     nav_notes: "Notas",
@@ -12,7 +13,6 @@ const translations = {
     nav_cta: "Hablemos",
     hero_eyebrow: "Portfolio profesional",
     hero_title: "Aaron Brumat <span>Full Stack Junior</span>",
-    hero_sub: "Disponible full time para contrataciones en empresa y tambien para proyectos freelance. Como disenador web trabajo en modalidad freelance.",
     hero_cta_freelance: "Proyecto freelance",
     hero_cta_primary: "Ver proyectos",
     hero_cta_secondary: "Contactar",
@@ -27,11 +27,11 @@ const translations = {
     profile_title: "Perfil",
     profile_name: "Aaron Brumat",
     profile_status: "Disponible",
-    profile_summary: "Full Stack Junior disponible full time y freelance. Diseño web freelance.",
     profile_tag_design: "Diseño web",
     profile_tag_uiux: "UI/UX",
     profile_tag_python: "Python",
     profile_tag_csharp: "C#",
+    profile_tag_css: "CSS",
     profile_tag_js: "JavaScript",
     profile_tag_django: "Django",
     profile_tag_flask: "Flask",
@@ -40,13 +40,13 @@ const translations = {
     profile_cta_secondary: "Explorar",
     about_eyebrow: "Sobre mi",
     about_title: "Construyo experiencias digitales con impacto real",
-    about_text: "Soy estudiante del ultimo año de Desarrollo de Software en el Instituto Belgrano (Rosario). Tengo disponibilidad full time para contrataciones en empresa y tambien acepto proyectos freelance. En diseño web trabajo como freelancer, con foco en construir productos claros, eficientes y escalables.",
+    about_text: "Soy estudiante del ultimo año de Desarrollo de Software en el Instituto Belgrano (Rosario). Tengo disponibilidad full time para contrataciones en empresa y tambien acepto proyectos freelance. Con foco en construir productos claros, eficientes y escalables.",
     about_card_1_title: "Filosofia",
     about_card_1_text: "Diseño sistemas simples que pueden crecer sin perder claridad ni estabilidad.",
     about_card_2_title: "Metodologia",
     about_card_2_text: "Iteracion rapida, validacion constante y entrega con estandares profesionales.",
     about_card_3_title: "Valores",
-    about_card_3_text: "Transparencia, ownership y una comunicacion clara en cada etapa del proyecto.",
+    about_card_3_text: "Transparencia, codigo propio y una comunicación clara en cada etapa del proyecto.",
     services_eyebrow: "Servicios",
     services_title: "Soluciones completas para productos digitales",
     services_text: "Como perfil junior, me enfoco en entregar soluciones claras, con buenas practicas y compromiso de aprendizaje continuo.",
@@ -82,7 +82,7 @@ const translations = {
     project_1_title: "StockARG",
     project_1_tag: "Finanzas",
     project_1_text: "Centraliza clientes, productos, ventas y stock en un solo sistema. Interfaz clara en Tkinter y reportes exportables. Desarrollado en 2 semanas.",
-    project_1_feature_1: "Login con email/contrasena y opcion Google (opcional).",
+    project_1_feature_1: "Login con email/contraseña y opcion Google (opcional).",
     project_1_feature_2: "ABM de clientes, proveedores y productos.",
     project_1_feature_3: "Ventas con control de stock y reportes exportables.",
     project_1_feature_4: "Modulo de stock con alertas, movimientos y panel de estado.",
@@ -91,6 +91,11 @@ const translations = {
     project_1_stack_3: "MySQL",
     project_1_stack_4: "2 semanas",
     project_btn_code: "Ver codigo",
+    cert_eyebrow: "Certificados",
+    cert_title: "Certificaciones recientes",
+    cert_text: "Cursos finalizados que respaldan mi formacion en inteligencia artificial.",
+    cert_1_title: "Certificado de Inteligencia Artificial",
+    cert_1_text: "Finalizacion de un curso de IA centrado en fundamentos, modelos basicos y aplicaciones practicas.",
     case_eyebrow: "Caso de estudio",
     case_title: "StockARG en 2 semanas",
     case_intro: "Proyecto individual para centralizar clientes, productos, stock y ventas en un solo sistema.",
@@ -133,9 +138,7 @@ const translations = {
     edu_3_place: "Proyectos personales",
     edu_3_text: "Aplicacion de conceptos en proyectos reales.",
     testimonials_eyebrow: "Referencias",
-    testimonials_title: "Referencias disponibles",
-    testimonials_text: "Referencias disponibles a pedido.",
-    test_ref_text: "Referencias disponibles a pedido.",
+    testimonials_title: "Referencias disponibles a pedido",
     notes_eyebrow: "Notas",
     notes_title: "Ideas, procesos y aprendizajes",
     notes_text: "Espacio para compartir insights sobre tecnologia y producto.",
@@ -152,7 +155,7 @@ const translations = {
     contact_call_label: "Agendar llamada",
     contact_call_cta: "Abrir WhatsApp",
     contact_availability_label: "Disponibilidad",
-    contact_availability_text: "Full time en empresa + proyectos freelance. Diseño web siempre freelance.",
+    contact_availability_text: "Full time en empresa + proyectos freelance.",
     contact_response_label: "Tiempo de respuesta",
     contact_response_text: "Respondo en 24-48h.",
     contact_linkedin_label: "LinkedIn",
@@ -184,6 +187,7 @@ const translations = {
     nav_process: "Process",
     nav_skills: "Skills",
     nav_projects: "Projects",
+    nav_certificates: "Certificates",
     nav_experience: "Experience",
     nav_education: "Education",
     nav_notes: "Notes",
@@ -191,7 +195,6 @@ const translations = {
     nav_cta: "Let us talk",
     hero_eyebrow: "Professional portfolio",
     hero_title: "Aaron Brumat <span>Junior Full Stack</span>",
-    hero_sub: "Available full time for company roles and also for freelance projects. As a web designer, I work freelance.",
     hero_cta_freelance: "Freelance project",
     hero_cta_primary: "View projects",
     hero_cta_secondary: "Contact",
@@ -206,7 +209,7 @@ const translations = {
     profile_title: "Profile",
     profile_name: "Aaron Brumat",
     profile_status: "Available",
-    profile_summary: "Junior Full Stack available full time and freelance. Freelance web design.",
+    profile_summary: "Junior Full Stack available full time and freelance.",
     profile_tag_design: "Web design",
     profile_tag_uiux: "UI/UX",
     profile_tag_python: "Python",
@@ -219,7 +222,7 @@ const translations = {
     profile_cta_secondary: "Explore",
     about_eyebrow: "About",
     about_title: "I build digital experiences with real impact",
-    about_text: "I am a final-year Software Development student at Instituto Belgrano (Rosario). I am available full time for company roles and also take freelance projects. As a web designer, I work freelance, focused on building clear, efficient, and scalable products.",
+    about_text: "I am a final-year Software Development student at Instituto Belgrano (Rosario). I am available full time for company roles and also take freelance projects. Focused on building clear, efficient, and scalable products.",
     about_card_1_title: "Philosophy",
     about_card_1_text: "I design simple systems that can grow without losing clarity or stability.",
     about_card_2_title: "Method",
@@ -270,6 +273,11 @@ const translations = {
     project_1_stack_3: "MySQL",
     project_1_stack_4: "2 weeks",
     project_btn_code: "View code",
+    cert_eyebrow: "Certificates",
+    cert_title: "Recent certifications",
+    cert_text: "Completed courses that support my training in artificial intelligence.",
+    cert_1_title: "Artificial Intelligence Certificate",
+    cert_1_text: "Completed an AI course focused on fundamentals, core models, and practical applications.",
     case_eyebrow: "Case study",
     case_title: "StockARG in 2 weeks",
     case_intro: "Solo project to centralize customers, products, stock, and sales in one system.",
@@ -331,7 +339,7 @@ const translations = {
     contact_call_label: "Schedule a call",
     contact_call_cta: "Open WhatsApp",
     contact_availability_label: "Availability",
-    contact_availability_text: "Full time for company roles + freelance projects. Web design is always freelance.",
+    contact_availability_text: "Full time for company roles + freelance projects.",
     contact_response_label: "Response time",
     contact_response_text: "Reply within 24-48h.",
     contact_linkedin_label: "LinkedIn",
@@ -511,9 +519,9 @@ if (mailPicker) {
 
 const lightbox = document.getElementById("lightbox");
 if (lightbox) {
-  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxMedia = document.getElementById("lightbox-media");
   const lightboxCaption = document.getElementById("lightbox-caption");
-  const triggers = Array.from(document.querySelectorAll('[data-lightbox="stockarg"]'));
+  const triggers = Array.from(document.querySelectorAll("[data-lightbox]"));
   const prevButton = lightbox.querySelector("[data-lightbox-prev]");
   const nextButton = lightbox.querySelector("[data-lightbox-next]");
   const closeButtons = lightbox.querySelectorAll("[data-lightbox-close]");
@@ -522,30 +530,62 @@ if (lightbox) {
   const stage = lightbox.querySelector(".lightbox-stage");
   let currentIndex = 0;
   let zoom = 1;
+  let activeItems = [];
+  let activeMedia = null;
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   const setZoom = (value) => {
     zoom = clamp(value, 0.5, 3);
-    lightboxImage.style.transform = `scale(${zoom})`;
+    if (activeMedia) {
+      activeMedia.style.transform = `scale(${zoom})`;
+    }
     if (zoomValue) {
       zoomValue.textContent = `${Math.round(zoom * 100)}%`;
     }
   };
 
+  const setActiveItems = (group) => {
+    activeItems = triggers.filter((item) => item.dataset.lightbox === group);
+  };
+
+  const clearMedia = () => {
+    if (!lightboxMedia) {
+      activeMedia = null;
+      return;
+    }
+    lightboxMedia.innerHTML = "";
+    activeMedia = null;
+  };
+
   const updateImage = () => {
-    const item = triggers[currentIndex];
+    const item = activeItems[currentIndex];
     if (!item) {
       return;
     }
-    lightboxImage.src = item.src;
-    lightboxImage.alt = item.alt || "";
-    lightboxCaption.textContent = item.dataset.caption || item.alt || "";
+    const source = item.dataset.lightboxSrc || item.src;
+    const caption = item.dataset.caption || item.alt || "";
+
+    clearMedia();
+    if (lightboxMedia && source) {
+      const img = document.createElement("img");
+      img.src = source;
+      img.alt = item.alt || "";
+      img.draggable = false;
+      lightboxMedia.appendChild(img);
+      activeMedia = img;
+    }
+    lightboxCaption.textContent = caption;
     setZoom(1);
   };
 
-  const openLightbox = (index) => {
-    currentIndex = index;
+  const openLightbox = (item) => {
+    if (!item) {
+      return;
+    }
+    const group = item.dataset.lightbox || "default";
+    setActiveItems(group);
+    currentIndex = Math.max(0, activeItems.indexOf(item));
     updateImage();
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
@@ -556,24 +596,24 @@ if (lightbox) {
     lightbox.classList.remove("open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.classList.remove("lightbox-open");
-    lightboxImage.src = "";
+    clearMedia();
   };
 
   const showNext = (direction) => {
-    if (!triggers.length) {
+    if (!activeItems.length) {
       return;
     }
-    currentIndex = (currentIndex + direction + triggers.length) % triggers.length;
+    currentIndex = (currentIndex + direction + activeItems.length) % activeItems.length;
     updateImage();
   };
 
-  triggers.forEach((img, index) => {
-    const button = img.closest("button");
-    const handler = () => openLightbox(index);
+  triggers.forEach((item) => {
+    const button = item.closest("button");
+    const handler = () => openLightbox(item);
     if (button) {
       button.addEventListener("click", handler);
     } else {
-      img.addEventListener("click", handler);
+      item.addEventListener("click", handler);
     }
   });
 
