@@ -28,15 +28,13 @@
       <nav class="nav">
         <div class="logo">AB</div>
         <div class="nav-links">
-          <a href="#skills" data-i18n="nav_skills">Habilidades</a>
           <a href="#projects" data-i18n="nav_projects">Proyectos</a>
-          <a href="#certificates" data-i18n="nav_certificates">Certificados</a>
+          <a href="#architecture" data-i18n="nav_architecture">Arquitectura</a>
+          <a href="#skills" data-i18n="nav_skills">Habilidades</a>
           <a href="#about" data-i18n="nav_about">Sobre mi</a>
-          <a href="#services" data-i18n="nav_services">Servicios</a>
-          <a href="#process" data-i18n="nav_process">Proceso</a>
           <a href="#experience" data-i18n="nav_experience">Experiencia</a>
           <a href="#education" data-i18n="nav_education">Educacion</a>
-          <a href="#notes" data-i18n="nav_notes">Notas</a>
+          <a href="#certificates" data-i18n="nav_certificates">Certificados</a>
           <a href="#contact" data-i18n="nav_contact">Contacto</a>
         </div>
         <div class="nav-actions">
@@ -54,9 +52,12 @@
             Aaron Brumat
             <span>Full Stack Junior</span>
           </h1>
+          <p class="hero-sub" data-i18n="hero_sub">
+            Construyo software interno para stock y ventas con foco en datos confiables y flujos claros.
+          </p>
           <div class="hero-actions">
-            <a class="btn secondary" href="#contact" data-i18n="hero_cta_freelance">Proyecto freelance</a>
-            <a class="btn ghost" href="#projects" data-i18n="hero_cta_primary">Ver proyectos</a>
+            <a class="btn primary" href="#projects" data-i18n="hero_cta_primary">Ver proyectos</a>
+            <a class="btn ghost" href="#contact" data-i18n="hero_cta_secondary">Contactar</a>
             <a class="btn ghost" href="cv.html" target="_blank" rel="noreferrer" data-i18n="hero_cta_cv">Ver CV</a>
           </div>
           <p class="hero-note" data-i18n="hero_response">Respuesta en 24-48h.</p>
@@ -85,12 +86,13 @@
               <span class="status" data-i18n="profile_status">Disponible</span>
             </div>
             <div class="profile-body">
+              <p data-i18n="profile_summary">
+                Junior enfocado en sistemas internos con datos confiables y reportes claros.
+              </p>
               <div class="profile-tags">
-                <span data-i18n="profile_tag_design">Diseño web</span>
-                <span data-i18n="profile_tag_uiux">UI/UX</span>
                 <span data-i18n="profile_tag_python">Python</span>
-                <span data-i18n="profile_tag_csharp">C#</span>
-                <span data-i18n="profile_tag_csharp">CSS</span>
+                <span data-i18n="profile_tag_sql">SQL</span>
+                <span data-i18n="profile_tag_tkinter">Tkinter</span>
                 <span data-i18n="profile_tag_js">JavaScript</span>
                 <span data-i18n="profile_tag_django">Django</span>
                 <span data-i18n="profile_tag_flask">Flask</span>
@@ -106,34 +108,6 @@
       </section>
 
       
-
-      <section class="section" id="skills">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="skills_eyebrow">Habilidades</p>
-          <h2 data-i18n="skills_title">Tecnologias y herramientas principales</h2>
-          <p data-i18n="skills_text">
-            Tecnologias aprendidas durante mi formacion.
-          </p>
-        </div>
-        <div class="skills-grid" data-reveal>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_1_title">Lenguajes</h3>
-            <p data-i18n="skills_block_1_list">Python, C#, JavaScript</p>
-          </div>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_2_title">Bases de datos</h3>
-            <p data-i18n="skills_block_2_list">MySQL Workbench</p>
-          </div>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_3_title">Frameworks</h3>
-            <p data-i18n="skills_block_3_list">Django, Flask, FastAPI</p>
-          </div>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_4_title">Aprendiendo</h3>
-            <p data-i18n="skills_block_4_list">Haskell y Unity.</p>
-          </div>
-        </div>
-      </section>
 
       <section class="section" id="projects">
         <div class="section-header" data-reveal>
@@ -219,11 +193,17 @@
             <p data-i18n="project_1_text">
               Sistema de gestion de stock, ventas y clientes con interfaz moderna en Tkinter. Desarrollado en 2 semanas.
             </p>
+            <p class="muted" data-i18n="project_1_breakdown_label">Problema → Solucion → Resultado</p>
             <ul class="project-list">
-              <li data-i18n="project_1_feature_1">Login con email/contraseña y opcion Google (opcional).</li>
-              <li data-i18n="project_1_feature_2">ABM de clientes, proveedores y productos.</li>
-              <li data-i18n="project_1_feature_3">Ventas con control de stock y reportes exportables.</li>
-              <li data-i18n="project_1_feature_4">Modulo de stock con alertas, movimientos y panel de estado.</li>
+              <li data-i18n="project_1_problem">Procesos en planillas separadas generan errores y falta de trazabilidad.</li>
+              <li data-i18n="project_1_solution">App de escritorio con login, modulos de clientes/productos/ventas y base MySQL.</li>
+              <li data-i18n="project_1_result">Flujo completo de ventas y stock con reportes exportables y panel de estado.</li>
+            </ul>
+            <p class="muted" data-i18n="project_1_decisions_label">Decisiones tecnicas clave</p>
+            <ul class="project-list">
+              <li data-i18n="project_1_decision_1">Tkinter para entregar rapido una interfaz usable en escritorio.</li>
+              <li data-i18n="project_1_decision_2">Modelo relacional en MySQL para integridad y consistencia de datos.</li>
+              <li data-i18n="project_1_decision_3">Separacion por modulos y validaciones para evitar errores de stock.</li>
             </ul>
             <div class="project-meta">
               <span class="tag" data-i18n="project_1_stack_1">Python</span>
@@ -233,6 +213,8 @@
             </div>
             <div class="project-actions">
               <a class="btn ghost" href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noreferrer" data-i18n="project_btn_code">Ver codigo</a>
+              <a class="btn ghost" href="#architecture" data-i18n="project_btn_arch">Ver arquitectura</a>
+              <a class="btn ghost" href="https://github.com/MaikiBRU/Stock_ARG#readme" target="_blank" rel="noreferrer" data-i18n="project_btn_readme">Ver README</a>
             </div>
           </article>
         </div>
@@ -271,32 +253,119 @@
             <span class="tag" data-i18n="case_tag_2">2 semanas</span>
           </div>
         </div>
-      </section>
-
-      <section class="section" id="certificates">
         <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="cert_eyebrow">Certificados</p>
-          <h2 data-i18n="cert_title">Certificaciones</h2>
-          <p data-i18n="cert_text">
-            Cursos finalizados que respaldan mi formacion en inteligencia artificial.
+          <p class="eyebrow" data-i18n="project_highlights_eyebrow">Aporte tecnico</p>
+          <h2 data-i18n="project_highlights_title">Decisiones de ingenieria</h2>
+          <p data-i18n="project_highlights_text">
+            Enfoque en datos confiables, flujos claros y soporte a usuarios no tecnicos.
           </p>
         </div>
         <div class="card-grid" data-reveal>
-          <article class="card certificate-card">
+          <article class="card">
+            <h3 data-i18n="project_highlight_1_title">Modelo de datos primero</h3>
+            <p data-i18n="project_highlight_1_text">
+              Defini entidades, relaciones y validaciones para evitar inconsistencias de stock.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="project_highlight_2_title">Calidad en operaciones</h3>
+            <p data-i18n="project_highlight_2_text">
+              Flujos completos de alta, venta y movimiento con control de errores en cada paso.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="project_highlight_3_title">Entrega util</h3>
+            <p data-i18n="project_highlight_3_text">
+              Reportes exportables y panel de estado para decisiones diarias sin Excel.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="architecture">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="architecture_eyebrow">Arquitectura</p>
+          <h2 data-i18n="architecture_title">Como esta construido StockARG</h2>
+          <p data-i18n="architecture_text">
+            Quiero que se entienda que hay modelo, reglas y decisiones tecnicas detras de la UI.
+          </p>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <h3 data-i18n="architecture_card_1_title">Estructura por capas</h3>
+            <p data-i18n="architecture_card_1_text">
+              Separacion entre UI, logica de negocio y persistencia para mantener orden y escalabilidad.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="architecture_card_2_title">Modelo de datos</h3>
+            <p data-i18n="architecture_card_2_text">
+              Entidades clave: clientes, productos, ventas, movimientos y proveedores con relaciones claras.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="architecture_card_3_title">Reglas de integridad</h3>
+            <p data-i18n="architecture_card_3_text">
+              Validaciones de stock, precios y cantidades para evitar errores operativos.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="architecture_card_4_title">Edge cases resueltos</h3>
+            <p data-i18n="architecture_card_4_text">
+              Bloqueo de ventas sin stock, control de duplicados y manejo de errores en reportes.
+            </p>
+          </article>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <h3 data-i18n="architecture_card_5_title">Documentacion y pruebas</h3>
+            <p data-i18n="architecture_card_5_text">
+              README con instalacion, diagrama ERD y decisiones tecnicas. Tests basicos de Utils.
+            </p>
+          </article>
+          <article class="card">
             <button class="certificate-media project-media" type="button">
               <img
-                src="assets/Certificado-Aaron-Brumat.png"
-                alt="Certificado de Inteligencia Artificial"
-                data-caption="Certificado de Inteligencia Artificial"
-                data-lightbox="certificates"
+                src="assets/StockARG-ERD.svg"
+                alt="Diagrama ERD StockARG"
+                data-caption="Modelo de datos StockARG (resumen conceptual)"
+                data-lightbox="stockarg-erd"
                 loading="lazy"
               />
             </button>
-            <h3 data-i18n="cert_1_title">Certificado de Inteligencia Artificial</h3>
-            <p data-i18n="cert_1_text">
-              Finalizacion de un curso de IA centrado en fundamentos, modelos basicos y aplicaciones practicas.
+            <h3 data-i18n="architecture_card_6_title">Diagrama ERD</h3>
+            <p data-i18n="architecture_card_6_text">
+              Resumen visual del modelo de datos para explicar entidades y relaciones principales.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="skills_eyebrow">Habilidades</p>
+          <h2 data-i18n="skills_title">Tecnologias y herramientas principales</h2>
+          <p data-i18n="skills_text">
+            Tecnologias aplicadas en proyectos reales y en formacion continua.
+          </p>
+        </div>
+        <div class="skills-grid" data-reveal>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_1_title">Lenguajes</h3>
+            <p data-i18n="skills_block_1_list">Python, C#, JavaScript</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_2_title">Datos</h3>
+            <p data-i18n="skills_block_2_list">MySQL (modelado, consultas, integridad)</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_3_title">Frameworks</h3>
+            <p data-i18n="skills_block_3_list">Django, Flask, FastAPI, Tkinter</p>
+          </div>
+          <div class="skill-block">
+            <h3 data-i18n="skills_block_4_title">En foco</h3>
+            <p data-i18n="skills_block_4_list">Testing basico, APIs REST, buenas practicas</p>
+          </div>
         </div>
       </section>
 
@@ -331,64 +400,6 @@
           </div>
         </div>
       </section>
-
-      <section class="section" id="services">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="services_eyebrow">Servicios</p>
-          <h2 data-i18n="services_title">Soluciones completas para productos digitales</h2>
-          <p data-i18n="services_text">
-            Como perfil junior, me enfoco en entregar soluciones claras, con buenas practicas y compromiso de
-            aprendizaje continuo.
-          </p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="services_card_1_title">Desarrollo web</h3>
-            <p data-i18n="services_card_1_text">
-              Landing o web completa, responsive, performance y deploy.
-            </p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="services_card_2_title">Diseño web</h3>
-            <p data-i18n="services_card_2_text">
-              Diseño visual, estructura clara y UI consistente para web.
-            </p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="services_card_3_title">Automatizacion</h3>
-            <p data-i18n="services_card_3_text">
-              Scripts, reportes y automatizaciones para ahorrar tiempo.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="process">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="process_eyebrow">Proceso</p>
-          <h2 data-i18n="process_title">Como trabajo en cada proyecto</h2>
-          <p data-i18n="process_text">Un flujo simple, claro y enfocado en resultados.</p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="process_1_title">1. Descubrimiento</h3>
-            <p data-i18n="process_1_text">Objetivos, alcance y prioridades definidas desde el inicio.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="process_2_title">2. Diseño y desarrollo</h3>
-            <p data-i18n="process_2_text">Iteracion rapida con foco en claridad visual y funcional.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="process_3_title">3. Entrega y mejora</h3>
-            <p data-i18n="process_3_text">Entrega con testing basico y ajustes segun feedback.</p>
-          </article>
-        </div>
-      </section>
-
-      
-
-      
-
       <section class="section" id="experience">
         <div class="section-header" data-reveal>
           <p class="eyebrow" data-i18n="experience_eyebrow">Experiencia</p>
@@ -451,33 +462,29 @@
         </div>
       </section>
 
-      <section class="section" id="testimonials">
+      <section class="section" id="certificates">
         <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="testimonials_eyebrow">Referencias</p>
-          <h2 data-i18n="testimonials_title">Referencias disponibles a pedido</h2>
-        </div>
-      </section>
-      
-      <section class="section" id="notes">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="notes_eyebrow">Notas</p>
-          <h2 data-i18n="notes_title">Ideas, procesos y aprendizajes</h2>
-          <p data-i18n="notes_text">
-            Espacio para compartir insights sobre tecnologia y producto.
+          <p class="eyebrow" data-i18n="cert_eyebrow">Certificados</p>
+          <h2 data-i18n="cert_title">Certificaciones</h2>
+          <p data-i18n="cert_text">
+            Formacion complementaria en inteligencia artificial.
           </p>
         </div>
         <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="note_1_title">Como optimizar un flujo de trabajo</h3>
-            <p data-i18n="note_1_text">Guia breve sobre automatizacion y productividad.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="note_2_title">Checklist para lanzar un producto</h3>
-            <p data-i18n="note_2_text">Puntos clave para asegurar calidad y coherencia.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="note_3_title">UI moderna sin perder performance</h3>
-            <p data-i18n="note_3_text">Equilibrio entre estetica y velocidad de carga.</p>
+          <article class="card certificate-card">
+            <button class="certificate-media project-media" type="button">
+              <img
+                src="assets/Certificado-Aaron-Brumat.png"
+                alt="Certificado de Inteligencia Artificial"
+                data-caption="Certificado de Inteligencia Artificial"
+                data-lightbox="certificates"
+                loading="lazy"
+              />
+            </button>
+            <h3 data-i18n="cert_1_title">Certificado de Inteligencia Artificial</h3>
+            <p data-i18n="cert_1_text">
+              Finalizacion de un curso de IA centrado en fundamentos, modelos basicos y aplicaciones practicas.
+            </p>
           </article>
         </div>
       </section>

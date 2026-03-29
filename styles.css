@@ -325,6 +325,10 @@ img {
   margin-bottom: 20px;
 }
 
+.profile-summary {
+  margin-bottom: 12px;
+}
+
 .profile-tags {
   display: flex;
   flex-wrap: wrap;
