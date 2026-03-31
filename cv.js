@@ -1,6 +1,6 @@
 ﻿const translations = {
   es: {
-    cv_role: "Full Stack Junior - Software | Webs",
+    cv_role: "Full Stack - Diseño Web",
     cv_pdf: "Descargar PDF",
     cv_portfolio: "Portfolio",
     cv_location: "Rosario, Santa Fe",
