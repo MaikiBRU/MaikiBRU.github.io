@@ -77,8 +77,8 @@ const translations = {
     skills_block_4_title: "Aprendiendo",
     skills_block_4_list: "Haskell y Unity.",
     projects_eyebrow: "Proyectos",
-    projects_title: "Trabajo seleccionado",
-    projects_text: "Prefiero enfocarme en un proyecto grande y bien hecho antes que en varios proyectos pequeños.",
+    projects_title: "Proyectos destacados",
+    projects_text: "Proyectos personales que demuestran mis habilidades y enfoque de trabajo.",
     project_1_title: "StockARG",
     project_1_tag: "Finanzas",
     project_1_text: "Centraliza clientes, productos, ventas y stock en un solo sistema. Interfaz clara en Tkinter y reportes exportables. Desarrollado en 2 semanas.",
@@ -91,13 +91,25 @@ const translations = {
     project_1_stack_3: "MySQL",
     project_1_stack_4: "2 semanas",
     project_btn_code: "Ver codigo",
+    project_shot_main: "Imagen principal",
+    project_shot_login: "Login",
+    project_shot_admin_menu: "Menu Administrador",
+    project_shot_user_menu: "Menu Usuario",
+    project_shot_clients: "Modulo Clientes",
+    project_shot_products: "Modulo Productos",
+    project_shot_suppliers: "Modulo Proveedores",
+    project_shot_sales: "Modulo Ventas",
+    project_shot_movements: "Movimientos en Stock",
+    project_shot_reports: "Reportes de Stock",
+    project_shot_stock_main: "Stock Principal",
     cert_eyebrow: "Certificados",
     cert_title: "Certificaciones",
     cert_text: "Cursos finalizados que respaldan mi formacion en inteligencia artificial.",
     cert_1_title: "Certificado de Inteligencia Artificial",
     cert_1_text: "Finalizacion de un curso de IA centrado en fundamentos, modelos basicos y aplicaciones practicas.",
+    cert_image_caption: "Certificado de Inteligencia Artificial",
     case_eyebrow: "Caso de estudio",
-    case_title: "StockARG en 2 semanas",
+    case_title: "StockARG",
     case_intro: "Proyecto individual para centralizar clientes, productos, stock y ventas en un solo sistema.",
     case_1_title: "Problema",
     case_1_text: "Gestion dispersa de clientes, stock y ventas sin reportes claros.",
@@ -273,13 +285,25 @@ const translations = {
     project_1_stack_3: "MySQL",
     project_1_stack_4: "2 weeks",
     project_btn_code: "View code",
+    project_shot_main: "Main screen",
+    project_shot_login: "Login",
+    project_shot_admin_menu: "Admin menu",
+    project_shot_user_menu: "User menu",
+    project_shot_clients: "Clients module",
+    project_shot_products: "Products module",
+    project_shot_suppliers: "Suppliers module",
+    project_shot_sales: "Sales module",
+    project_shot_movements: "Stock movements",
+    project_shot_reports: "Stock reports",
+    project_shot_stock_main: "Main stock view",
     cert_eyebrow: "Certificates",
     cert_title: "Certifications",
     cert_text: "Completed courses that support my training in artificial intelligence.",
     cert_1_title: "Artificial Intelligence Certificate",
     cert_1_text: "Completed an AI course focused on fundamentals, core models, and practical applications.",
+    cert_image_caption: "Artificial Intelligence Certificate",
     case_eyebrow: "Case study",
-    case_title: "StockARG in 2 weeks",
+    case_title: "StockARG",
     case_intro: "Solo project to centralize customers, products, stock, and sales in one system.",
     case_1_title: "Problem",
     case_1_text: "Scattered customer, stock, and sales management with no clear reports.",
@@ -394,6 +418,20 @@ const setLanguage = (lang) => {
     const key = el.dataset.i18nPlaceholder;
     if (translations[lang][key]) {
       el.setAttribute("placeholder", translations[lang][key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const key = el.dataset.i18nAlt;
+    if (translations[lang][key]) {
+      el.setAttribute("alt", translations[lang][key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-caption]").forEach((el) => {
+    const key = el.dataset.i18nCaption;
+    if (translations[lang][key]) {
+      el.setAttribute("data-caption", translations[lang][key]);
     }
   });
 };

@@ -452,7 +452,7 @@ img {
 }
 
 .project-hero-frame {
-  width: min(760px, 100%);
+  width: min(520px, 60%);
   margin: 0 auto;
   background: rgba(10, 16, 26, 0.5);
   border: 1px solid var(--line);
@@ -467,6 +467,7 @@ img {
 .project-hero-img {
   width: 100%;
   height: auto;
+  max-height: 360px;
   object-fit: contain;
   object-position: center;
   display: block;
