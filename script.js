@@ -234,7 +234,7 @@ const translations = {
     profile_cta_secondary: "Explore",
     about_eyebrow: "About",
     about_title: "I build digital experiences with real impact",
-    about_text: "I am a final-year Software Development student at Instituto Belgrano (Rosario). I am available full time for company roles and also take freelance projects. Focused on building clear, efficient, and scalable products.",
+    about_text: "I am a final-year Software Development student at Terciario Urquiza (Rosario). I am available full time for company roles and also take freelance projects. Focused on building clear, efficient, and scalable products.",
     about_card_1_title: "Philosophy",
     about_card_1_text: "I design simple systems that can grow without losing clarity or stability.",
     about_card_2_title: "Method",
