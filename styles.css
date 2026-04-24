@@ -396,6 +396,16 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.projects-stack {
+  display: grid;
+  gap: 32px;
+}
+
+.project-block {
+  display: grid;
+  gap: 24px;
+}
+
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -576,7 +586,6 @@ img {
 }
 
 .case-study {
-  margin-top: 32px;
   padding: 24px;
   background: var(--panel);
   border: 1px solid var(--line);
