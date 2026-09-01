@@ -1,0 +1,596 @@
+/* ============================================================
+   Secciones — hero, proyectos, stack, perfil, trayectoria, contacto.
+   Composicion editorial: columnas anchas de texto, filetes como unica
+   separacion, imagenes grandes y silenciosas.
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(620px, 92svh, 1000px);
+  padding-top: calc(var(--header-h) + clamp(40px, 8vw, 90px));
+  padding-bottom: clamp(56px, 9vw, 110px);
+}
+
+/* Se lee como una frase, no como tres columnas: al angostarse debe envolver
+   como texto corrido en lugar de repartirse en items flex. */
+.hero-kicker {
+  display: block;
+  margin-bottom: clamp(26px, 4vw, 44px);
+}
+
+.hero-kicker span + span {
+  margin-left: 9px;
+}
+
+.hero h1 {
+  margin-bottom: clamp(26px, 4vw, 48px);
+}
+
+/* Segunda linea del nombre en cursiva: el unico gesto tipografico */
+.hero h1 em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.hero-lead {
+  max-width: 54ch;
+  font-size: var(--fs-lead);
+  color: var(--ink-2);
+}
+
+.hero-lead strong {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.hero-links {
+  margin-top: clamp(30px, 4vw, 44px);
+}
+
+.hero-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px 32px;
+  margin-top: clamp(52px, 8vw, 96px);
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+
+.hero-stack {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.07em;
+  color: var(--ink-3);
+}
+
+.hero-stack b {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+@media (min-width: 640px) {
+  .hero-status {
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Color por tema de seccion ----------
+   El numero de la seccion y el de la navegacion comparten color, asi que lo
+   que pertenece al mismo tema se agrupa sin necesidad de explicarlo.
+     verde   proyectos y contacto  -> verificable / accionable ahora
+     azul    stack y perfil        -> capacidad tecnica
+     violeta trayectoria           -> recorrido en curso                      */
+
+#proyectos .section-head .num,
+#contacto .section-head .num {
+  color: var(--sig-live);
+}
+
+#stack .section-head .num,
+#perfil .section-head .num {
+  color: var(--sig-tech);
+}
+
+#trayectoria .section-head .num {
+  color: var(--sig-next);
+}
+
+/* Etiquetas con punto de senal (aprendiendo, en desarrollo, en curso) */
+.spec-row dt.sig-next,
+.spec-row dt.sig-tech,
+.spec-row dt.sig-live {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+/* ---------- Proyectos ---------- */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  padding-top: clamp(56px, 8vw, 110px);
+  border-top: 1px solid var(--rule);
+}
+
+.project:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.project-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 24px 40px;
+  margin-bottom: clamp(30px, 4vw, 48px);
+}
+
+.project-index {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.project-index .num {
+  font-size: 1.05em;
+}
+
+.project-index .live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-2);
+}
+
+.project h3 {
+  margin-bottom: 20px;
+}
+
+.project-lead {
+  max-width: 56ch;
+  font-size: var(--fs-lead);
+  color: var(--ink-2);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 26px;
+  padding-bottom: 6px;
+}
+
+/* Cifras del proyecto: una linea de texto, no cajas */
+.project-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  margin-top: 22px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.project-figures b {
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.project-media {
+  margin-bottom: clamp(44px, 6vw, 80px);
+}
+
+/* Problema / solucion: dos columnas de prosa */
+.project-story {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: clamp(30px, 4vw, 64px);
+  margin-bottom: clamp(44px, 6vw, 72px);
+}
+
+.project-story h4 {
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.project-story p {
+  color: var(--ink-2);
+}
+
+.project-spec {
+  margin-bottom: clamp(44px, 6vw, 72px);
+}
+
+/* Decisiones tecnicas: bloques numerados separados por filete */
+.notes {
+  border-top: 1px solid var(--rule);
+}
+
+.notes-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 24px;
+  padding: 26px 0 4px;
+}
+
+.notes-head h3,
+.notes-head h4 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.notes-head p {
+  font-size: var(--fs-small);
+  color: var(--ink-3);
+}
+
+.note {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 14px 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.note .num {
+  padding-top: 5px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+}
+
+.note h5 {
+  margin-bottom: 10px;
+}
+
+.note p {
+  max-width: 68ch;
+  color: var(--ink-2);
+}
+
+.note code {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  overflow-wrap: anywhere;
+}
+
+/* Proyectos secundarios */
+.minor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: clamp(30px, 4vw, 64px);
+  padding-top: clamp(44px, 6vw, 72px);
+  border-top: 1px solid var(--rule);
+}
+
+.minor-item h4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 1.28rem;
+}
+
+.minor-item h4 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.minor-item p {
+  margin-bottom: 16px;
+  color: var(--ink-2);
+}
+
+.minor-item .mono {
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1.9;
+}
+
+/* ---------- Perfil ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: clamp(36px, 6vw, 90px);
+  align-items: start;
+}
+
+.about-prose p {
+  font-size: var(--fs-lead);
+}
+
+.about-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* El ajuste de luz ya esta aplicado en el propio archivo, asi que aca no se
+   suma ningun filtro: la foto se ve tal cual es. */
+.about-photo {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+.about-side .mono {
+  line-height: 1.9;
+}
+
+/* ---------- Contacto ---------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(44px, 7vw, 100px);
+  align-items: start;
+}
+
+.contact-mail {
+  display: inline-block;
+  margin-bottom: 36px;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.contact-channels {
+  border-top: 1px solid var(--rule);
+}
+
+.contact-channels li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.contact-channels a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  color: var(--ink-2);
+  transition: color 0.3s var(--ease), padding-left 0.3s var(--ease);
+}
+
+.contact-channels a:hover,
+.contact-channels a:focus-visible {
+  color: var(--ink);
+  padding-left: 8px;
+}
+
+.contact-channels .ch-key {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.contact-channels .ch-val {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.contact-form .form-note {
+  font-size: var(--fs-small);
+  color: var(--ink-3);
+}
+
+/* ---------- Bloques y utilidades de seccion ---------- */
+
+.block-gap {
+  margin-top: clamp(52px, 7vw, 96px);
+}
+
+.about-focus {
+  margin-top: clamp(44px, 6vw, 80px);
+}
+
+.stack-foot {
+  margin-top: 30px;
+  max-width: 70ch;
+  line-height: 1.9;
+}
+
+.process-line {
+  margin-top: 24px;
+  line-height: 2;
+}
+
+.process-line span[aria-hidden] {
+  color: var(--ink-4);
+  margin-inline: 6px;
+}
+
+/* Filas de trayectoria: nombre, lugar y detalle apilados */
+.spec-row dd .mono {
+  display: inline-block;
+  margin: 3px 0 7px;
+}
+
+/* ---------- Certificacion ---------- */
+
+.cert {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+.cert-title {
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.cert p {
+  max-width: 56ch;
+  color: var(--ink-2);
+}
+
+.cert-meta {
+  margin-top: 18px;
+}
+
+/* ---------- Dialogos: espaciado propio ---------- */
+
+.dialog-lead {
+  margin: 16px 0 28px;
+  line-height: 1.8;
+}
+
+.mail-status {
+  margin-top: 20px;
+}
+
+/* ---------- Pie ---------- */
+
+.site-footer {
+  padding-block: 44px 56px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px 32px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+}
+
+/* ---------- Puntos de quiebre ---------- */
+
+@media (max-width: 900px) {
+  .project-head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .about,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-side {
+    flex-direction: row;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .about-photo {
+    max-width: 128px;
+  }
+}
+
+@media (max-width: 560px) {
+  .note {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .note .num {
+    padding-top: 0;
+  }
+
+  .hero-foot {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .contact-channels a {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-channels .ch-val {
+    text-align: left;
+  }
+
+  .about-side {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 900px) {
+  .cert {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cert .figure {
+    max-width: 460px;
+  }
+}

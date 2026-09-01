@@ -1,0 +1,359 @@
+/* ============================================================
+   CV — misma tinta monocroma en pantalla, hoja clara al imprimir.
+   Reutiliza los tokens de base.css y los componentes de components.css.
+   ============================================================ */
+
+.cv-page {
+  padding-block: 22px 80px;
+}
+
+.cv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px 26px;
+  width: min(880px, 100% - 2 * var(--gutter));
+  margin: 0 auto 40px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+}
+
+.cv {
+  width: min(880px, 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+/* ---------- Cabecera ---------- */
+
+.cv-head {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) minmax(0, 268px);
+  gap: 26px 32px;
+  align-items: start;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv-photo {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+.cv-ident h1 {
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  margin-bottom: 8px;
+}
+
+.cv-role {
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.cv-summary {
+  max-width: 54ch;
+  color: var(--ink-2);
+}
+
+.cv-contact {
+  display: grid;
+  gap: 7px;
+  font-size: var(--fs-small);
+}
+
+.cv-contact li {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+}
+
+.cv-contact span {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.cv-contact a,
+.cv-contact b {
+  color: var(--ink);
+  font-weight: 400;
+  /* break-word, no anywhere: parte entre palabras antes que a mitad del correo */
+  overflow-wrap: break-word;
+}
+
+.cv-contact a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Secciones ---------- */
+
+.cv-section {
+  margin-top: 34px;
+  padding-top: 34px;
+  border-top: 1px solid var(--rule);
+}
+
+.cv-section:first-of-type {
+  border-top: 0;
+}
+
+.cv-section h2 {
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.cv-section > p {
+  max-width: 76ch;
+  color: var(--ink-2);
+}
+
+.cv-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 30px 48px;
+}
+
+.cv-cols > div > h2 ~ h2 {
+  margin-top: 28px;
+}
+
+/* ---------- Proyectos ---------- */
+
+.cv-project + .cv-project {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.cv-project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-bottom: 10px;
+}
+
+.cv-project-head h3 {
+  font-size: 1.5rem;
+}
+
+.cv-meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.cv-project > p {
+  max-width: 78ch;
+  color: var(--ink-2);
+}
+
+.cv-bullets {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.cv-bullets li {
+  position: relative;
+  padding-left: 18px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.cv-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 1px;
+  background: var(--ink-4);
+}
+
+.cv-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.04em;
+  color: var(--ink-4);
+}
+
+.cv-links a {
+  /* Relleno vertical para llegar al objetivo tactil de 24px sin cambiar el dibujo. */
+  padding-block: 3px;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+
+.cv-links a:hover {
+  color: var(--ink);
+}
+
+/* ---------- Listas ---------- */
+
+.cv-skills {
+  display: grid;
+  gap: 12px;
+}
+
+.cv-skills li {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.cv-skills b {
+  padding-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.cv-plain {
+  display: grid;
+  gap: 6px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.cv-plain li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.cv-plain li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 1px;
+  background: var(--ink-4);
+}
+
+.cv-entry + .cv-entry {
+  margin-top: 18px;
+}
+
+.cv-entry b {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cv-entry .cv-meta {
+  display: block;
+  margin-top: 3px;
+}
+
+.cv-entry p {
+  margin-top: 6px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.cv-note {
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--ink-3);
+}
+
+@media (max-width: 720px) {
+  .cv-head {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .cv-contact {
+    grid-column: 1 / -1;
+  }
+
+  .cv-skills li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3px;
+  }
+}
+
+/* ---------- Impresion: hoja clara, sin adornos ---------- */
+
+@media print {
+  @page {
+    margin: 13mm;
+  }
+
+  :root {
+    --ink: #101114;
+    --ink-2: #33363c;
+    --ink-3: #5f636b;
+    --ink-4: #8a8e96;
+    --rule: #d7dade;
+    --rule-soft: #e6e8eb;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #101114;
+    font-size: 10.5pt;
+  }
+
+  .cv-toolbar {
+    display: none !important;
+  }
+
+  .cv-page {
+    padding: 0;
+  }
+
+  .cv {
+    width: 100%;
+    max-width: none;
+  }
+
+  .cv-photo {
+    border-color: #c8ccd1;
+  }
+
+  .cv-section,
+  .cv-project,
+  .cv-entry {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #101114 !important;
+    text-decoration: none;
+  }
+
+  .cv-links a {
+    color: #33363c !important;
+  }
+}

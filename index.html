@@ -1,824 +1,802 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aaron Brumat | Portfolio</title>
+    <title>Aaron Brumat — Software Developer | Backend, APIs y Datos</title>
+    <meta
+      name="description"
+      content="Software Developer en Rosario, Argentina. Aplicaciones full-stack con Python, FastAPI, PostgreSQL y Next.js. Data Center, en producción y probable sin registro."
+    />
     <meta name="author" content="Aaron Brumat" />
-    <meta property="og:title" content="Aaron Brumat | Portfolio" />
-    <meta property="og:image" content="assets/Imagen%20Principal.png" />
-    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0d0d0f" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://aaronbrumat.com.ar/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Aaron Brumat" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content="https://aaronbrumat.com.ar/" />
+    <meta property="og:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
+    <meta
+      property="og:description"
+      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center, plataforma de calidad de datos, en producción y probable sin registro."
+    />
+    <meta property="og:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Aaron Brumat — Software Developer. Backend, APIs y datos." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aaron Brumat | Portfolio" />
-    <meta name="twitter:image" content="assets/Imagen%20Principal.png" />
+    <meta name="twitter:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
+    <meta
+      name="twitter:description"
+      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center en producción, probable sin registro."
+    />
+    <meta name="twitter:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
     />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="bg-orb orb-1" aria-hidden="true"></div>
-    <div class="bg-orb orb-2" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
 
-    <header class="site-header">
-      <nav class="nav">
-        <div class="logo">AB</div>
-        <div class="nav-links">
-          <a href="#skills" data-i18n="nav_skills">Habilidades</a>
-          <a href="#projects" data-i18n="nav_projects">Proyectos</a>
-          <a href="#certificates" data-i18n="nav_certificates">Certificados</a>
-          <a href="#about" data-i18n="nav_about">Sobre mi</a>
-          <a href="#services" data-i18n="nav_services">Servicios</a>
-          <a href="#process" data-i18n="nav_process">Proceso</a>
-          <a href="#experience" data-i18n="nav_experience">Experiencia</a>
-          <a href="#education" data-i18n="nav_education">Educacion</a>
-          <a href="#notes" data-i18n="nav_notes">Notas</a>
-          <a href="#contact" data-i18n="nav_contact">Contacto</a>
-        </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aaron Brumat",
+        "url": "https://aaronbrumat.com.ar/",
+        "jobTitle": "Software Developer",
+        "email": "mailto:aaronbru.dev@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rosario",
+          "addressRegion": "Santa Fe",
+          "addressCountry": "AR"
+        },
+        "sameAs": ["https://github.com/MaikiBRU", "https://www.linkedin.com/in/aaronbrumat/"],
+        "knowsAbout": [
+          "Python",
+          "FastAPI",
+          "SQL",
+          "PostgreSQL",
+          "TypeScript",
+          "Next.js",
+          "Docker",
+          "Linux",
+          "REST APIs",
+          "Data Quality"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+
+    <header class="site-header" id="site-header">
+      <div class="wrap nav">
+        <a class="brand" href="#inicio">Aaron Brumat<span class="brand-dot">.</span></a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Secciones">
+          <a href="#proyectos" data-nav><sup>01</sup><span data-i18n="nav_projects">Proyectos</span></a>
+          <a href="#stack" data-nav><sup>02</sup><span data-i18n="nav_stack">Stack</span></a>
+          <a href="#perfil" data-nav><sup>03</sup><span data-i18n="nav_about">Perfil</span></a>
+          <a href="#trayectoria" data-nav><sup>04</sup><span data-i18n="nav_track">Trayectoria</span></a>
+          <a href="#contacto" data-nav><sup>05</sup><span data-i18n="nav_contact">Contacto</span></a>
+        </nav>
+
         <div class="nav-actions">
-          <button class="btn ghost" id="lang-toggle" type="button">EN</button>
-          <a class="btn primary" href="#contact" data-i18n="nav_cta">Hablemos</a>
+          <button class="link link--quiet is-desktop" id="lang-toggle" type="button">EN</button>
+          <a class="link link--quiet is-desktop" href="cv.html" data-i18n="nav_cv">CV</a>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+            <span data-i18n="nav_menu">Menu</span><i aria-hidden="true"></i>
+          </button>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <main>
-      <section class="hero" id="home">
-        <div class="hero-content" data-reveal>
-          <p class="eyebrow" data-i18n="hero_eyebrow">Portfolio profesional</p>
-          <h1 class="hero-title" data-i18n-html="hero_title">
-            Aaron Brumat
-            <span>Full Stack</span>
-          </h1>
-          <div class="hero-actions">
-            <a class="btn secondary" href="#contact" data-i18n="hero_cta_freelance">Proyecto freelance</a>
-            <a class="btn ghost" href="#projects" data-i18n="hero_cta_primary">Ver proyectos</a>
-            <a class="btn ghost" href="cv.html" target="_blank" rel="noreferrer" data-i18n="hero_cta_cv">Ver CV</a>
-          </div>
-          <p class="hero-note" data-i18n="hero_response">Respuesta en 24-48h.</p>
-          <div class="hero-meta">
-            <div class="meta-card">
-              <span data-i18n="hero_meta_1_label">Enfoque</span>
-              <strong data-i18n="hero_meta_1_value">Calidad y detalle</strong>
-            </div>
-            <div class="meta-card">
-              <span data-i18n="hero_meta_2_label">Trabajo</span>
-              <strong data-i18n="hero_meta_2_value">Remoto o hibrido</strong>
-            </div>
-            <div class="meta-card">
-              <span data-i18n="hero_meta_3_label">Disponibilidad</span>
-              <strong data-i18n="hero_meta_3_value">Full time + freelance</strong>
-            </div>
-          </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a class="mobile-link" href="#proyectos"><span class="num">01</span><span data-i18n="nav_projects">Proyectos</span></a>
+      <a class="mobile-link" href="#stack"><span class="num">02</span><span data-i18n="nav_stack">Stack</span></a>
+      <a class="mobile-link" href="#perfil"><span class="num">03</span><span data-i18n="nav_about">Perfil</span></a>
+      <a class="mobile-link" href="#trayectoria"><span class="num">04</span><span data-i18n="nav_track">Trayectoria</span></a>
+      <a class="mobile-link" href="#contacto"><span class="num">05</span><span data-i18n="nav_contact">Contacto</span></a>
+      <div class="mobile-foot">
+        <a class="link link--quiet" href="cv.html" data-i18n="nav_cv">CV</a>
+        <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="link link--quiet" href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <button class="link link--quiet" id="lang-toggle-mobile" type="button">EN</button>
+      </div>
+    </div>
+
+    <main id="contenido">
+      <!-- ============ HERO ============ -->
+      <section class="hero wrap" id="inicio">
+        <p class="kicker hero-kicker">
+          <span data-i18n="hero_role_a">Software Developer</span>
+          <span aria-hidden="true">—</span>
+          <span data-i18n="hero_role_b">Backend, APIs y datos</span>
+        </p>
+
+        <h1>Aaron<br /><em>Brumat</em></h1>
+
+        <p class="hero-lead" data-i18n-rich="hero_pitch">Construyo aplicaciones completas con Python y TypeScript: APIs REST, modelos de datos en PostgreSQL y frontends en Next.js. Es decir, el motor que procesa la información, la base donde queda guardada y la pantalla desde la que se usa. Estoy terminando la carrera de <strong>Técnico Desarrollador de Software</strong> y llevo cada proyecto hasta dejarlo desplegado, probado y funcionando.</p>
+
+        <div class="link-row hero-links">
+          <a class="link" href="#proyectos"><span data-i18n="hero_cta_projects">Ver proyectos</span><span class="arrow" aria-hidden="true">↓</span></a>
+          <a class="link link--live" href="https://datacenter.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="hero_cta_demo">Probar Data Center</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">
+            GitHub<span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link link--quiet" href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">
+            LinkedIn<span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link link--quiet" href="cv.html"><span data-i18n="hero_link_cv">CV</span></a>
         </div>
-        <div class="hero-visual" data-reveal>
-          <div class="profile-card">
-            <div class="profile-top">
-              <div>
-                <p data-i18n="profile_title">Perfil</p>
-                <h3 data-i18n="profile_name">Aaron Brumat</h3>
-              </div>
-              <span class="status" data-i18n="profile_status">Disponible</span>
-            </div>
-            <div class="profile-body">
-              <div class="profile-tags">
-                <span data-i18n="profile_tag_design">Diseño web</span>
-                <span data-i18n="profile_tag_uiux">UI/UX</span>
-                <span data-i18n="profile_tag_python">Python</span>
-                <span data-i18n="profile_tag_csharp">C#</span>
-                <span data-i18n="profile_tag_css">CSS</span>
-                <span data-i18n="profile_tag_js">JavaScript</span>
-                <span data-i18n="profile_tag_django">Django</span>
-                <span data-i18n="profile_tag_flask">Flask</span>
-                <span data-i18n="profile_tag_fastapi">FastAPI</span>
-              </div>
-            </div>
-            <div class="profile-actions">
-              <a class="btn ghost" href="#contact" data-i18n="profile_cta">Agendar llamada</a>
-              <a class="btn ghost" href="#projects" data-i18n="profile_cta_secondary">Explorar</a>
-            </div>
-          </div>
+
+        <div class="hero-foot">
+          <p class="hero-stack">
+            <b>Python</b> · <b>FastAPI</b> · <b>PostgreSQL</b> · <b>SQL</b> · <b>TypeScript</b> · <b>Next.js</b> ·
+            <b>Docker</b> · <b>Linux</b> · <b>Git</b>
+          </p>
+          <p class="hero-status">
+            <span class="dot dot--pulse" aria-hidden="true"></span>
+            <span data-i18n="hero_tag">Rosario, Argentina — disponible para trabajar</span>
+          </p>
         </div>
       </section>
 
-      
-
-      <section class="section" id="skills">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="skills_eyebrow">Habilidades</p>
-          <h2 data-i18n="skills_title">Tecnologias y herramientas principales</h2>
-          <p data-i18n="skills_text">
-            Tecnologias aprendidas durante mi formacion.
-          </p>
-        </div>
-        <div class="skills-grid" data-reveal>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_1_title">Lenguajes</h3>
-            <p data-i18n="skills_block_1_list">Python, C#, JavaScript</p>
-          </div>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_2_title">Bases de datos</h3>
-            <p data-i18n="skills_block_2_list">MySQL Workbench</p>
-          </div>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_3_title">Frameworks</h3>
-            <p data-i18n="skills_block_3_list">Django, Flask, FastAPI</p>
-          </div>
-          <div class="skill-block">
-            <h3 data-i18n="skills_block_4_title">Aprendiendo</h3>
-            <p data-i18n="skills_block_4_list">Haskell y Unity.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="projects_eyebrow">Proyectos</p>
-          <h2 data-i18n="projects_title">Proyectos destacados</h2>
-          <p data-i18n="projects_text">
-            Proyectos personales que demuestran mis habilidades y enfoque de trabajo.
-          </p>
-        </div>
-        <div class="projects-stack" data-reveal>
-          <div class="project-block">
-            <article class="card project-card">
-            <div class="project-gallery">
-              <button class="project-hero-frame project-media" type="button">
-                <img
-                  class="project-hero-img"
-                  src="assets/Imagen%20Principal.png"
-                  alt="Imagen Principal"
-                  data-i18n-alt="project_shot_main"
-                  data-caption="Imagen Principal"
-                  data-i18n-caption="project_shot_main"
-                  data-lightbox="stockarg"
-                />
-              </button>
-              <div class="project-shots">
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Login.png"
-                      alt="Login"
-                      data-i18n-alt="project_shot_login"
-                      data-caption="Login"
-                      data-i18n-caption="project_shot_login"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_login">Login</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Menu%20Administrador.png"
-                      alt="Menu Administrador"
-                      data-i18n-alt="project_shot_admin_menu"
-                      data-caption="Menu Administrador"
-                      data-i18n-caption="project_shot_admin_menu"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_admin_menu">Menu Administrador</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Menu%20Usuario.png"
-                      alt="Menu Usuario"
-                      data-i18n-alt="project_shot_user_menu"
-                      data-caption="Menu Usuario"
-                      data-i18n-caption="project_shot_user_menu"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_user_menu">Menu Usuario</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Modulo%20Clientes.png"
-                      alt="Modulo Clientes"
-                      data-i18n-alt="project_shot_clients"
-                      data-caption="Modulo Clientes"
-                      data-i18n-caption="project_shot_clients"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_clients">Modulo Clientes</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Modulo%20Productos.png"
-                      alt="Modulo Productos"
-                      data-i18n-alt="project_shot_products"
-                      data-caption="Modulo Productos"
-                      data-i18n-caption="project_shot_products"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_products">Modulo Productos</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Modulo%20Proveedores.png"
-                      alt="Modulo Proveedores"
-                      data-i18n-alt="project_shot_suppliers"
-                      data-caption="Modulo Proveedores"
-                      data-i18n-caption="project_shot_suppliers"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_suppliers">Modulo Proveedores</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Modulo%20Ventas.png"
-                      alt="Modulo Ventas"
-                      data-i18n-alt="project_shot_sales"
-                      data-caption="Modulo Ventas"
-                      data-i18n-caption="project_shot_sales"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_sales">Modulo Ventas</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Movimientos%20en%20Stock.png"
-                      alt="Movimientos en Stock"
-                      data-i18n-alt="project_shot_movements"
-                      data-caption="Movimientos en Stock"
-                      data-i18n-caption="project_shot_movements"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_movements">Movimientos en Stock</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Reportes%20de%20Stock.png"
-                      alt="Reportes de Stock"
-                      data-i18n-alt="project_shot_reports"
-                      data-caption="Reportes de Stock"
-                      data-i18n-caption="project_shot_reports"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_reports">Reportes de Stock</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Stock%20Principal.png"
-                      alt="Stock Principal"
-                      data-i18n-alt="project_shot_stock_main"
-                      data-caption="Stock Principal"
-                      data-i18n-caption="project_shot_stock_main"
-                      data-lightbox="stockarg"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_shot_stock_main">Stock Principal</figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="project-header">
-              <h3 data-i18n="project_1_title">StockARG</h3>
-              <span class="tag" data-i18n="project_1_tag">Finanzas</span>
-            </div>
-            <p data-i18n="project_1_text">
-              Sistema de gestion de stock, ventas y clientes con interfaz moderna en Tkinter.
+      <!-- ============ PROYECTOS ============ -->
+      <section class="section" id="proyectos">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker"><span class="num">01</span><span data-i18n="projects_eyebrow">Proyectos</span></p>
+            <h2 data-i18n="projects_title">Sistemas que construi de punta a punta</h2>
+            <p class="lead" data-i18n="projects_lead">
+              Cada uno arranca en un problema concreto y termina en algo que funciona: modelo de datos, API, interfaz,
+              pruebas y despliegue. Los enlaces llevan al código real y, cuando existe, a la aplicación en vivo.
             </p>
-            <ul class="project-list">
-              <li data-i18n="project_1_feature_1">Login con email/contraseña y opcion Google (opcional).</li>
-              <li data-i18n="project_1_feature_2">ABM de clientes, proveedores y productos.</li>
-              <li data-i18n="project_1_feature_3">Ventas con control de stock y reportes exportables.</li>
-              <li data-i18n="project_1_feature_4">Modulo de stock con alertas, movimientos y panel de estado.</li>
-            </ul>
-            <div class="project-meta">
-              <span class="tag" data-i18n="project_1_stack_1">Python</span>
-              <span class="tag" data-i18n="project_1_stack_2">Tkinter</span>
-              <span class="tag" data-i18n="project_1_stack_3">MySQL</span>
-              <span class="tag" data-i18n="project_1_stack_4">Google Cloud</span>
-            </div>
-              <div class="project-actions">
-                <a class="btn ghost" href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noreferrer" data-i18n="project_btn_code">Ver codigo</a>
+          </div>
+
+          <div class="projects">
+            <!-- ---------- 01 · Data Center ---------- -->
+            <article class="project" aria-labelledby="p-dc-title">
+              <div class="project-head reveal">
+                <div>
+                  <p class="project-index">
+                    <span class="num sig-live">01</span>
+                    <span data-i18n="p_dc_kind">Full-stack · Calidad de datos</span>
+                    <span class="live sig-live"><span class="dot dot--pulse" aria-hidden="true"></span><span data-i18n="badge_live">En producción</span></span>
+                  </p>
+                  <h3 id="p-dc-title">Data Center</h3>
+                  <p class="project-lead" data-i18n="p_dc_tagline">Plataforma de monitoreo de calidad de datos para operaciones de ecommerce y logística: analiza datasets, detecta anomalías y convierte los hallazgos en incidencias con responsable y SLA. En concreto, revisa archivos de pedidos y envíos, encuentra los registros mal cargados y genera una tarea para que alguien los corrija.</p>
+                  <p class="project-figures">
+                    <span><b>226</b> <span data-i18n="p_dc_fig_1">tests automatizados</span></span>
+                    <span><b>50+</b> <span data-i18n="p_dc_fig_2">endpoints REST</span></span>
+                    <span><b>45 min</b> <span data-i18n="p_dc_fig_3">sandbox sin registro</span></span>
+                  </p>
+                </div>
+                <div class="project-actions">
+                  <a class="link link--live" href="https://datacenter.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="btn_app">Ver aplicación</span><span class="arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a class="link link--quiet" href="https://github.com/MaikiBRU/Page-Data-Center" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="btn_code">Ver código</span><span class="arrow" aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-media reveal">
+                <button class="figure" type="button" data-lightbox="dc" data-src="assets/dc-dashboard.webp">
+                  <img
+                    src="assets/dc-dashboard.webp"
+                    width="1800"
+                    height="1125"
+                    alt="Dashboard de Data Center: calidad de datos 31,1%, filas afectadas, filas criticas, hallazgos, anomalías y casos abiertos."
+                    data-i18n-alt="p_dc_shot_dashboard_alt"
+                    data-caption="Dashboard: KPIs de calidad calculados sobre filas"
+                    data-i18n-caption="p_dc_shot_dashboard"
+                    decoding="async"
+                  />
+                </button>
+                <p class="figure-caption">
+                  <span data-i18n="p_dc_shot_dashboard">Dashboard: KPIs de calidad calculados sobre filas</span>
+                  <span aria-hidden="true">datacenter.aaronbrumat.com.ar</span>
+                </p>
+
+                <div class="strip">
+                  <button type="button" data-lightbox="dc" data-src="assets/dc-dataset.webp" data-caption="Validación de esquema y vista previa del CSV" data-i18n-caption="p_dc_shot_dataset">
+                    <img src="assets/dc-dataset.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Validación de esquema de un dataset y vista previa de las primeras filas del CSV." data-i18n-alt="p_dc_shot_dataset_alt" />
+                  </button>
+                  <button type="button" data-lightbox="dc" data-src="assets/dc-cases.webp" data-caption="Casos: SLA, severidad y responsables" data-i18n-caption="p_dc_shot_cases">
+                    <img src="assets/dc-cases.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Workflow de incidentes con heatmap de SLA por severidad y métricas por responsable." data-i18n-alt="p_dc_shot_cases_alt" />
+                  </button>
+                  <button type="button" data-lightbox="dc" data-src="assets/dc-recommendations.webp" data-caption="Recomendaciones priorizadas por peso" data-i18n-caption="p_dc_shot_reco">
+                    <img src="assets/dc-recommendations.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Recomendaciones accionables priorizadas por peso de severidad y filas afectadas." data-i18n-alt="p_dc_shot_reco_alt" />
+                  </button>
+                  <button type="button" data-lightbox="dc" data-src="assets/dc-runs.webp" data-caption="Historial de corridas de calidad" data-i18n-caption="p_dc_shot_runs">
+                    <img src="assets/dc-runs.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Historial de corridas de calidad con filtros, totales y tendencia por día." data-i18n-alt="p_dc_shot_runs_alt" />
+                  </button>
+                  <button type="button" data-lightbox="dc" data-src="assets/dc-charts.webp" data-caption="Actividad y violaciones por severidad" data-i18n-caption="p_dc_shot_charts">
+                    <img src="assets/dc-charts.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Graficos de corridas por día y de violaciones por severidad." data-i18n-alt="p_dc_shot_charts_alt" />
+                  </button>
+                  <button type="button" data-lightbox="dc" data-src="assets/dc-demo.webp" data-caption="Entrada pública al sandbox" data-i18n-caption="p_dc_shot_demo">
+                    <img src="assets/dc-demo.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Pagina pública de la demo con los limites de la sesión temporal." data-i18n-alt="p_dc_shot_demo_alt" />
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-story reveal">
+                <div>
+                  <h4 data-i18n="label_problem">El problema</h4>
+                  <p data-i18n="p_dc_problem">
+                    Un pedido con precio negativo, una dirección sin número o un peso imposible no rompen nada hasta que
+                    rompen la operación. Sin una vista única de la calidad de cada dataset, esos registros aparecen
+                    tarde, nadie queda a cargo de corregirlos y no hay forma de saber si la situacion mejora o empeora.
+                  </p>
+                </div>
+                <div>
+                  <h4 data-i18n="label_solution">La solución</h4>
+                  <p data-i18n="p_dc_solution">Un motor de reglas por dominio valida cada dataset, puntúa su calidad, detecta valores estadísticamente extremos y transforma los hallazgos en incidencias con severidad, responsable y plazo. Para que cualquiera pueda evaluarlo sin fricción, la ruta pública crea un sandbox temporal y aislado —una copia de prueba que no toca los datos reales— ya poblada con datos analizados, que se borra sola al expirar.</p>
+                </div>
+              </div>
+
+              <dl class="spec project-spec reveal">
+                <div class="spec-row">
+                  <dt data-i18n="spec_dc_1_k">Datasets</dt>
+                  <dd data-i18n="spec_dc_1_v">Carga de CSV o generación, validación de esquema contra el dominio, vista previa y corridas de calidad con historial. Antes de analizar nada, el sistema comprueba que el archivo tenga las columnas que dice tener.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_dc_2_k">Calidad y anomalías</dt>
+                  <dd data-i18n="spec_dc_2_v">Reglas por dominio con severidad declarada y detección de outliers por z-score modificado. Además de lo que rompe una regla, marca los valores que se apartan tanto del resto que casi seguro son un error de carga.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_dc_3_k">Casos</dt>
+                  <dd data-i18n="spec_dc_3_v">Workflow de incidentes con estados, SLA, timeline, notas y exportes. Cada problema detectado se convierte en una tarea con responsable, plazo e historial de lo que se hizo.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_dc_4_k">Acceso</dt>
+                  <dd data-i18n="spec_dc_4_v">Autenticación local y con Google, roles, auditoría de usuarios y sandbox anónimo en paralelo. Cada persona ve solo lo que le corresponde, y quien entra sin cuenta trabaja en un espacio aparte.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_backend">Backend</dt>
+                  <dd class="mono">FastAPI · SQLAlchemy · Pydantic · Alembic · PostgreSQL 16 · pytest</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_frontend">Frontend</dt>
+                  <dd class="mono">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Recharts</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_infra">Infraestructura</dt>
+                  <dd class="mono" data-i18n="spec_dc_infra_v">Cloudflare Worker (Next.js) → EC2 Ubuntu · Caddy → Docker Compose: FastAPI + PostgreSQL 16. La interfaz se sirve desde la red de Cloudflare y la API desde un servidor propio en AWS; los cambios de base de datos se aplican antes de aceptar tráfico y se respalda en cada despliegue.</dd>
+                </div>
+              </dl>
+
+              <div class="notes reveal">
+                <div class="notes-head">
+                  <h4 data-i18n="label_decisions">Decisiones técnicas</h4>
+                  <p data-i18n="p_dc_decisions_note">Tres cambios que cambiaron lo que el sistema afirma.</p>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">01</span>
+                  <div>
+                    <h5 data-i18n="p_dc_note_1_title">Métricas auditables en lugar de estimadas</h5>
+                    <p data-i18n="p_dc_note_1_text">El dashboard mostraba un impacto en dólares calculado con constantes sin origen y un score de riesgo que llegaba a 100 sobre un dataset mayormente limpio. Los reemplacé por conteos de filas distintas. Dicho simple: antes el panel mostraba una cifra que nadie podía comprobar; ahora todo lo que muestra se puede contar a mano en el archivo.</p>
+                    <code data-i18n="p_dc_note_1_code">quality = 100 x (1 - filas_afectadas / filas_totales)</code>
+                  </div>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">02</span>
+                  <div>
+                    <h5 data-i18n="p_dc_note_2_title">Mediana y MAD en vez de media y desvío</h5>
+                    <p data-i18n="p_dc_note_2_text">El detector de anomalías calculaba media y desvío sobre la muestra ya contaminada, así que los propios valores extremos inflaban el umbral y quedaban dentro. Con z-score modificado sobre mediana y MAD la detección se mantiene estable aunque un tercio de los datos esté contaminado. En otras palabras: el método anterior se dejaba engañar por los errores que tenía que encontrar.</p>
+                    <code data-i18n="p_dc_note_2_code">z = (x - mediana) / (1.4826 x MAD) — |z| &gt;= 3.5</code>
+                  </div>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">03</span>
+                  <div>
+                    <h5 data-i18n="p_dc_note_3_title">Un sandbox público que falla cerrado</h5>
+                    <p data-i18n="p_dc_note_3_text">La demo comparte base con la aplicación autenticada, así que el aislamiento no puede depender de recordar protegerlo. La partición vive en columnas del modelo y la dependencia de sesión rechaza los tokens de demo. La idea: si mañana agrego una función y me olvido de protegerla, queda cerrada por defecto en lugar de quedar expuesta.</p>
+                    <code data-i18n="p_dc_note_3_code">404, no 403: la respuesta no confirma ids ajenos</code>
+                  </div>
+                </div>
               </div>
             </article>
-            <div class="case-study">
-              <div class="case-header">
-                <p class="eyebrow" data-i18n="case_eyebrow">Caso de estudio</p>
-                <h3 data-i18n="case_title">StockARG</h3>
-                <p data-i18n="case_intro">
-                  Proyecto individual para centralizar clientes, productos, stock y ventas en un solo sistema.
+
+            <!-- ---------- 02 · StockARG ---------- -->
+            <article class="project" aria-labelledby="p-sa-title">
+              <div class="project-head reveal">
+                <div>
+                  <p class="project-index">
+                    <span class="num sig-tech">02</span>
+                    <span data-i18n="p_sa_kind">Escritorio · Gestión y base de datos</span>
+                  </p>
+                  <h3 id="p-sa-title">StockARG</h3>
+                  <p class="project-lead" data-i18n="p_sa_tagline">
+                    Sistema de gestión de stock, ventas, clientes y proveedores para un comercio, con base de datos
+                    MySQL y reportes exportables.
+                  </p>
+                  <p class="project-figures">
+                    <span><b>7</b> <span data-i18n="p_sa_fig_1">entidades en el modelo</span></span>
+                    <span><b>4</b> <span data-i18n="p_sa_fig_2">módulos unificados</span></span>
+                    <span><b>CSV · PDF</b> <span data-i18n="p_sa_fig_3">exportación</span></span>
+                  </p>
+                </div>
+                <div class="project-actions">
+                  <a class="link" href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="btn_code">Ver código</span><span class="arrow" aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-media reveal">
+                <button class="figure" type="button" data-lightbox="sa" data-src="assets/sa-reportes.webp">
+                  <img
+                    src="assets/sa-reportes.webp"
+                    width="1500"
+                    height="844"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Reportes de StockARG: estado del stock por producto y reporte de ventas por rango de fechas, con exportación a PDF y CSV."
+                    data-i18n-alt="p_sa_shot_rep_alt"
+                    data-caption="Reportes de stock y ventas, exportables a CSV y PDF"
+                    data-i18n-caption="p_sa_shot_rep"
+                  />
+                </button>
+                <p class="figure-caption">
+                  <span data-i18n="p_sa_shot_rep">Reportes de stock y ventas, exportables a CSV y PDF</span>
+                  <span aria-hidden="true">Python · Tkinter · MySQL</span>
                 </p>
+
+                <div class="strip">
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-stock.webp" data-caption="Control de stock por nivel" data-i18n-caption="p_sa_shot_stock">
+                    <img class="is-centered" src="assets/sa-stock.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de control de stock de StockARG con estados por color y busqueda." data-i18n-alt="p_sa_shot_stock_alt" />
+                  </button>
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-ventas.webp" data-caption="Ventas con descuento de stock" data-i18n-caption="p_sa_shot_ventas">
+                    <img class="is-centered" src="assets/sa-ventas.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de ventas de StockARG." data-i18n-alt="p_sa_shot_ventas_alt" />
+                  </button>
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-productos.webp" data-caption="ABM de productos" data-i18n-caption="p_sa_shot_productos">
+                    <img class="is-centered" src="assets/sa-productos.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de productos de StockARG." data-i18n-alt="p_sa_shot_productos_alt" />
+                  </button>
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-clientes.webp" data-caption="ABM de clientes" data-i18n-caption="p_sa_shot_clientes">
+                    <img class="is-centered" src="assets/sa-clientes.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de clientes de StockARG." data-i18n-alt="p_sa_shot_clientes_alt" />
+                  </button>
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-proveedores.webp" data-caption="ABM de proveedores" data-i18n-caption="p_sa_shot_proveedores">
+                    <img class="is-centered" src="assets/sa-proveedores.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de proveedores de StockARG." data-i18n-alt="p_sa_shot_proveedores_alt" />
+                  </button>
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-movimientos.webp" data-caption="Historial de movimientos" data-i18n-caption="p_sa_shot_mov">
+                    <img class="is-centered" src="assets/sa-movimientos.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Historial de movimientos de stock de StockARG." data-i18n-alt="p_sa_shot_mov_alt" />
+                  </button>
+                </div>
               </div>
-              <div class="case-grid">
-                <div class="case-card">
-                  <h4 data-i18n="case_1_title">Problema</h4>
-                  <p data-i18n="case_1_text">
-                    Gestion dispersa de clientes, stock y ventas sin reportes claros.
+
+              <div class="project-story reveal">
+                <div>
+                  <h4 data-i18n="label_problem">El problema</h4>
+                  <p data-i18n="p_sa_problem">
+                    Clientes, productos, stock y ventas vivían en planillas separadas. Sin trazabilidad de los
+                    movimientos ni reportes para el control diario, cada corrección dependía de recordar dónde estaba
+                    el dato correcto.
                   </p>
                 </div>
-                <div class="case-card">
-                  <h4 data-i18n="case_2_title">Solucion</h4>
-                  <p data-i18n="case_2_text">
-                    App de escritorio en Python + Tkinter + MySQL con login y modulos clave.
-                  </p>
-                </div>
-                <div class="case-card">
-                  <h4 data-i18n="case_3_title">Resultados</h4>
-                  <ul class="case-list">
-                    <li data-i18n="case_3_item_1">Flujos completos de ventas y stock con reportes.</li>
-                    <li data-i18n="case_3_item_2">Exportacion a CSV/PDF y panel de estado.</li>
-                    <li data-i18n="case_3_item_3">UI consistente y facil de usar.</li>
-                  </ul>
+                <div>
+                  <h4 data-i18n="label_solution">La solución</h4>
+                  <p data-i18n="p_sa_solution">Una aplicación de escritorio en Python sobre MySQL que unifica los cuatro módulos. Las reglas de integridad viven en la lógica de negocio, no en la interfaz: las validaciones no dependen de que la pantalla las recuerde, están en el código que ejecuta la operación. No se puede vender sin stock suficiente, ni cargar cantidades o precios negativos, ni duplicar códigos de producto, y cada alta, venta o ajuste deja un movimiento registrado.</p>
                 </div>
               </div>
-              <div class="project-meta">
-                <span class="tag" data-i18n="case_tag_1">Proyecto individual</span>
-                <span class="tag" data-i18n="case_tag_2">2 semanas</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-block">
-            <article class="card project-card">
-            <div class="project-gallery">
-              <button class="project-hero-frame project-media" type="button">
-                <img
-                  class="project-hero-img"
-                  src="assets/Data%20Center%20Dashboard.png"
-                  alt="Dashboard general"
-                  data-i18n-alt="project_2_shot_dashboard"
-                  data-caption="Dashboard general"
-                  data-i18n-caption="project_2_shot_dashboard"
-                  data-lightbox="datacenter"
-                />
-              </button>
-              <div class="project-shots">
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Data%20Center%20Login.png"
-                      alt="Login"
-                      data-i18n-alt="project_2_shot_login"
-                      data-caption="Login"
-                      data-i18n-caption="project_2_shot_login"
-                      data-lightbox="datacenter"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_2_shot_login">Login</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Data%20Center%20Datasets.png"
-                      alt="Datasets"
-                      data-i18n-alt="project_2_shot_datasets"
-                      data-caption="Datasets"
-                      data-i18n-caption="project_2_shot_datasets"
-                      data-lightbox="datacenter"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_2_shot_datasets">Datasets</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Data%20Center%20Runs.png"
-                      alt="Historial de calidad"
-                      data-i18n-alt="project_2_shot_runs"
-                      data-caption="Historial de calidad"
-                      data-i18n-caption="project_2_shot_runs"
-                      data-lightbox="datacenter"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_2_shot_runs">Historial de calidad</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Data%20Center%20Cases.png"
-                      alt="Workflow de incidentes"
-                      data-i18n-alt="project_2_shot_cases"
-                      data-caption="Workflow de incidentes"
-                      data-i18n-caption="project_2_shot_cases"
-                      data-lightbox="datacenter"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_2_shot_cases">Workflow de incidentes</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button class="shot-btn project-media" type="button">
-                    <img
-                      src="assets/Data%20Center%20Recommendations.png"
-                      alt="Recomendaciones"
-                      data-i18n-alt="project_2_shot_recommendations"
-                      data-caption="Recomendaciones"
-                      data-i18n-caption="project_2_shot_recommendations"
-                      data-lightbox="datacenter"
-                      loading="lazy"
-                    />
-                  </button>
-                  <figcaption class="shot-caption" data-i18n="project_2_shot_recommendations">Recomendaciones</figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="project-header">
-              <h3 data-i18n="project_2_title">Data Center</h3>
-              <span class="tag" data-i18n="project_2_tag">Calidad de datos</span>
-            </div>
-            <p data-i18n="project_2_text">
-              Plataforma full stack para monitorear calidad de datos en ecommerce y logística, con dashboard operativo, corridas de calidad y gestión de incidencias.
-            </p>
-            <ul class="project-list">
-              <li data-i18n="project_2_feature_1">Autenticación local + Google y control de acceso por roles.</li>
-              <li data-i18n="project_2_feature_2">Datasets con alta, carga CSV o generación demo y corridas de calidad.</li>
-              <li data-i18n="project_2_feature_3">Detección de issues/anomalías, casos con SLA, timeline, notas y workflow.</li>
-              <li data-i18n="project_2_feature_4">Recomendaciones accionables, reportes exportables y administración de usuarios.</li>
-            </ul>
-            <div class="project-meta">
-              <span class="tag" data-i18n="project_2_stack_1">Next.js</span>
-              <span class="tag" data-i18n="project_2_stack_2">TypeScript</span>
-              <span class="tag" data-i18n="project_2_stack_3">FastAPI</span>
-              <span class="tag" data-i18n="project_2_stack_4">PostgreSQL</span>
-            </div>
-              <div class="project-actions">
-                <a class="btn" href="https://datacenter.aaronbrumat.com.ar" target="_blank" rel="noreferrer" data-i18n="project_btn_app">Visualizar app</a>
-                <a class="btn ghost" href="https://github.com/MaikiBRU/Page-Data-Center" target="_blank" rel="noreferrer" data-i18n="project_btn_code">Ver codigo</a>
-              </div>
+
+              <dl class="spec project-spec reveal">
+                <div class="spec-row">
+                  <dt data-i18n="spec_sa_1_k">Gestión</dt>
+                  <dd data-i18n="spec_sa_1_v">ABM completo de clientes, proveedores y productos, con validaciones y control de duplicados.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_sa_2_k">Ventas</dt>
+                  <dd data-i18n="spec_sa_2_v">Detalle por línea que descuenta stock y bloquea la operación si no alcanza. La venta no se registra a medias: o descuenta todo lo que corresponde, o no se hace.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_sa_3_k">Reportes</dt>
+                  <dd data-i18n="spec_sa_3_v">Movimientos e informes exportables a CSV y PDF, con panel de estado por nivel de stock.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_sa_4_k">Acceso</dt>
+                  <dd data-i18n="spec_sa_4_v">Email y contraseña hasheada con bcrypt, o inicio de sesión con Google. Esquema versionado con migraciones SQL.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_stack">Stack</dt>
+                  <dd class="mono">Python · Tkinter · MySQL 8 · bcrypt · Google OAuth · ReportLab · pytest</dd>
+                </div>
+              </dl>
             </article>
-            <div class="case-study">
-              <div class="case-header">
-                <p class="eyebrow" data-i18n="case_2_eyebrow">Caso de estudio</p>
-                <h3 data-i18n="case_2_title_main">Data Center</h3>
-                <p data-i18n="case_2_intro">
-                  Plataforma orientada a detectar problemas de calidad de datos, priorizar riesgo operativo y convertir hallazgos en acciones concretas.
-                </p>
-              </div>
-              <div class="case-grid">
-                <div class="case-card">
-                  <h4 data-i18n="case_2_problem_title">Problema</h4>
-                  <p data-i18n="case_2_problem_text">
-                    Operaciones con datasets críticos sin una vista unificada de calidad, anomalías, impacto y responsables.
-                  </p>
-                </div>
-                <div class="case-card">
-                  <h4 data-i18n="case_2_solution_title">Solucion</h4>
-                  <p data-i18n="case_2_solution_text">
-                    App web full stack con Next.js + FastAPI para monitoreo, corridas de calidad, gestión de casos, recomendaciones y usuarios.
-                  </p>
-                </div>
-                <div class="case-card">
-                  <h4 data-i18n="case_2_results_title">Resultados</h4>
-                  <ul class="case-list">
-                    <li data-i18n="case_2_results_item_1">Dashboard operativo con KPIs, riesgo, impacto y salud por dataset.</li>
-                    <li data-i18n="case_2_results_item_2">Workflow de incidentes con SLA, timeline, notas y seguimiento.</li>
-                    <li data-i18n="case_2_results_item_3">Recomendaciones accionables, exportes y administración por roles.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="project-meta">
-                <span class="tag" data-i18n="case_2_tag_1">Proyecto full stack</span>
-                <span class="tag" data-i18n="case_2_tag_2">Ecommerce + Logistica</span>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
 
-      <section class="section" id="certificates">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="cert_eyebrow">Certificados</p>
-          <h2 data-i18n="cert_title">Certificaciones</h2>
-          <p data-i18n="cert_text">
-            Cursos finalizados que respaldan mi formacion en inteligencia artificial.
-          </p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card certificate-card">
-            <button class="certificate-media project-media" type="button">
-              <img
-                src="assets/Certificado-Aaron-Brumat.png"
-                alt="Certificado de Inteligencia Artificial"
-                data-i18n-alt="cert_image_caption"
-                data-caption="Certificado de Inteligencia Artificial"
-                data-i18n-caption="cert_image_caption"
-                data-lightbox="certificates"
-                loading="lazy"
-              />
-            </button>
-            <h3 data-i18n="cert_1_title">Certificado de Inteligencia Artificial</h3>
-            <p data-i18n="cert_1_text">
-              Finalizacion de un curso de IA centrado en fundamentos, modelos basicos y aplicaciones practicas.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="about">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="about_eyebrow">Sobre mi</p>
-          <h2 data-i18n="about_title">Construyo experiencias digitales con impacto real</h2>
-          <p data-i18n="about_text">
-            Soy estudiante del ultimo año de Desarrollo de Software en el Terciario Urquiza (Rosario).
-            Tengo disponibilidad full time para contrataciones en empresa y tambien acepto proyectos freelance.
-            Con foco en construir productos claros, eficientes y escalables.
-          </p>
-        </div>
-        <div class="about-grid" data-reveal>
-          <div class="about-card">
-            <h3 data-i18n="about_card_1_title">Filosofia</h3>
-            <p data-i18n="about_card_1_text">
-              Diseño sistemas simples que pueden crecer sin perder claridad ni estabilidad.
-            </p>
-          </div>
-          <div class="about-card">
-            <h3 data-i18n="about_card_2_title">Metodologia</h3>
-            <p data-i18n="about_card_2_text">
-              Iteracion rapida, validacion constante y entrega con estandares profesionales.
-            </p>
-          </div>
-          <div class="about-card">
-            <h3 data-i18n="about_card_3_title">Valores</h3>
-            <p data-i18n="about_card_3_text">
-              Transparencia, codigo propio y una comunicación clara en cada etapa del proyecto.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="services_eyebrow">Servicios</p>
-          <h2 data-i18n="services_title">Soluciones completas para productos digitales</h2>
-          <p data-i18n="services_text">
-            Como perfil Full Stack, me enfoco en ofrecer un servicio integral que cubre tanto el diseño como el desarrollo de productos digitales.
-            Mi objetivo es crear soluciones completas y coherentes que funcionen perfectamente.
-            Ademas tambien ofreceran una experiencia de usuario excepcional.
-          </p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="services_card_1_title">Desarrollo web</h3>
-            <p data-i18n="services_card_1_text">
-              Landing o web completa, responsive, performance y deploy.
-            </p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="services_card_2_title">Diseño web</h3>
-            <p data-i18n="services_card_2_text">
-              Diseño visual, estructura clara y UI consistente para web.
-            </p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="services_card_3_title">Automatizacion</h3>
-            <p data-i18n="services_card_3_text">
-              Scripts, reportes y automatizaciones para ahorrar tiempo.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="process">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="process_eyebrow">Proceso</p>
-          <h2 data-i18n="process_title">Como trabajo en cada proyecto</h2>
-          <p data-i18n="process_text">Un flujo simple, claro y enfocado en resultados.</p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="process_1_title">1. Descubrimiento</h3>
-            <p data-i18n="process_1_text">Objetivos, alcance y prioridades definidas desde el inicio.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="process_2_title">2. Diseño y desarrollo</h3>
-            <p data-i18n="process_2_text">Iteracion rapida con foco en claridad visual y funcional.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="process_3_title">3. Entrega y mejora</h3>
-            <p data-i18n="process_3_text">Entrega con testing y ajustes segun feedback.</p>
-          </article>
-        </div>
-      </section>
-
-      
-
-      
-
-      <section class="section" id="experience">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="experience_eyebrow">Experiencia</p>
-          <h2 data-i18n="experience_title">Trayectoria profesional</h2>
-          <p data-i18n="experience_text">
-            Experiencia laboral convencional con foco en procesos, datos y atencion al cliente. Busco mi primera experiencia IT y aportar responsabilidad, puntualidad y trabajo en equipo.
-          </p>
-        </div>
-        <div class="timeline" data-reveal>
-          <div class="timeline-item">
-            <h3 data-i18n="exp_1_title">Vendedor y atencion al cliente</h3>
-            <p class="muted" data-i18n="exp_1_company">Local de Ropa \"KINGU\" | 03/2025 - 11/2025</p>
-            <p data-i18n="exp_1_text">Atencion al cliente, manejo de caja y cierres. Orden operativo, puntualidad y trabajo en equipo.</p>
-          </div>
-          <div class="timeline-item">
-            <h3 data-i18n="exp_2_title">Vendedor y control de stock</h3>
-            <p class="muted" data-i18n="exp_2_company">Almacen \"Tina\" | 02/2024 - 12/2024</p>
-            <p data-i18n="exp_2_text">Control de stock y registro de mercaderia. Orden, responsabilidad y consistencia diaria.</p>
-          </div>
-          <div class="timeline-item">
-            <h3 data-i18n="exp_3_title">Pasantia administrativa</h3>
-            <p class="muted" data-i18n="exp_3_company">S.I.S.O SRL | 11/2023 - 12/2023</p>
-            <p data-i18n="exp_3_text">Carga y correccion de datos en software contable. Cumplimiento de procesos y atencion al detalle.</p>
-          </div>
-        </div>
-        <div class="card" data-reveal>
-          <h3 data-i18n="experience_transfer_title">Transferencias a IT</h3>
-          <ul class="transfer-grid">
-            <li data-i18n="experience_transfer_item_1">Procesos y orden</li>
-            <li data-i18n="experience_transfer_item_2">Calidad de datos y registros</li>
-            <li data-i18n="experience_transfer_item_3">Trabajo en equipo y atencion al detalle</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="education">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="education_eyebrow">Educacion</p>
-          <h2 data-i18n="education_title">Formacion</h2>
-          <p data-i18n="education_text">
-            Estudiante en el ultimo año de Desarrollo de Software.
-          </p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="edu_1_title">Desarrollo de Software</h3>
-            <p class="muted" data-i18n="edu_1_place">Terciario Urquiza, Rosario | Ultimo año</p>
-            <p data-i18n="edu_1_text">Formacion tecnica con foco en desarrollo y buenas practicas.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="edu_2_title">En formacion continua</h3>
-            <p class="muted" data-i18n="edu_2_place">Cursos y practicas personales</p>
-            <p data-i18n="edu_2_text">Refuerzo constante en lenguajes y herramientas.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="edu_3_title">Aprendizaje autodidacta</h3>
-            <p class="muted" data-i18n="edu_3_place">Proyectos personales</p>
-            <p data-i18n="edu_3_text">Aplicacion de conceptos en proyectos reales.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="notes">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="notes_eyebrow">Notas</p>
-          <h2 data-i18n="notes_title">Ideas, procesos y aprendizajes</h2>
-          <p data-i18n="notes_text">
-            Espacio para compartir insights sobre tecnologia y producto.
-          </p>
-        </div>
-        <div class="card-grid" data-reveal>
-          <article class="card">
-            <h3 data-i18n="note_1_title">Como optimizar un flujo de trabajo</h3>
-            <p data-i18n="note_1_text">Guia breve sobre automatizacion y productividad.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="note_2_title">Checklist para lanzar un producto</h3>
-            <p data-i18n="note_2_text">Puntos clave para asegurar calidad y coherencia.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="note_3_title">UI moderna sin perder performance</h3>
-            <p data-i18n="note_3_text">Equilibrio entre estetica y velocidad de carga.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="section-header" data-reveal>
-          <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
-          <h2 data-i18n="contact_title">Trabajemos juntos</h2>
-          <p data-i18n="contact_text">
-            Contame sobre tu idea y te respondo con una propuesta clara.
-          </p>
-        </div>
-        <div class="contact-grid" data-reveal>
-          <div class="contact-info">
-            <div class="info-block">
-              <span data-i18n="contact_email_label">Email</span>
-              <a href="mailto:aaronbru.dev@gmail.com" data-mail-link>aaronbru.dev@gmail.com</a>
-            </div>
-            <div class="info-block">
-              <span data-i18n="contact_call_label">Agendar llamada</span>
-              <a class="btn secondary" href="https://wa.me/543417202830" target="_blank" rel="noreferrer" data-i18n="contact_call_cta">Abrir WhatsApp</a>
-            </div>
-            <div class="info-block">
-              <span data-i18n="contact_availability_label">Disponibilidad</span>
-              <p class="muted" data-i18n="contact_availability_text">
-                Full time en empresa + proyectos freelance.
+          <!-- ---------- Secundarios ---------- -->
+          <div class="minor reveal">
+            <div class="minor-item">
+              <h4>BarberApp<span class="tag sig-next"><span class="dot dot--next" aria-hidden="true"></span><span data-i18n="badge_wip">En desarrollo</span></span></h4>
+              <p data-i18n="p_ba_text">
+                Base full-stack para la gestión de turnos de una barbería: catálogo de servicios y extras, alta de
+                barberos y reservas con estados. Backend FastAPI con SQLAlchemy asincrono y migraciones Alembic;
+                frontend Next.js App Router. Repositorio privado por ahora.
               </p>
+              <span class="mono">FastAPI · SQLAlchemy async · Alembic · PostgreSQL · Next.js · TypeScript · Docker</span>
             </div>
-            <div class="info-block">
-              <span data-i18n="contact_response_label">Tiempo de respuesta</span>
-              <p class="muted" data-i18n="contact_response_text">Respondo en 24-48h.</p>
-            </div>
-            <div class="info-block">
-              <span data-i18n="contact_linkedin_label">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noreferrer">Perfil profesional</a>
-            </div>
-            <div class="info-block">
-              <span data-i18n="contact_github_label">GitHub</span>
-              <a href="https://github.com/MaikiBRU" target="_blank" rel="noreferrer">Repositorio</a>
+            <div class="minor-item">
+              <h4><span data-i18n="p_pf_title">Este portfolio</span><span class="tag" data-i18n="badge_web">Sitio web</span></h4>
+              <p data-i18n="p_pf_text">HTML, CSS y JavaScript sin frameworks ni dependencias de terceros: todo lo que se sirve está en el repositorio, sin nada que compilar. Bilingüe español e inglés, imágenes en WebP y navegación accesible por teclado.</p>
+              <span class="mono">HTML · CSS · JavaScript · Cloudflare Pages · GitHub Pages</span>
+              <a class="link link--quiet" href="https://github.com/MaikiBRU/MaikiBRU.github.io" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="btn_code">Ver código</span><span class="arrow" aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
-          <form class="contact-form" id="contact-form">
-            <label>
-              <span data-i18n="form_name">Nombre</span>
-              <input type="text" name="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required />
-            </label>
-            <label>
-              <span data-i18n="form_email">Email</span>
-              <input type="email" name="email" placeholder="tucorreo@email.com" data-i18n-placeholder="form_email_placeholder" required />
-            </label>
-            <label>
-              <span data-i18n="form_message">Mensaje</span>
-              <textarea name="message" rows="4" placeholder="Contame sobre tu proyecto" data-i18n-placeholder="form_message_placeholder" required></textarea>
-            </label>
-            <button class="btn primary" type="submit" data-i18n="form_submit">Enviar mensaje</button>
-            <p class="muted" data-i18n="form_disclaimer">Se abrira tu cliente de email con el mensaje listo.</p>
-          </form>
+        </div>
+      </section>
+
+      <!-- ============ STACK ============ -->
+      <section class="section" id="stack">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker"><span class="num">02</span><span data-i18n="stack_eyebrow">Stack</span></p>
+            <h2 data-i18n="stack_title">Tecnologías que usé para construir estos sistemas</h2>
+            <p class="lead" data-i18n="stack_lead">
+              Solo lo que aparece en el código de mis proyectos o en el despliegue que los sostiene.
+            </p>
+          </div>
+
+          <dl class="spec reveal">
+            <div class="spec-row">
+              <dt data-i18n="stack_lang">Lenguajes</dt>
+              <dd data-i18n="stack_lang_v">Python, TypeScript, JavaScript, SQL, HTML, CSS</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="stack_backend">Backend y APIs</dt>
+              <dd data-i18n="stack_backend_v">FastAPI, SQLAlchemy, Pydantic, Alembic, REST, JWT, OAuth 2.0, pytest</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="stack_data">Datos</dt>
+              <dd data-i18n="stack_data_v">PostgreSQL, MySQL, modelado relacional, migraciones, validación de esquemas, detección de anomalías</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="stack_frontend">Frontend</dt>
+              <dd data-i18n="stack_frontend_v">Next.js, React, Tailwind CSS, Recharts, JavaScript</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="stack_infra">Infraestructura</dt>
+              <dd data-i18n="stack_infra_v">Docker, Docker Compose, Linux (Ubuntu), AWS EC2, Caddy, Cloudflare, Git, GitHub</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="sig-next"><span class="dot dot--next" aria-hidden="true"></span><span data-i18n="stack_learning">Aprendiendo</span></dt>
+              <dd data-i18n="stack_learning_v">Data Engineering, Machine Learning, IA aplicada, pandas, administración de servidores, infraestructura Linux y redes</dd>
+            </div>
+          </dl>
+
+          <p class="mono stack-foot reveal" data-i18n="stack_foot">
+            Durante la cursada también trabaje con C#, Django y Flask. No los uso en los proyectos que muestro acá, así
+            que los dejo listados sin protagonismo.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ PERFIL ============ -->
+      <section class="section" id="perfil">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker"><span class="num">03</span><span data-i18n="about_eyebrow">Perfil</span></p>
+            <h2 data-i18n="about_title">Me interesa la parte que no se ve</h2>
+          </div>
+
+          <div class="about">
+            <div class="about-prose prose reveal">
+              <p data-i18n-rich="about_p1">Vivo en Rosario, Santa Fe. Estoy terminando la carrera de <strong>Técnico Desarrollador de Software</strong> y trabajo sobre todo con Python y SQL. Lo que más me atrae es lo que no se ve desde la pantalla: cómo se modelan los datos, cómo se diseña una API y cómo se sostiene un sistema una vez que ya está desplegado.</p>
+              <p data-i18n-rich="about_p2">Mis proyectos son la forma en que aprendo. Data Center empezó siendo un dashboard y terminó siendo el lugar donde tuve que decidir <strong>qué métricas eran defendibles</strong>, por qué un detector de anomalías fallaba en silencio y cómo aislar un espacio de prueba público de los datos reales de la aplicación sin depender de acordarme de protegerlo.</p>
+              <p data-i18n-rich="about_p3">Ahora estoy orientando esa base hacia <strong>Data Engineering, Machine Learning e IA aplicada</strong>, y hacia la <strong>administración de servidores: infraestructura Linux y redes</strong>. Desplegar Data Center en un servidor propio —configurar el sistema operativo, el proxy que atiende las conexiones y los certificados— fue la parte del proyecto que más me interesó, y es donde quiero seguir.</p>
+            </div>
+
+            <aside class="about-side reveal">
+              <img
+                class="about-photo"
+                src="assets/foto.webp"
+                width="400"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                alt="Retrato de Aaron Brumat"
+                data-i18n-alt="about_photo_alt"
+              />
+              <p class="mono">Aaron Brumat<br /><span data-i18n="about_id_loc">Rosario, Santa Fe, Argentina</span></p>
+            </aside>
+          </div>
+
+          <dl class="spec about-focus reveal">
+            <div class="spec-row">
+              <dt data-i18n="focus_1_title">Backend y APIs</dt>
+              <dd data-i18n="focus_1_text">Endpoints REST, autenticación, roles y permisos que fallan cerrados: si algo no está explícitamente permitido, queda bloqueado.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="focus_2_title">Datos</dt>
+              <dd data-i18n="focus_2_text">Modelo relacional, migraciones versionadas y métricas auditables: cada cifra que se muestra se puede rastrear hasta el dato que la produjo.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="focus_3_title">Servidores y despliegue</dt>
+              <dd data-i18n="focus_3_text">Docker, Linux y despliegues con respaldo previo: dejar el sistema andando en un servidor y poder volver a la versión anterior si algo sale mal.</dd>
+            </div>
+          </dl>
+
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="build_title">Lo que puedo construir</h3>
+              <p data-i18n="build_note">Tipos de trabajo para los que ya tengo el recorrido hecho.</p>
+            </div>
+            <ul class="spec spec--numbered">
+              <li class="spec-row">
+                <span class="spec-key" aria-hidden="true">01</span>
+                <span class="spec-val"><strong data-i18n="build_1_title">Aplicaciones web full-stack</strong> — <span data-i18n="build_1_text">Interfaz, API y base de datos, desplegadas y con pruebas.</span></span>
+              </li>
+              <li class="spec-row">
+                <span class="spec-key" aria-hidden="true">02</span>
+                <span class="spec-val"><strong data-i18n="build_2_title">APIs REST y backends</strong> — <span data-i18n="build_2_text">Endpoints, autenticación, roles y migraciones de esquema.</span></span>
+              </li>
+              <li class="spec-row">
+                <span class="spec-key" aria-hidden="true">03</span>
+                <span class="spec-val"><strong data-i18n="build_3_title">Sistemas de gestión</strong> — <span data-i18n="build_3_text">ABM, reglas de negocio, reportes y exportación de datos.</span></span>
+              </li>
+              <li class="spec-row">
+                <span class="spec-key" aria-hidden="true">04</span>
+                <span class="spec-val"><strong data-i18n="build_4_title">Procesamiento de datos</strong> — <span data-i18n="build_4_text">Validación, limpieza, métricas y automatización de tareas repetitivas.</span></span>
+              </li>
+            </ul>
+            <p class="mono process-line">
+              <span data-i18n="process_1">Entender el problema y el modelo de datos</span>
+              <span aria-hidden="true">&rarr;</span>
+              <span data-i18n="process_2">construir y probar</span>
+              <span aria-hidden="true">&rarr;</span>
+              <span data-i18n="process_3">desplegar y medir</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TRAYECTORIA ============ -->
+      <section class="section" id="trayectoria">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker"><span class="num">04</span><span data-i18n="track_eyebrow">Trayectoria</span></p>
+            <h2 data-i18n="track_title">Formación y experiencia</h2>
+          </div>
+
+          <div class="reveal">
+            <div class="notes-head">
+              <h3 data-i18n="track_edu_title">Educación</h3>
+              <p data-i18n="track_edu_note">Formación técnica en curso, con foco en desarrollo y buenas prácticas.</p>
+            </div>
+            <dl class="spec">
+              <div class="spec-row">
+                <dt class="sig-next"><span class="dot dot--next" aria-hidden="true"></span><span data-i18n="edu_1_meta">2024 — en curso</span></dt>
+                <dd>
+                  <strong data-i18n="edu_1_title">Técnico Desarrollador de Software</strong><br />
+                  <span class="mono" data-i18n="edu_1_place">Terciario Urquiza, Rosario</span><br />
+                  <span data-i18n="edu_1_text">Cursando el último año. Programación, bases de datos, análisis de sistemas y desarrollo de aplicaciones. Título aún no obtenido.</span>
+                </dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="edu_2_meta">2019 — 2023</dt>
+                <dd>
+                  <strong data-i18n="edu_2_title">Secundaria completa</strong><br />
+                  <span class="mono" data-i18n="edu_2_place">María Bicecci, Rosario</span>
+                </dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="edu_3_meta">Continuo</dt>
+                <dd>
+                  <strong data-i18n="edu_3_title">Aprendizaje autodidacta</strong><br />
+                  <span data-i18n="edu_3_text">Lo que no cubre la cursada lo aprendo construyendo: Docker, despliegue en Linux, testing y diseño de APIs salieron de necesitarlos en un proyecto real.</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="track_exp_title">Experiencia laboral</h3>
+              <p data-i18n="track_exp_note">Mi experiencia laboral está fuera de IT. La incluyo porque explica cómo trabajo: procesos, registros y responsabilidad diaria. La parte técnica está arriba, en Proyectos.</p>
+            </div>
+            <dl class="spec">
+              <div class="spec-row">
+                <dt data-i18n="exp_1_meta">03/2025 — 11/2025</dt>
+                <dd>
+                  <strong data-i18n="exp_1_title">Vendedor y atención al cliente</strong><br />
+                  <span class="mono" data-i18n="exp_1_place">Local de ropa KINGU</span><br />
+                  <span data-i18n="exp_1_text">Atención personalizada, manejo de caja, cobros y cierres. Orden operativo y trabajo en equipo.</span>
+                </dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="exp_2_meta">02/2024 — 12/2024</dt>
+                <dd>
+                  <strong data-i18n="exp_2_title">Vendedor y control de stock</strong><br />
+                  <span class="mono" data-i18n="exp_2_place">Almacén Tina</span><br />
+                  <span data-i18n="exp_2_text">Control de mercadería y registro de existencias. De acá salió la idea de StockARG.</span>
+                </dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="exp_3_meta">11/2023 — 12/2023</dt>
+                <dd>
+                  <strong data-i18n="exp_3_title">Pasantía administrativa</strong><br />
+                  <span class="mono" data-i18n="exp_3_place">S.I.S.O SRL</span><br />
+                  <span data-i18n="exp_3_text">Carga y corrección de datos en software contable. Primer contacto con la calidad de los datos como problema real.</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="cert_title">Certificación</h3>
+            </div>
+            <div class="cert">
+              <div>
+                <h4 class="cert-title" data-i18n="cert_1_title">Certificado de Iniciación al Desarrollo con IA</h4>
+                <p data-i18n="cert_1_text">
+                  Jornadas formativas "Desarrollo con IA: de 0 a Producción", dictadas por BIG school. El certificado
+                  completo está a la vista: no hay código de verificacion público emitido para este curso.
+                </p>
+                <p class="mono cert-meta">
+                  BIG school · <span data-i18n="cert_meta_date">Marzo 2026</span> ·
+                  <span data-i18n="cert_meta_dur">6 horas</span>
+                </p>
+              </div>
+              <button class="figure" type="button" data-lightbox="cert" data-src="assets/certificado.webp" data-caption="Certificado de Iniciación al Desarrollo con IA — BIG school" data-i18n-caption="cert_caption">
+                <img
+                  src="assets/certificado.webp"
+                  width="960"
+                  height="742"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Certificado de Iniciación al Desarrollo con IA otorgado a Aaron Brumat por BIG school."
+                  data-i18n-alt="cert_alt"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section class="section" id="contacto">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker"><span class="num">05</span><span data-i18n="contact_eyebrow">Contacto</span></p>
+            <h2 data-i18n="contact_title">Hablemos</h2>
+            <p class="lead" data-i18n="contact_lead">
+              Busco sumarme a un equipo de desarrollo. Escribime por el medio que te resulte más comodo: respondo en
+              24 a 48 horas.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="reveal">
+              <a class="link contact-mail" href="mailto:aaronbru.dev@gmail.com">aaronbru.dev@gmail.com</a>
+              <ul class="contact-channels">
+                <li>
+                  <a href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">
+                    <span class="ch-key">LinkedIn</span><span class="ch-val">in/aaronbrumat <span aria-hidden="true">↗</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">
+                    <span class="ch-key">GitHub</span><span class="ch-val">github.com/MaikiBRU <span aria-hidden="true">↗</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/543417202830" target="_blank" rel="noopener noreferrer">
+                    <span class="ch-key">WhatsApp</span><span class="ch-val">+54 341 720 2830 <span aria-hidden="true">↗</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="cv.html">
+                    <span class="ch-key" data-i18n="contact_cv">Currículum</span><span class="ch-val" data-i18n="contact_cv_value">Ver e imprimir en PDF</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <form class="contact-form reveal" id="contact-form" novalidate>
+              <label class="field">
+                <span data-i18n="form_name">Nombre</span>
+                <input type="text" name="name" autocomplete="name" maxlength="80" required placeholder="Tu nombre" data-i18n-placeholder="form_name_ph" />
+              </label>
+              <label class="field">
+                <span data-i18n="form_email">Email</span>
+                <input type="email" name="email" autocomplete="email" maxlength="120" required placeholder="tucorreo@email.com" data-i18n-placeholder="form_email_ph" />
+              </label>
+              <label class="field">
+                <span data-i18n="form_message">Mensaje</span>
+                <textarea name="message" rows="4" maxlength="2000" required placeholder="En qué están trabajando y cómo puedo ayudar" data-i18n-placeholder="form_message_ph"></textarea>
+              </label>
+              <div class="hp-field" aria-hidden="true">
+                <label>No completar<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+              </div>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              <button class="action" type="submit" data-i18n="form_submit">Preparar mensaje</button>
+              <p class="form-note" data-i18n="form_note">
+                No hay servidor detrás: el formulario arma el correo y elige tu cliente. También podes escribir directo
+                a aaronbru.dev@gmail.com.
+              </p>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <strong>Aaron Brumat</strong>
-        <p data-i18n="footer_text">Desarrollador de software - Portfolio 2026</p>
-      </div>
-      <div class="footer-links">
-        <a href="#home" data-i18n="footer_back">Volver arriba</a>
+      <div class="wrap footer-inner">
+        <p>Aaron Brumat · <span data-i18n="footer_year">Rosario, Argentina · 2026</span></p>
+        <nav class="footer-links" aria-label="Enlaces del pie">
+          <a class="link link--quiet" href="#proyectos" data-i18n="nav_projects">Proyectos</a>
+          <a class="link link--quiet" href="cv.html" data-i18n="nav_cv">CV</a>
+          <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="link link--quiet" href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="link link--quiet" href="#inicio" data-i18n="footer_top">Volver arriba</a>
+        </nav>
       </div>
     </footer>
 
-    <div class="mail-picker" id="mail-picker" aria-hidden="true">
-      <div class="mail-picker-backdrop" data-mail-close></div>
-      <div class="mail-picker-panel" role="dialog" aria-modal="true" aria-label="Enviar mensaje">
-        <button class="mail-picker-close" type="button" data-mail-close aria-label="Cerrar">&times;</button>
-        <h3 data-i18n="mail_picker_title">Elegi como enviar</h3>
-        <p data-i18n="mail_picker_text">Podes abrir Gmail o Outlook Web con el mensaje listo.</p>
-        <div class="mail-picker-actions">
-          <button class="btn primary" type="button" data-mail-open="gmail" data-i18n="mail_picker_gmail">Abrir Gmail</button>
-          <button class="btn secondary" type="button" data-mail-open="outlook" data-i18n="mail_picker_outlook">Abrir Outlook</button>
-          <button class="btn ghost" type="button" data-mail-copy data-i18n="mail_picker_copy">Copiar mensaje</button>
+    <!-- Dialogo: elegir cliente de correo -->
+    <div class="dialog" id="mail-dialog" hidden>
+      <div class="dialog-backdrop" data-close></div>
+      <div class="dialog-panel" role="dialog" aria-modal="true" aria-labelledby="mail-dialog-title">
+        <button class="dialog-close" type="button" data-close data-i18n="dialog_close">Cerrar</button>
+        <h3 id="mail-dialog-title" data-i18n="mail_title">Elegí cómo enviarlo</h3>
+        <p class="mono dialog-lead" data-i18n="mail_text">
+          El mensaje ya está armado. Abrilo en tu webmail o copialo al portapapeles.
+        </p>
+        <div class="link-row">
+          <button class="link" type="button" data-mail="gmail" data-i18n="mail_gmail">Abrir Gmail</button>
+          <button class="link link--quiet" type="button" data-mail="outlook" data-i18n="mail_outlook">Abrir Outlook</button>
+          <button class="link link--quiet" type="button" data-mail="mailto" data-i18n="mail_client">Cliente de correo</button>
+          <button class="link link--quiet" type="button" data-mail-copy data-i18n="mail_copy">Copiar</button>
         </div>
-        <p class="muted" data-i18n="mail_picker_note">Si tenes un cliente de correo configurado, tambien podes usar mailto.</p>
+        <p class="form-status mail-status" id="mail-status" role="status" aria-live="polite"></p>
       </div>
     </div>
 
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-      <div class="lightbox-backdrop" data-lightbox-close></div>
-      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Vista de imagen">
-        <button class="lightbox-close" type="button" data-lightbox-close aria-label="Cerrar">&times;</button>
-        <div class="lightbox-stage">
-          <div class="lightbox-media" id="lightbox-media"></div>
-          <button class="lightbox-nav prev" type="button" data-lightbox-prev aria-label="Anterior">&lsaquo;</button>
-          <button class="lightbox-nav next" type="button" data-lightbox-next aria-label="Siguiente">&rsaquo;</button>
+    <!-- Dialogo: visor de imagenes -->
+    <div class="dialog lightbox" id="lightbox" hidden>
+      <div class="dialog-backdrop" data-close></div>
+      <div class="dialog-panel" role="dialog" aria-modal="true" aria-label="Vista ampliada" aria-describedby="lb-caption">
+        <div class="lightbox-stage" id="lb-stage">
+          <button class="lightbox-nav prev" type="button" data-lb-step="-1" aria-label="Imagen anterior">&lsaquo;</button>
+          <button class="lightbox-nav next" type="button" data-lb-step="1" aria-label="Imagen siguiente">&rsaquo;</button>
         </div>
-        <div class="lightbox-meta">
-          <p id="lightbox-caption"></p>
+        <div class="lightbox-bar">
+          <p id="lb-caption"></p>
           <div class="lightbox-zoom">
-            <button class="btn ghost" type="button" data-lightbox-zoom="out">-</button>
-            <button class="btn ghost" type="button" data-lightbox-zoom="reset" id="lightbox-zoom-value">100%</button>
-            <button class="btn ghost" type="button" data-lightbox-zoom="in">+</button>
+            <span id="lb-count"></span>
+            <button type="button" data-lb-zoom="-1" aria-label="Alejar">&minus;</button>
+            <button type="button" data-lb-zoom="0" id="lb-zoom-value">100%</button>
+            <button type="button" data-lb-zoom="1" aria-label="Acercar">+</button>
+            <button type="button" data-close data-i18n="dialog_close">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script defer src="js/i18n-data.js"></script>
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/nav.js"></script>
+    <script defer src="js/reveal.js"></script>
+    <script defer src="js/lightbox.js"></script>
+    <script defer src="js/contact.js"></script>
   </body>
 </html>
-
-

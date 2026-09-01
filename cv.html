@@ -1,153 +1,192 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CV | Aaron Brumat</title>
+    <title>CV — Aaron Brumat | Software Developer</title>
+    <meta name="description" content="Currículum de Aaron Brumat, Software Developer orientado a backend, APIs y datos. Rosario, Argentina." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://aaronbrumat.com.ar/cv.html" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Aaron Brumat" />
+    <meta property="og:url" content="https://aaronbrumat.com.ar/cv.html" />
+    <meta property="og:title" content="CV — Aaron Brumat | Software Developer" />
+    <meta property="og:description" content="Curriculum de Aaron Brumat, Software Developer orientado a backend, APIs y datos." />
+    <meta property="og:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0d0d0f" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="cv.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/cv.css" />
   </head>
-  <body>
-    <div class="bg-orb orb-1" aria-hidden="true"></div>
-    <div class="bg-orb orb-2" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
+
+  <body class="cv-page">
+    <div class="cv-toolbar">
+      <a class="link link--quiet" href="index.html" data-i18n="cv_back">&larr; Portfolio</a>
+      <div class="link-row">
+        <button class="link link--quiet" id="lang-toggle" type="button">EN</button>
+        <button class="link" id="cv-print" type="button" data-i18n="cv_pdf">Descargar PDF</button>
+      </div>
+    </div>
 
     <main class="cv">
-      <header class="cv-header">
-        <div>
+      <header class="cv-head">
+        <img class="cv-photo" src="assets/foto.webp" width="400" height="400" alt="Retrato de Aaron Brumat" data-i18n-alt="cv_photo_alt" />
+        <div class="cv-ident">
           <h1>Aaron Brumat</h1>
-          <p class="role" data-i18n="cv_role">Full Stack - Diseño Web</p>
+          <p class="cv-role" data-i18n="cv_role">Software Developer — Backend, APIs y datos</p>
+          <p class="cv-summary" data-i18n="cv_summary">
+            Estudiante del último año de Técnico Desarrollador de Software. Construyo aplicaciones completas con Python
+            y TypeScript, y llevo cada proyecto hasta dejarlo desplegado y probado.
+          </p>
         </div>
-        <div class="contact">
-          <img class="cv-photo" src="assets/foto-cv.jpeg" alt="Foto de Aaron Brumat" />
-          <div class="cv-actions">
-            <button class="btn ghost cv-lang" id="cv-lang-toggle" type="button">EN</button>
-            <button class="btn secondary" id="cv-pdf" type="button" data-i18n="cv_pdf">Descargar PDF</button>
-          </div>
-          <span data-i18n="cv_email">aaronbru.dev@gmail.com</span>
-          <span>+54 341 720 2830</span>
-          <a href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/MaikiBRU" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://maikibru.github.io" target="_blank" rel="noreferrer" data-i18n="cv_portfolio">Portfolio</a>
-          <span data-i18n="cv_location">Rosario, Santa Fe</span>
-        </div>
+        <ul class="cv-contact">
+          <li><span data-i18n="cv_c_email">Email</span><a href="mailto:aaronbru.dev@gmail.com">aaronbru.dev@gmail.com</a></li>
+          <li><span data-i18n="cv_c_phone">Teléfono</span><a href="https://wa.me/543417202830" target="_blank" rel="noopener noreferrer">+54 341 720 2830</a></li>
+          <li><span data-i18n="cv_c_loc">Ubicación</span><b data-i18n="cv_c_loc_value">Rosario, Santa Fe, Argentina</b></li>
+          <li><span>Portfolio</span><a href="https://aaronbrumat.com.ar/" target="_blank" rel="noopener noreferrer">aaronbrumat.com.ar</a></li>
+          <li><span>GitHub</span><a href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">github.com/MaikiBRU</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">in/aaronbrumat</a></li>
+        </ul>
       </header>
 
       <section class="cv-section">
-        <h2 data-i18n="cv_profile_title">Perfil / Objetivo profesional</h2>
-        <p data-i18n="cv_profile_text">
-          Estudiante del último año de Desarrollo de Software. Busco mi primera experiencia en IT, aportar mis conocimientos
-          y seguir creciendo en desarrollo y diseño web. Responsable, aprendo rápido y doy lo mejor en cada proyecto.
-        </p>
+        <h2 data-i18n="cv_profile_title">Perfil</h2>
+        <p data-i18n="cv_profile_text">Trabajo sobre todo con Python y SQL: APIs REST con FastAPI, modelos de datos en PostgreSQL y MySQL, y frontends en Next.js y TypeScript. Me interesan el backend, el modelado de datos y el despliegue; estoy orientando esa base hacia Data Engineering, Machine Learning e IA aplicada, y hacia la administración de servidores: infraestructura Linux y redes. Busco sumarme a un equipo de desarrollo donde pueda aportar y seguir creciendo.</p>
       </section>
 
-      <section class="cv-section grid">
+      <section class="cv-section">
+        <h2 data-i18n="cv_projects_title">Proyectos</h2>
+
+        <article class="cv-project">
+          <div class="cv-project-head">
+            <h3>Data Center</h3>
+            <span class="cv-meta" data-i18n="cv_p1_meta">Full-stack · en producción · 2026</span>
+          </div>
+          <p data-i18n="cv_p1_text">
+            Plataforma de monitoreo de calidad de datos para ecommerce y logística. Un motor de reglas por dominio
+            valida cada dataset, puntúa su calidad, detecta anomalías por z-score modificado sobre mediana y MAD, y
+            convierte los hallazgos en incidencias con severidad, responsable y SLA. Incluye autenticación local y con
+            Google, roles, exportes y un sandbox público temporal y aislado para probarla sin cuenta.
+          </p>
+          <ul class="cv-bullets">
+            <li data-i18n="cv_p1_b1">Backend FastAPI con SQLAlchemy y Pydantic sobre PostgreSQL, más de 50 endpoints REST y migraciones Alembic.</li>
+            <li data-i18n="cv_p1_b2">226 tests de pytest: aislamiento entre sesiones, cuotas, validación de esquemas y métricas del dashboard.</li>
+            <li data-i18n="cv_p1_b3">Frontend Next.js con React, TypeScript, Tailwind y Recharts.</li>
+            <li data-i18n="cv_p1_b4">Despliegue con Docker Compose en EC2 (Ubuntu) detrás de Caddy, y frontend en Cloudflare.</li>
+          </ul>
+          <p class="cv-links">
+            <a href="https://datacenter.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">datacenter.aaronbrumat.com.ar/demo</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://github.com/MaikiBRU/Page-Data-Center" target="_blank" rel="noopener noreferrer">github.com/MaikiBRU/Page-Data-Center</a>
+          </p>
+        </article>
+
+        <article class="cv-project">
+          <div class="cv-project-head">
+            <h3>StockARG</h3>
+            <span class="cv-meta" data-i18n="cv_p2_meta">Aplicación de escritorio · 2026</span>
+          </div>
+          <p data-i18n="cv_p2_text">
+            Sistema de gestión de stock, ventas, clientes y proveedores en Python sobre MySQL. ABM completo con
+            validaciones, ventas que descuentan stock y bloquean la operación si no alcanza, historial de movimientos y
+            reportes exportables a CSV y PDF. Acceso con contraseña hasheada con bcrypt o inicio de sesión con Google,
+            y esquema versionado con migraciones SQL.
+          </p>
+          <p class="cv-links">
+            <a href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noopener noreferrer">github.com/MaikiBRU/Stock_ARG</a>
+          </p>
+        </article>
+      </section>
+
+      <section class="cv-section cv-cols">
         <div>
           <h2 data-i18n="cv_skills_title">Habilidades técnicas</h2>
-          <ul>
-            <li data-i18n="cv_skills_1">Python, C#, JavaScript, TypeScript</li>
-            <li data-i18n="cv_skills_2">MySQL Workbench, SQL</li>
-            <li data-i18n="cv_skills_3">HTML y CSS</li>
-            <li data-i18n="cv_skills_4">UI/UX y diseño web</li>
-            <li data-i18n="cv_skills_5">Frameworks: Django, Flask, FastAPI</li>
-            <li data-i18n="cv_skills_6">Aprendiendo: Haskell</li>
+          <ul class="cv-skills">
+            <li><b data-i18n="cv_s1_k">Lenguajes</b><span data-i18n="cv_s1_v">Python, TypeScript, JavaScript, SQL, HTML, CSS</span></li>
+            <li><b data-i18n="cv_s2_k">Backend</b><span data-i18n="cv_s2_v">FastAPI, SQLAlchemy, Pydantic, Alembic, REST, JWT, OAuth 2.0, pytest</span></li>
+            <li><b data-i18n="cv_s3_k">Datos</b><span data-i18n="cv_s3_v">PostgreSQL, MySQL, modelado relacional, migraciones, validación de esquemas</span></li>
+            <li><b data-i18n="cv_s4_k">Frontend</b><span data-i18n="cv_s4_v">Next.js, React, Tailwind CSS, Recharts</span></li>
+            <li><b data-i18n="cv_s5_k">Infraestructura</b><span data-i18n="cv_s5_v">Docker, Docker Compose, Linux (Ubuntu), AWS EC2, Caddy, Cloudflare, Git</span></li>
+            <li><b data-i18n="cv_s6_k">Aprendiendo</b><span data-i18n="cv_s6_v">Data Engineering, Machine Learning, IA aplicada, pandas, administración de servidores, infraestructura Linux y redes</span></li>
+            <li><b data-i18n="cv_s7_k">Cursada</b><span data-i18n="cv_s7_v">C#, Django, Flask</span></li>
           </ul>
         </div>
         <div>
-          <h2 data-i18n="cv_soft_title">Habilidades complementarias</h2>
-          <ul>
-            <li data-i18n="cv_soft_1">Atención al cliente</li>
-            <li data-i18n="cv_soft_2">Resolución de problemas</li>
-            <li data-i18n="cv_soft_3">Responsabilidad y adaptabilidad</li>
+          <h2 data-i18n="cv_soft_title">Complementarias</h2>
+          <ul class="cv-plain">
+            <li data-i18n="cv_soft_1">Resolución de problemas y atención al detalle</li>
+            <li data-i18n="cv_soft_2">Responsabilidad y adaptabilidad</li>
+            <li data-i18n="cv_soft_3">Atención al cliente y trabajo en equipo</li>
             <li data-i18n="cv_soft_4">Microsoft 365</li>
           </ul>
-        </div>
-      </section>
 
-      <section class="cv-section grid">
-        <div>
-          <h2 data-i18n="cv_education_title">Educación</h2>
-          <p><strong data-i18n="cv_education_school">Terciario Urquiza, Rosario</strong></p>
-          <p data-i18n="cv_education_program">Desarrollo de Software (en curso)</p>
-          <p data-i18n="cv_education_secondary">Secundaria completa - Maria Bicecci (2019 - 2023)</p>
-          <p data-i18n="cv_certificate">Certificado: Bases de programacion con IA - Big School (2026)</p>
-        </div>
-        <div>
-          <h2 data-i18n="cv_languages_title">Idiomas</h2>
-          <ul>
-            <li data-i18n="cv_language_1">Español nativo</li>
-            <li data-i18n="cv_language_2">Inglés intermedio</li>
-            <li data-i18n="cv_language_3">Portugués básico</li>
+          <h2 data-i18n="cv_lang_title">Idiomas</h2>
+          <ul class="cv-plain">
+            <li data-i18n="cv_lang_1">Español — nativo</li>
+            <li data-i18n="cv_lang_2">Inglés — intermedio</li>
+            <li data-i18n="cv_lang_3">Portugués — básico</li>
           </ul>
         </div>
       </section>
 
-      <section class="cv-section">
-        <h2 data-i18n="cv_project_title">Proyecto destacado</h2>
-        <div class="project">
-          <div>
-            <h3 data-i18n="cv_project_name">StockARG</h3>
-            <p data-i18n="cv_project_desc">
-              Sistema de gestión de stock, ventas y clientes con interfaz moderna en Tkinter.
-            </p>
-            <ul>
-              <li data-i18n="cv_project_1">Login con email/contraseña y opción Google.</li>
-              <li data-i18n="cv_project_2">ABM de clientes, proveedores y productos.</li>
-              <li data-i18n="cv_project_3">Ventas con control de stock y reportes exportables.</li>
-              <li data-i18n="cv_project_4">Módulo de stock con alertas, movimientos y panel de estado.</li>
-            </ul>
+      <section class="cv-section cv-cols">
+        <div>
+          <h2 data-i18n="cv_education_title">Educación</h2>
+          <div class="cv-entry">
+            <b data-i18n="cv_edu1_title">Técnico Desarrollador de Software</b>
+            <span class="cv-meta" data-i18n="cv_edu1_meta">Terciario Urquiza, Rosario · 2024 — en curso (último año)</span>
           </div>
-          <div class="project-meta">
-            <span data-i18n="cv_project_meta_1">Python</span>
-            <span data-i18n="cv_project_meta_2">Tkinter</span>
-            <span data-i18n="cv_project_meta_3">MySQL</span>
-            <span data-i18n="cv_project_meta_4">Google Cloud</span>
+          <div class="cv-entry">
+            <b data-i18n="cv_edu2_title">Secundaria completa</b>
+            <span class="cv-meta" data-i18n="cv_edu2_meta">María Bicecci, Rosario · 2019 — 2023</span>
+          </div>
+          <div class="cv-entry">
+            <b data-i18n="cv_edu3_title">Certificado de Iniciación al Desarrollo con IA</b>
+            <span class="cv-meta" data-i18n="cv_edu3_meta">BIG school · marzo 2026 · 6 horas</span>
+          </div>
+        </div>
+        <div>
+          <h2 data-i18n="cv_experience_title">Experiencia laboral</h2>
+          <p class="cv-note" data-i18n="cv_experience_note">Fuera de IT. Procesos, registros y responsabilidad diaria.</p>
+          <div class="cv-entry">
+            <b data-i18n="cv_exp1_title">Vendedor y atención al cliente</b>
+            <span class="cv-meta" data-i18n="cv_exp1_meta">Local de ropa KINGU · 03/2025 — 11/2025</span>
+            <p data-i18n="cv_exp1_text">Atención personalizada, manejo de caja, cobros y cierres.</p>
+          </div>
+          <div class="cv-entry">
+            <b data-i18n="cv_exp2_title">Vendedor y control de stock</b>
+            <span class="cv-meta" data-i18n="cv_exp2_meta">Almacén Tina · 02/2024 — 12/2024</span>
+            <p data-i18n="cv_exp2_text">Control de mercadería y registro de existencias.</p>
+          </div>
+          <div class="cv-entry">
+            <b data-i18n="cv_exp3_title">Pasantía administrativa</b>
+            <span class="cv-meta" data-i18n="cv_exp3_meta">S.I.S.O SRL · 11/2023 — 12/2023</span>
+            <p data-i18n="cv_exp3_text">Carga y corrección de datos en software contable.</p>
           </div>
         </div>
       </section>
 
       <section class="cv-section">
-        <h2 data-i18n="cv_experience_title">Experiencia</h2>
-        <div class="experience">
-          <div class="exp-item">
-            <div class="exp-header">
-              <strong data-i18n="cv_exp1_title">Vendedor y atención al cliente</strong>
-              <span data-i18n="cv_exp1_company">Local de Ropa "KINGU" - 03/2025 - 11/2025</span>
-            </div>
-            <p data-i18n="cv_exp1_text">
-              Atención personalizada, manejo de caja, cobros y cierres. Orden y mantenimiento del local.
-            </p>
-          </div>
-          <div class="exp-item">
-            <div class="exp-header">
-              <strong data-i18n="cv_exp2_title">Vendedor y control de stock</strong>
-              <span data-i18n="cv_exp2_company">Almacén "Tina" - 02/2024 - 12/2024</span>
-            </div>
-            <p data-i18n="cv_exp2_text">Atención al cliente y control de mercadería, orden y organización de productos.</p>
-          </div>
-          <div class="exp-item">
-            <div class="exp-header">
-              <strong data-i18n="cv_exp3_title">Pasantía administrativa</strong>
-              <span data-i18n="cv_exp3_company">S.I.S.O SRL - 11/2023 - 12/2023</span>
-            </div>
-            <p data-i18n="cv_exp3_text">
-              Uso de software contable para regularización de deudas y corrección de datos de clientes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="cv-section cv-availability">
         <h2 data-i18n="cv_availability_title">Disponibilidad</h2>
-        <p data-i18n="cv_availability_text">Lunes a sábado: full time. Disponible para empresa y proyectos freelance.</p>
+        <p data-i18n="cv_availability_text">
+          Full time, de lunes a sábado. Disponible para trabajo presencial en Rosario, híbrido o remoto.
+        </p>
       </section>
     </main>
-    <script src="cv.js"></script>
+
+    <script defer src="js/cv-data.js"></script>
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/cv.js"></script>
   </body>
 </html>
