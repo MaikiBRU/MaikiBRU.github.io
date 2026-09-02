@@ -6,7 +6,7 @@
     <title>Aaron Brumat — Software Developer | Backend, APIs y Datos</title>
     <meta
       name="description"
-      content="Software Developer en Rosario, Argentina. Aplicaciones full-stack con Python, FastAPI, PostgreSQL y Next.js. Data Center, en producción y probable sin registro."
+      content="Software Developer en Rosario, Argentina. Aplicaciones full-stack con Python, FastAPI, PostgreSQL y Next.js. Data Center y BarberApp, en producción y probables sin registro."
     />
     <meta name="author" content="Aaron Brumat" />
     <meta name="theme-color" content="#0d0d0f" />
@@ -20,7 +20,7 @@
     <meta property="og:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
     <meta
       property="og:description"
-      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center, plataforma de calidad de datos, en producción y probable sin registro."
+      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp, en producción y probables sin registro."
     />
     <meta property="og:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
     <meta
       name="twitter:description"
-      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center en producción, probable sin registro."
+      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp en producción, probables sin registro."
     />
     <meta name="twitter:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
 
@@ -314,12 +314,157 @@
               </div>
             </article>
 
-            <!-- ---------- 02 · StockARG ---------- -->
+            <!-- ---------- 02 · BarberApp ---------- -->
+            <article class="project" aria-labelledby="p-ba-title">
+              <div class="project-head reveal">
+                <div>
+                  <p class="project-index">
+                    <span class="num sig-live">02</span>
+                    <span data-i18n="p_ba_kind">Full-stack · Reservas y agenda</span>
+                    <span class="live sig-live"><span class="dot dot--pulse" aria-hidden="true"></span><span data-i18n="badge_live">En producción</span></span>
+                  </p>
+                  <h3 id="p-ba-title">BarberApp</h3>
+                  <p class="project-lead" data-i18n="p_ba_tagline">Plataforma de turnos para una barbería: el cliente reserva sobre disponibilidad calculada en el momento, el barbero trabaja su agenda del día y el dueño administra servicios, personal y horarios. En concreto, reemplaza la ida y vuelta por mensajes con una grilla que solo ofrece horarios que están realmente libres.</p>
+                  <p class="project-figures">
+                    <span><b>143</b> <span data-i18n="p_ba_fig_1">pruebas automatizadas</span></span>
+                    <span><b>3</b> <span data-i18n="p_ba_fig_2">roles con permisos distintos</span></span>
+                    <span><b>45 min</b> <span data-i18n="p_ba_fig_3">sandbox sin registro</span></span>
+                  </p>
+                </div>
+                <div class="project-actions">
+                  <a class="link link--live" href="https://barberapp.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="btn_app">Ver aplicación</span><span class="arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a class="link link--quiet" href="https://github.com/MaikiBRU/BarberApp" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="btn_code">Ver código</span><span class="arrow" aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-media reveal">
+                <button class="figure" type="button" data-lightbox="ba" data-src="assets/ba-booking.webp">
+                  <img
+                    src="assets/ba-booking.webp"
+                    width="1800"
+                    height="1125"
+                    alt="Paso de horario en la reserva: grilla de turnos disponibles cada 15 minutos, con un hueco donde ya hay un turno tomado."
+                    data-i18n-alt="p_ba_shot_booking_alt"
+                    data-caption="Reserva: la grilla solo muestra horarios libres"
+                    data-i18n-caption="p_ba_shot_booking"
+                    decoding="async"
+                  />
+                </button>
+                <p class="figure-caption">
+                  <span data-i18n="p_ba_shot_booking">Reserva: la grilla solo muestra horarios libres</span>
+                  <span aria-hidden="true">barberapp.aaronbrumat.com.ar</span>
+                </p>
+
+                <div class="strip">
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-dashboard.webp" data-caption="Panel: métricas calculadas sobre turnos reales" data-i18n-caption="p_ba_shot_dashboard">
+                    <img src="assets/ba-dashboard.webp" width="1800" height="1125" loading="lazy" decoding="async" alt="Panel de administración con turnos de hoy, próximos turnos, facturación del día y del mes, y la agenda de la jornada." data-i18n-alt="p_ba_shot_dashboard_alt" />
+                  </button>
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-agenda.webp" data-caption="Agenda del barbero con acciones por turno" data-i18n-caption="p_ba_shot_agenda">
+                    <img src="assets/ba-agenda.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Agenda del barbero con los turnos del día y los botones de confirmar, completar o marcar ausencia." data-i18n-alt="p_ba_shot_agenda_alt" />
+                  </button>
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-appointments.webp" data-caption="Todos los turnos, filtrados por estado" data-i18n-caption="p_ba_shot_appointments">
+                    <img src="assets/ba-appointments.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Listado paginado de turnos con filtros por estado y cambio de estado en línea." data-i18n-alt="p_ba_shot_appointments_alt" />
+                  </button>
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-services.webp" data-caption="Catálogo: precio, duración y alta o baja" data-i18n-caption="p_ba_shot_services">
+                    <img src="assets/ba-services.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Administración de servicios con precio, duración y botones para activar o desactivar." data-i18n-alt="p_ba_shot_services_alt" />
+                  </button>
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-hours.webp" data-caption="Horarios de atención por día" data-i18n-caption="p_ba_shot_hours">
+                    <img src="assets/ba-hours.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Editor de horarios de atención con apertura, cierre y día cerrado para cada día de la semana." data-i18n-alt="p_ba_shot_hours_alt" />
+                  </button>
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-demo.webp" data-caption="Entrada pública al sandbox" data-i18n-caption="p_ba_shot_demo">
+                    <img src="assets/ba-demo.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Página pública de la demo con los límites de la sesión temporal y el acceso a la aplicación real." data-i18n-alt="p_ba_shot_demo_alt" />
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-story reveal">
+                <div>
+                  <h4 data-i18n="label_problem">El problema</h4>
+                  <p data-i18n="p_ba_problem">
+                    Una barbería coordina turnos por mensajes. Dos personas escriben al mismo tiempo, alguien anota mal y
+                    el barbero termina con dos clientes a la misma hora. La agenda vive en la cabeza de quien contesta el
+                    teléfono, así que nadie más puede consultarla ni corregirla.
+                  </p>
+                </div>
+                <div>
+                  <h4 data-i18n="label_solution">La solución</h4>
+                  <p data-i18n="p_ba_solution">El servidor calcula qué horarios quedan libres a partir de los horarios de atención, la duración del servicio con sus extras, los turnos ya tomados y las ausencias del barbero. Al confirmar vuelve a validar el horario elegido, y si dos personas lo piden a la vez la propia base de datos rechaza la segunda. Para poder probarlo sin registrarse, la ruta pública crea una barbería temporal y aislada, ya poblada, que se borra sola al expirar.</p>
+                </div>
+              </div>
+
+              <dl class="spec project-spec reveal">
+                <div class="spec-row">
+                  <dt data-i18n="spec_ba_1_k">Reservas</dt>
+                  <dd data-i18n="spec_ba_1_v">Grilla configurable de 15 minutos, antelación mínima, horizonte máximo y ventana de cancelación. Un servicio de 90 minutos ofrece menos horarios que uno de 45, y los extras extienden el turno.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_ba_2_k">Agenda y estados</dt>
+                  <dd data-i18n="spec_ba_2_v">Máquina de estados explícita: pendiente, confirmado, completado, cancelado y ausente. Cada respuesta trae las transiciones que ese usuario puede hacer, así que la interfaz nunca ofrece un botón que el servidor va a rechazar.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_ba_3_k">Administración</dt>
+                  <dd data-i18n="spec_ba_3_v">Servicios, extras, barberos y horarios de atención, con alta y baja lógica. Desactivar un barbero lo saca de la reserva y le corta el acceso en el mismo momento.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="spec_ba_4_k">Demo aislada</dt>
+                  <dd data-i18n="spec_ba_4_v">Una sesión anónima crea su propia barbería y se puede recorrer como cliente, barbero o administrador sobre los mismos datos. Tiene vencimiento, tiempo de inactividad y cupos, y no comparte una sola fila con el local real.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_backend">Backend</dt>
+                  <dd class="mono">FastAPI · SQLAlchemy 2 async · Pydantic v2 · Alembic · PostgreSQL 16 · pytest</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_frontend">Frontend</dt>
+                  <dd class="mono">Next.js 16 · React · TypeScript · Tailwind CSS 4 · TanStack Query · Vitest</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_infra">Infraestructura</dt>
+                  <dd class="mono" data-i18n="spec_ba_infra_v">Cloudflare Worker (Next.js) → EC2 Ubuntu · Caddy → Docker: FastAPI + PostgreSQL 16. El navegador llama a /api en el mismo dominio y el Worker reenvía al servidor, así que no hay CORS. Las migraciones corren antes de aceptar tráfico y el despliegue respalda la base antes de tocar nada.</dd>
+                </div>
+              </dl>
+
+              <div class="notes reveal">
+                <div class="notes-head">
+                  <h4 data-i18n="label_decisions">Decisiones técnicas</h4>
+                  <p data-i18n="p_ba_decisions_note">Tres decisiones sobre dónde tiene que vivir una garantía.</p>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">01</span>
+                  <div>
+                    <h5 data-i18n="p_ba_note_1_title">El solapamiento lo rechaza la base, no el código</h5>
+                    <p data-i18n="p_ba_note_1_text">Verificar antes de insertar deja una ventana: dos reservas simultáneas pueden pasar la comprobación y escribirse las dos. Una restricción de exclusión sobre el rango de tiempo cierra esa ventana dentro del motor, y el servicio traduce el rechazo en un mensaje. Dicho simple: aunque el código tuviera un error, la base no acepta dos turnos pisados para el mismo barbero.</p>
+                    <code data-i18n="p_ba_note_1_code">EXCLUDE USING gist (barber_id WITH =, tstzrange(starts_at, ends_at) WITH &amp;&amp;)</code>
+                  </div>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">02</span>
+                  <div>
+                    <h5 data-i18n="p_ba_note_2_title">El cliente no decide de quién es el turno</h5>
+                    <p data-i18n="p_ba_note_2_text">La versión anterior aceptaba el identificador del cliente y la duración dentro del pedido, así que cualquiera podía reservar a nombre de otro o pedir un turno de cinco minutos para un servicio de una hora. Ahora el dueño sale del token y la duración se calcula del catálogo. En otras palabras: el navegador dejó de poder afirmar cosas que le convienen.</p>
+                    <code data-i18n="p_ba_note_2_code">duración = servicio + extras · dueño = token, no el cuerpo</code>
+                  </div>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">03</span>
+                  <div>
+                    <h5 data-i18n="p_ba_note_3_title">Un error que SQLite no podía encontrar</h5>
+                    <p data-i18n="p_ba_note_3_text">La columna que identifica al inquilino era de 36 caracteres, medida para un UUID, pero el identificador de una demo tiene 43. Las pruebas corren sobre SQLite, que ignora el largo de los textos, así que las 143 pasaban y el error apareció recién en la primera sesión en producción. Agregué una prueba que compara el identificador generado contra el largo real de la columna.</p>
+                    <code data-i18n="p_ba_note_3_code">shop_id VARCHAR(36) → VARCHAR(64)</code>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ---------- 03 · StockARG ---------- -->
             <article class="project" aria-labelledby="p-sa-title">
               <div class="project-head reveal">
                 <div>
                   <p class="project-index">
-                    <span class="num sig-tech">02</span>
+                    <span class="num sig-tech">03</span>
                     <span data-i18n="p_sa_kind">Escritorio · Gestión y base de datos</span>
                   </p>
                   <h3 id="p-sa-title">StockARG</h3>
