@@ -96,3 +96,11 @@ python -m http.server 8000
 | --- | --- | --- |
 | Data Center | [Page-Data-Center](https://github.com/MaikiBRU/Page-Data-Center) | [datacenter.aaronbrumat.com.ar/demo](https://datacenter.aaronbrumat.com.ar/demo) |
 | StockARG | [Stock_ARG](https://github.com/MaikiBRU/Stock_ARG) | aplicacion de escritorio |
+
+## Cache de assets
+
+`index.html` y `cv.html` se revalidan en cada visita, pero `css/` y `js/`
+quedan cacheados una semana en el borde de Cloudflare. Por eso las
+referencias llevan `?v=<fecha>`: al cambiar un script hay que subir esa
+versión en las dos páginas, o el navegador seguirá usando el archivo
+viejo hasta que expire el caché.
