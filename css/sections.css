@@ -94,9 +94,9 @@
 /* ---------- Color por tema de seccion ----------
    El numero de la seccion y el de la navegacion comparten color, asi que lo
    que pertenece al mismo tema se agrupa sin necesidad de explicarlo.
-     verde   proyectos y contacto  -> verificable / accionable ahora
-     azul    stack y perfil        -> capacidad tecnica
-     violeta trayectoria           -> recorrido en curso                      */
+     verde   proyectos y contacto        -> verificable / accionable ahora
+     azul    stack, seguridad y perfil   -> capacidad tecnica
+     violeta trayectoria                 -> recorrido en curso                */
 
 #proyectos .section-head .num,
 #contacto .section-head .num {
@@ -104,6 +104,7 @@
 }
 
 #stack .section-head .num,
+#seguridad .section-head .num,
 #perfil .section-head .num {
   color: var(--sig-tech);
 }
@@ -324,7 +325,10 @@
   color: var(--ink-4);
 }
 
+/* La grilla es auto-fit: con un solo item la columna ocupa todo el ancho.
+   El tope de medida mantiene la linea legible igual que en el resto. */
 .minor-item p {
+  max-width: 62ch;
   margin-bottom: 16px;
   color: var(--ink-2);
 }

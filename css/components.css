@@ -41,10 +41,12 @@
   color: var(--live);
 }
 
+/* Seis secciones tienen que entrar entre la marca y las acciones desde los
+   1025px, donde aparece la barra. El gap cede antes que la fila se rompa. */
 .nav-links {
   display: flex;
   align-items: baseline;
-  gap: 30px;
+  gap: clamp(17px, 2.1vw, 30px);
 }
 
 .nav-links a {
@@ -76,6 +78,7 @@
 }
 
 .nav-links a[href="#stack"] sup,
+.nav-links a[href="#seguridad"] sup,
 .nav-links a[href="#perfil"] sup {
   color: var(--sig-tech);
 }
@@ -121,6 +124,7 @@
 }
 
 .nav-links a[href="#stack"].is-active::after,
+.nav-links a[href="#seguridad"].is-active::after,
 .nav-links a[href="#perfil"].is-active::after {
   background: var(--sig-tech);
   box-shadow: 0 0 8px var(--sig-tech-soft);

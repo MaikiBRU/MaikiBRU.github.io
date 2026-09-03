@@ -3,10 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Politica de seguridad de contenido de respaldo. Cloudflare Pages la
+         manda como cabecera desde _headers; GitHub Pages ignora ese archivo,
+         asi que la politica viaja tambien en el HTML y vale en los dos
+         alojamientos. frame-ancestors no se aplica desde <meta>: contra el
+         enmarcado actua X-Frame-Options, que si llega por cabecera. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     <title>Aaron Brumat — Software Developer | Backend, APIs y Datos</title>
     <meta
       name="description"
-      content="Software Developer en Rosario, Argentina. Aplicaciones full-stack con Python, FastAPI, PostgreSQL y Next.js. Data Center y BarberApp, en producción y probables sin registro."
+      content="Software Developer en Rosario, Argentina. Full-stack con Python, FastAPI, PostgreSQL y Next.js. Data Center y BarberApp, en producción y con demo sin registro."
     />
     <meta name="author" content="Aaron Brumat" />
     <meta name="theme-color" content="#0d0d0f" />
@@ -20,7 +32,7 @@
     <meta property="og:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
     <meta
       property="og:description"
-      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp, en producción y probables sin registro."
+      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp, en producción y con demo sin registro."
     />
     <meta property="og:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -30,7 +42,7 @@
     <meta name="twitter:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
     <meta
       name="twitter:description"
-      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp en producción, probables sin registro."
+      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp en producción, con demo sin registro."
     />
     <meta name="twitter:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
 
@@ -43,9 +55,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
     />
-    <link rel="stylesheet" href="css/base.css?v=20260902" />
-    <link rel="stylesheet" href="css/components.css?v=20260902" />
-    <link rel="stylesheet" href="css/sections.css?v=20260902" />
+    <link rel="stylesheet" href="css/base.css?v=20260902b" />
+    <link rel="stylesheet" href="css/components.css?v=20260902b" />
+    <link rel="stylesheet" href="css/sections.css?v=20260902b" />
 
     <script type="application/ld+json">
       {
@@ -88,9 +100,10 @@
         <nav class="nav-links" id="nav-links" aria-label="Secciones">
           <a href="#proyectos" data-nav><sup>01</sup><span data-i18n="nav_projects">Proyectos</span></a>
           <a href="#stack" data-nav><sup>02</sup><span data-i18n="nav_stack">Stack</span></a>
-          <a href="#perfil" data-nav><sup>03</sup><span data-i18n="nav_about">Perfil</span></a>
-          <a href="#trayectoria" data-nav><sup>04</sup><span data-i18n="nav_track">Trayectoria</span></a>
-          <a href="#contacto" data-nav><sup>05</sup><span data-i18n="nav_contact">Contacto</span></a>
+          <a href="#seguridad" data-nav><sup>03</sup><span data-i18n="nav_security">Seguridad</span></a>
+          <a href="#perfil" data-nav><sup>04</sup><span data-i18n="nav_about">Perfil</span></a>
+          <a href="#trayectoria" data-nav><sup>05</sup><span data-i18n="nav_track">Trayectoria</span></a>
+          <a href="#contacto" data-nav><sup>06</sup><span data-i18n="nav_contact">Contacto</span></a>
         </nav>
 
         <div class="nav-actions">
@@ -106,9 +119,10 @@
     <div class="mobile-menu" id="mobile-menu" hidden>
       <a class="mobile-link" href="#proyectos"><span class="num">01</span><span data-i18n="nav_projects">Proyectos</span></a>
       <a class="mobile-link" href="#stack"><span class="num">02</span><span data-i18n="nav_stack">Stack</span></a>
-      <a class="mobile-link" href="#perfil"><span class="num">03</span><span data-i18n="nav_about">Perfil</span></a>
-      <a class="mobile-link" href="#trayectoria"><span class="num">04</span><span data-i18n="nav_track">Trayectoria</span></a>
-      <a class="mobile-link" href="#contacto"><span class="num">05</span><span data-i18n="nav_contact">Contacto</span></a>
+      <a class="mobile-link" href="#seguridad"><span class="num">03</span><span data-i18n="nav_security">Seguridad</span></a>
+      <a class="mobile-link" href="#perfil"><span class="num">04</span><span data-i18n="nav_about">Perfil</span></a>
+      <a class="mobile-link" href="#trayectoria"><span class="num">05</span><span data-i18n="nav_track">Trayectoria</span></a>
+      <a class="mobile-link" href="#contacto"><span class="num">06</span><span data-i18n="nav_contact">Contacto</span></a>
       <div class="mobile-foot">
         <a class="link link--quiet" href="cv.html" data-i18n="nav_cv">CV</a>
         <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -161,7 +175,7 @@
         <div class="wrap">
           <div class="section-head reveal">
             <p class="kicker"><span class="num">01</span><span data-i18n="projects_eyebrow">Proyectos</span></p>
-            <h2 data-i18n="projects_title">Sistemas que construi de punta a punta</h2>
+            <h2 data-i18n="projects_title">Sistemas que construí de punta a punta</h2>
             <p class="lead" data-i18n="projects_lead">
               Cada uno arranca en un problema concreto y termina en algo que funciona: modelo de datos, API, interfaz,
               pruebas y despliegue. Los enlaces llevan al código real y, cuando existe, a la aplicación en vivo.
@@ -228,10 +242,10 @@
                     <img src="assets/dc-runs.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Historial de corridas de calidad con filtros, totales y tendencia por día." data-i18n-alt="p_dc_shot_runs_alt" />
                   </button>
                   <button type="button" data-lightbox="dc" data-src="assets/dc-charts.webp" data-caption="Actividad y violaciones por severidad" data-i18n-caption="p_dc_shot_charts">
-                    <img src="assets/dc-charts.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Graficos de corridas por día y de violaciones por severidad." data-i18n-alt="p_dc_shot_charts_alt" />
+                    <img src="assets/dc-charts.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Gráficos de corridas por día y de violaciones por severidad." data-i18n-alt="p_dc_shot_charts_alt" />
                   </button>
                   <button type="button" data-lightbox="dc" data-src="assets/dc-demo.webp" data-caption="Entrada pública al sandbox" data-i18n-caption="p_dc_shot_demo">
-                    <img src="assets/dc-demo.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Pagina pública de la demo con los limites de la sesión temporal." data-i18n-alt="p_dc_shot_demo_alt" />
+                    <img src="assets/dc-demo.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Página pública de la demo con los límites de la sesión temporal." data-i18n-alt="p_dc_shot_demo_alt" />
                   </button>
                 </div>
               </div>
@@ -242,7 +256,7 @@
                   <p data-i18n="p_dc_problem">
                     Un pedido con precio negativo, una dirección sin número o un peso imposible no rompen nada hasta que
                     rompen la operación. Sin una vista única de la calidad de cada dataset, esos registros aparecen
-                    tarde, nadie queda a cargo de corregirlos y no hay forma de saber si la situacion mejora o empeora.
+                    tarde, nadie queda a cargo de corregirlos y no hay forma de saber si la situación mejora o empeora.
                   </p>
                 </div>
                 <div>
@@ -360,6 +374,9 @@
                 </p>
 
                 <div class="strip">
+                  <button type="button" data-lightbox="ba" data-src="assets/ba-myturns.webp" data-caption="Mis turnos: estado de cada reserva y cancelación" data-i18n-caption="p_ba_shot_myturns">
+                    <img src="assets/ba-myturns.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Vista del cliente con sus turnos próximos, el estado de cada uno y el botón de cancelar." data-i18n-alt="p_ba_shot_myturns_alt" />
+                  </button>
                   <button type="button" data-lightbox="ba" data-src="assets/ba-dashboard.webp" data-caption="Panel: métricas calculadas sobre turnos reales" data-i18n-caption="p_ba_shot_dashboard">
                     <img src="assets/ba-dashboard.webp" width="1800" height="1125" loading="lazy" decoding="async" alt="Panel de administración con turnos de hoy, próximos turnos, facturación del día y del mes, y la agenda de la jornada." data-i18n-alt="p_ba_shot_dashboard_alt" />
                   </button>
@@ -569,15 +586,6 @@
           <!-- ---------- Secundarios ---------- -->
           <div class="minor reveal">
             <div class="minor-item">
-              <h4>BarberApp<span class="tag sig-next"><span class="dot dot--next" aria-hidden="true"></span><span data-i18n="badge_wip">En desarrollo</span></span></h4>
-              <p data-i18n="p_ba_text">
-                Base full-stack para la gestión de turnos de una barbería: catálogo de servicios y extras, alta de
-                barberos y reservas con estados. Backend FastAPI con SQLAlchemy asincrono y migraciones Alembic;
-                frontend Next.js App Router. Repositorio privado por ahora.
-              </p>
-              <span class="mono">FastAPI · SQLAlchemy async · Alembic · PostgreSQL · Next.js · TypeScript · Docker</span>
-            </div>
-            <div class="minor-item">
               <h4><span data-i18n="p_pf_title">Este portfolio</span><span class="tag" data-i18n="badge_web">Sitio web</span></h4>
               <p data-i18n="p_pf_text">HTML, CSS y JavaScript sin frameworks ni dependencias de terceros: todo lo que se sirve está en el repositorio, sin nada que compilar. Bilingüe español e inglés, imágenes en WebP y navegación accesible por teclado.</p>
               <span class="mono">HTML · CSS · JavaScript · Cloudflare Pages · GitHub Pages</span>
@@ -628,8 +636,91 @@
           </dl>
 
           <p class="mono stack-foot reveal" data-i18n="stack_foot">
-            Durante la cursada también trabaje con C#, Django y Flask. No los uso en los proyectos que muestro acá, así
+            Durante la cursada también trabajé con C#, Django y Flask. No los uso en los proyectos que muestro acá, así
             que los dejo listados sin protagonismo.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ SEGURIDAD ============ -->
+      <section class="section" id="seguridad">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker"><span class="num">03</span><span data-i18n="sec_eyebrow">Seguridad</span></p>
+            <h2 data-i18n="sec_title">Quince prácticas y dónde vive cada una</h2>
+            <p class="lead" data-i18n="sec_lead">
+              Este sitio es HTML, CSS y JavaScript: no tiene servidor, ni base de datos, ni sesiones. Data Center y
+              BarberApp sí. Cada punto dice en cuál de los dos está aplicado, y los que acá no tienen superficie lo
+              dicen en lugar de simularla.
+            </p>
+          </div>
+
+          <dl class="spec reveal">
+            <div class="spec-row">
+              <dt data-i18n="sec_1_k">Claves fuera del código</dt>
+              <dd data-i18n="sec_1_v">Este sitio no consume ninguna API con credenciales, así que no hay ni una clave que esconder. En las aplicaciones, cada secreto —firma de tokens, base de datos, OAuth— entra por variable de entorno; el repositorio publica un archivo de ejemplo con los nombres, nunca con los valores.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_2_k">Secretos fuera de Git</dt>
+              <dd data-i18n="sec_2_v">Una lista de exclusión bloquea archivos de entorno, claves privadas y borradores personales, y un workflow revisa la historia completa en cada push. Borrar un secreto del último commit no alcanza: sigue siendo recuperable desde los anteriores.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_3_k">Datos sensibles</dt>
+              <dd data-i18n="sec_3_v">Acá no se guarda nada: el formulario no viaja a ningún servidor, arma el mensaje y lo abre en el correo del visitante. Lo único que persiste en el navegador es el idioma elegido. En tránsito todo va cifrado, y en las aplicaciones las contraseñas nunca se almacenan en claro.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_4_k">Autenticación en el servidor</dt>
+              <dd data-i18n="sec_4_v">Ninguna decisión de identidad se toma en el navegador. El dueño de cada operación sale del token, no del cuerpo del pedido, y el proceso se niega a arrancar en producción si la configuración de sesión no es segura.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_5_k">Acceso restringido a registros</dt>
+              <dd data-i18n="sec_5_v">Cada consulta queda acotada al espacio de la sesión que la hace. Pedir un identificador ajeno devuelve "no existe" en lugar de "no podés": un rechazo por permisos confirmaría que ese registro está ahí.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_6_k">Manipulación de campos bloqueada</dt>
+              <dd data-i18n="sec_6_v">El cliente no puede afirmar cosas que le convienen. La duración de un turno se calcula del catálogo y el dueño se lee del token; antes los dos llegaban dentro del pedido y cualquiera podía reservar a nombre de otro.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_7_k">Contraseñas hasheadas</dt>
+              <dd data-i18n="sec_7_v">bcrypt con coste 12, y una comprobación que detecta hashes viejos para rehacerlos. Cuando el email no existe igual se verifica contra un hash de descarte, para que el tiempo de respuesta no revele qué cuentas están registradas.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_8_k">Intentos de inicio limitados</dt>
+              <dd data-i18n="sec_8_v">Ventana deslizante por IP sobre inicio de sesión y registro, aplicada antes de tocar la base de datos. Al pasarse, la respuesta dice cuántos segundos hay que esperar.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_9_k">Consultas vigiladas</dt>
+              <dd data-i18n="sec_9_v">Cada pedido deja una línea de registro estructurada con identificador de correlación, método, ruta, estado y milisegundos, así que una consulta lenta se rastrea hasta la petición que la disparó. El volcado de SQL queda prohibido en producción y el arranque falla si está encendido.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_10_k">Protección contra bots</dt>
+              <dd data-i18n="sec_10_v">El formulario tiene un campo trampa invisible para personas y exige un tiempo mínimo entre que se abre y se envía: un robot completa todo y dispara al instante. Cloudflare filtra por delante del sitio.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_11_k">Entradas validadas</dt>
+              <dd data-i18n="sec_11_v">Acá el formulario comprueba forma y longitud, y quita saltos de línea y caracteres de control antes de armar el correo. En las aplicaciones, cada cuerpo pasa por un esquema con límites declarados: mínimos, máximos y rangos por campo.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_12_k">Subida de archivos restringida</dt>
+              <dd data-i18n="sec_12_v">Este sitio no acepta archivos. Data Center recibe CSV con tope de tamaño —25 MB con cuenta, 2 MB en la demo—, nombre saneado antes de tocar el disco y cupo acumulado por sesión.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_13_k">Respuestas de API limitadas</dt>
+              <dd data-i18n="sec_13_v">Todo listado se pagina con el tope declarado en el propio parámetro: 50 por defecto, 200 como máximo. No hay endpoint que devuelva una tabla entera por pedirlo.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_14_k">Dependencias escaneadas</dt>
+              <dd data-i18n="sec_14_v">Este sitio no tiene ni una dependencia de terceros: cero paquetes son cero vulnerabilidades heredadas, y la verificación falla si aparece un manifiesto sin su auditoría. En las aplicaciones se auditan los paquetes de producción y se corren reglas de seguridad sobre el código en cada push.</dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="sec_15_k">HTTPS forzado</dt>
+              <dd data-i18n="sec_15_v">HSTS de un año con subdominios incluidos, actualización automática de cualquier recurso a HTTPS en la política de contenido, y una verificación que falla si algo queda apuntando a HTTP plano. Los certificados los emiten Cloudflare adelante y Caddy en el servidor.</dd>
+            </div>
+          </dl>
+
+          <p class="mono stack-foot reveal">
+            <span data-i18n="sec_foot">Si encontrás algo, el canal de reporte está publicado en</span>
+            <a class="link link--quiet" href="/.well-known/security.txt">/.well-known/security.txt</a>
           </p>
         </div>
       </section>
@@ -638,7 +729,7 @@
       <section class="section" id="perfil">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">03</span><span data-i18n="about_eyebrow">Perfil</span></p>
+            <p class="kicker"><span class="num">04</span><span data-i18n="about_eyebrow">Perfil</span></p>
             <h2 data-i18n="about_title">Me interesa la parte que no se ve</h2>
           </div>
 
@@ -717,7 +808,7 @@
       <section class="section" id="trayectoria">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">04</span><span data-i18n="track_eyebrow">Trayectoria</span></p>
+            <p class="kicker"><span class="num">05</span><span data-i18n="track_eyebrow">Trayectoria</span></p>
             <h2 data-i18n="track_title">Formación y experiencia</h2>
           </div>
 
@@ -794,7 +885,7 @@
                 <h4 class="cert-title" data-i18n="cert_1_title">Certificado de Iniciación al Desarrollo con IA</h4>
                 <p data-i18n="cert_1_text">
                   Jornadas formativas "Desarrollo con IA: de 0 a Producción", dictadas por BIG school. El certificado
-                  completo está a la vista: no hay código de verificacion público emitido para este curso.
+                  completo está a la vista: no hay código de verificación público emitido para este curso.
                 </p>
                 <p class="mono cert-meta">
                   BIG school · <span data-i18n="cert_meta_date">Marzo 2026</span> ·
@@ -821,10 +912,10 @@
       <section class="section" id="contacto">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">05</span><span data-i18n="contact_eyebrow">Contacto</span></p>
+            <p class="kicker"><span class="num">06</span><span data-i18n="contact_eyebrow">Contacto</span></p>
             <h2 data-i18n="contact_title">Hablemos</h2>
             <p class="lead" data-i18n="contact_lead">
-              Busco sumarme a un equipo de desarrollo. Escribime por el medio que te resulte más comodo: respondo en
+              Busco sumarme a un equipo de desarrollo. Escribime por el medio que te resulte más cómodo: respondo en
               24 a 48 horas.
             </p>
           </div>
@@ -937,11 +1028,11 @@
       </div>
     </div>
 
-    <script defer src="js/i18n-data.js?v=20260902"></script>
-    <script defer src="js/i18n.js?v=20260902"></script>
-    <script defer src="js/nav.js?v=20260902"></script>
-    <script defer src="js/reveal.js?v=20260902"></script>
-    <script defer src="js/lightbox.js?v=20260902"></script>
-    <script defer src="js/contact.js?v=20260902"></script>
+    <script defer src="js/i18n-data.js?v=20260902b"></script>
+    <script defer src="js/i18n.js?v=20260902b"></script>
+    <script defer src="js/nav.js?v=20260902b"></script>
+    <script defer src="js/reveal.js?v=20260902b"></script>
+    <script defer src="js/lightbox.js?v=20260902b"></script>
+    <script defer src="js/contact.js?v=20260902b"></script>
   </body>
 </html>

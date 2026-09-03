@@ -1,19 +1,32 @@
-# Cabeceras aplicadas por Cloudflare Pages. GitHub Pages las ignora sin romper nada.
+# Cabeceras aplicadas por Cloudflare Pages. GitHub Pages las ignora sin romper
+# nada, y por eso cada pagina lleva ademas su propia CSP en <meta>: la politica
+# viaja con el HTML y vale en los dos alojamientos.
 #
 # script-src y connect-src permiten explicitamente el beacon de Cloudflare Web
 # Analytics, que Cloudflare inyecta en la respuesta. Sin esas dos excepciones la
 # politica lo bloquea y las visitas no se registran.
+#
+# No se declara Cross-Origin-Embedder-Policy: require-corp bloquearia la hoja de
+# estilos de Google Fonts, que no se sirve con CORS. Se deja anotado en lugar de
+# ponerlo y romper la tipografia.
 
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()
+  X-Permitted-Cross-Domain-Policies: none
+  Permissions-Policy: accelerometer=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), idle-detection=(), interest-cohort=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()
   Cross-Origin-Opener-Policy: same-origin
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Resource-Policy: same-origin
+  Origin-Agent-Cluster: ?1
 
+# Las capturas y la imagen social tienen que poder cargarse desde afuera
+# (previsualizaciones de LinkedIn, WhatsApp o Twitter), asi que aca la politica
+# de recursos se afloja a proposito.
 /assets/*
+  Cross-Origin-Resource-Policy: cross-origin
   Cache-Control: public, max-age=31536000, immutable
 
 /css/*
@@ -21,3 +34,16 @@
 
 /js/*
   Cache-Control: public, max-age=604800
+
+# El HTML se revalida en cada visita: es lo que hace que un cambio de contenido
+# se vea sin esperar a que expire ningun cache.
+/*.html
+  Cache-Control: no-cache
+
+/
+  Cache-Control: no-cache
+
+# Canal de reporte de vulnerabilidades (RFC 9116).
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
