@@ -9,7 +9,7 @@ terceros: el repositorio es exactamente lo que se sirve.
 ## Estructura
 
 ```
-index.html        Portfolio: hero, proyectos, stack, seguridad, perfil, trayectoria, contacto
+index.html        Portfolio: hero, proyectos, stack, perfil, trayectoria, contacto
 cv.html           CV en pantalla, con hoja de estilos de impresion aparte
 css/
   base.css        Tokens de diseno, reset, tipografia y utilidades
@@ -49,7 +49,7 @@ atencion, y cada tono significa siempre lo mismo:
 | | Significa | Donde |
 | --- | --- | --- |
 | verde | verificable ahora | disponible para trabajar, en produccion, abrir la app |
-| azul | capacidad tecnica | stack, seguridad, perfil |
+| azul | capacidad tecnica | stack, perfil |
 | violeta | en curso | aprendiendo, la carrera |
 
 El numero de la navegacion y el de la seccion comparten color, de modo que lo
@@ -87,9 +87,10 @@ Cambiar `--font-display` en `css/base.css` reemplaza la serif en todo el sitio.
 
 ## Seguridad
 
-La seccion 03 del sitio explica las quince practicas y en cual de los dos
-ambitos vive cada una: este repositorio estatico, o las aplicaciones
-(Data Center y BarberApp). Lo que se aplica **aca** es esto:
+No hay una seccion de seguridad aparte: las medidas se enuncian como
+caracteristicas del sitio, en el bloque "Este portfolio" de Proyectos, al lado
+del enlace al codigo. Quien las lee esta a un clic de verificarlas. Esto es lo
+que hay:
 
 | Que | Donde |
 | --- | --- |
@@ -141,4 +142,4 @@ paginas, o el navegador seguira usando el archivo viejo hasta que expire el
 cache.
 
 La version es la fecha del cambio en formato `AAAAMMDD`, con una letra al final
-cuando hay mas de un cambio el mismo dia. La actual es `20260902b`.
+cuando hay mas de un cambio el mismo dia. La actual es `20260903`.

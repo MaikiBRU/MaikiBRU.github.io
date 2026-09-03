@@ -94,9 +94,9 @@
 /* ---------- Color por tema de seccion ----------
    El numero de la seccion y el de la navegacion comparten color, asi que lo
    que pertenece al mismo tema se agrupa sin necesidad de explicarlo.
-     verde   proyectos y contacto        -> verificable / accionable ahora
-     azul    stack, seguridad y perfil   -> capacidad tecnica
-     violeta trayectoria                 -> recorrido en curso                */
+     verde   proyectos y contacto  -> verificable / accionable ahora
+     azul    stack y perfil        -> capacidad tecnica
+     violeta trayectoria           -> recorrido en curso                      */
 
 #proyectos .section-head .num,
 #contacto .section-head .num {
@@ -104,7 +104,6 @@
 }
 
 #stack .section-head .num,
-#seguridad .section-head .num,
 #perfil .section-head .num {
   color: var(--sig-tech);
 }
@@ -330,6 +329,31 @@
 .minor-item p {
   max-width: 62ch;
   margin-bottom: 16px;
+  color: var(--ink-2);
+}
+
+/* Etiqueta del grupo de caracteristicas: mismo tratamiento que un dt de la
+   lista de especificacion, para que se lea como su encabezado. Lleva tambien
+   la clase .mono, y `.minor-item .mono` fija 16px mas abajo en este archivo:
+   el selector nombra el elemento para ganar sin depender del orden. */
+.minor-item p.minor-label {
+  margin-bottom: 4px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* Una caracteristica por linea, separadas por el filete de 1px: la misma
+   gramatica que las listas de especificacion, sin tarjetas ni vinetas. */
+.minor-features {
+  max-width: 62ch;
+  margin-bottom: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+.minor-features li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
   color: var(--ink-2);
 }
 
