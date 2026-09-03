@@ -1,0 +1,137 @@
+name: Seguridad
+
+# El repositorio es exactamente lo que se publica: cualquier cosa que entre
+# queda servida en aaronbrumat.com.ar. Este workflow es la puerta.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Una pasada semanal: la historia no cambia, pero las reglas de deteccion si.
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seguridad-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secretos:
+    name: Secretos en la historia
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # La historia completa: un secreto borrado del ultimo commit sigue
+          # siendo recuperable desde los anteriores.
+          fetch-depth: 0
+
+      - name: Gitleaks sobre toda la historia
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  archivos:
+    name: Archivos que no pueden publicarse
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ningun archivo de credenciales rastreado
+        run: |
+          set -euo pipefail
+          encontrados=$(git ls-files | grep -iE '(^|/)\.env($|\.)|\.(pem|key|p12|pfx|jks|keystore)$|(^|/)id_(rsa|ed25519)$|(^|/)credentials\.json$|(^|/)\.netrc$|(^|/)\.htpasswd$' || true)
+          if [ -n "$encontrados" ]; then
+            echo "::error::Hay archivos de credenciales rastreados:"
+            echo "$encontrados"
+            exit 1
+          fi
+          echo "OK: ningun archivo de credenciales rastreado."
+
+      - name: Ningun borrador de CV en texto plano
+        run: |
+          set -euo pipefail
+          encontrados=$(git ls-files | grep -iE '^cv_.*\.(txt|docx|pdf)$' || true)
+          if [ -n "$encontrados" ]; then
+            echo "::error::Borradores de CV rastreados (contienen datos personales):"
+            echo "$encontrados"
+            exit 1
+          fi
+          echo "OK: ningun borrador de CV rastreado."
+
+  dependencias:
+    name: Superficie de dependencias
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # El sitio no tiene dependencias de terceros y esa es la garantia mas
+      # fuerte que puede dar: cero paquetes es cero CVEs heredados. Si algun
+      # dia aparece un manifiesto, este paso obliga a auditarlo.
+      - name: Verificar que sigue sin dependencias
+        run: |
+          set -euo pipefail
+          manifiestos=$(git ls-files | grep -iE '(^|/)(package\.json|package-lock\.json|yarn\.lock|pnpm-lock\.yaml|requirements.*\.txt|pyproject\.toml|Gemfile|composer\.json)$' || true)
+          if [ -n "$manifiestos" ]; then
+            echo "::error::Aparecieron manifiestos de dependencias. Agregar el escaneo correspondiente (npm audit / pip-audit) antes de mergear:"
+            echo "$manifiestos"
+            exit 1
+          fi
+          echo "OK: sin dependencias de terceros."
+
+      - name: Todo recurso externo va por HTTPS
+        run: |
+          set -euo pipefail
+          inseguros=$(grep -rInE '(src|href)="http://' --include='*.html' --include='*.css' --include='*.js' . || true)
+          if [ -n "$inseguros" ]; then
+            echo "::error::Recursos servidos por HTTP plano:"
+            echo "$inseguros"
+            exit 1
+          fi
+          echo "OK: ningun recurso por HTTP plano."
+
+      - name: Ningun enlace externo sin rel=noopener
+        run: |
+          set -euo pipefail
+          sueltos=$(grep -rIn 'target="_blank"' --include='*.html' . | grep -v 'noopener' || true)
+          if [ -n "$sueltos" ]; then
+            echo "::error::Enlaces con target=_blank sin rel=noopener:"
+            echo "$sueltos"
+            exit 1
+          fi
+          echo "OK: todos los target=_blank llevan rel=noopener."
+
+  cabeceras:
+    name: Cabeceras de seguridad
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Cloudflare Pages aplica _headers; GitHub Pages lo ignora. Por eso cada
+      # pagina lleva ademas su propia CSP en <meta>. Las dos tienen que existir.
+      - name: _headers declara las cabeceras minimas
+        run: |
+          set -euo pipefail
+          for cabecera in \
+            "Content-Security-Policy" \
+            "Strict-Transport-Security" \
+            "X-Content-Type-Options" \
+            "X-Frame-Options" \
+            "Referrer-Policy" \
+            "Permissions-Policy"
+          do
+            grep -q "$cabecera" _headers || { echo "::error::Falta $cabecera en _headers"; exit 1; }
+          done
+          echo "OK: _headers completo."
+
+      - name: Cada pagina lleva su CSP de respaldo
+        run: |
+          set -euo pipefail
+          for pagina in index.html cv.html; do
+            grep -q 'http-equiv="Content-Security-Policy"' "$pagina" \
+              || { echo "::error::$pagina no tiene CSP en <meta> (queda sin politica en GitHub Pages)"; exit 1; }
+          done
+          echo "OK: CSP de respaldo en las dos paginas."

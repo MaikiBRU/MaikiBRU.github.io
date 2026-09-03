@@ -1,0 +1,49 @@
+# El repositorio es exactamente lo que se sirve: nada de credenciales,
+# nada de material privado, nada generado. Lo que entre aca no se publica.
+
+# --- Secretos y credenciales -------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_ed25519
+*_rsa
+*_ed25519
+credentials.json
+service-account*.json
+secrets.*
+.netrc
+.htpasswd
+
+# --- Configuracion local de herramientas -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Sistema operativo --------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Borradores y material personal ------------------------------------
+# Los CV en texto plano vivian en el repositorio y quedaron en la historia.
+# Cualquier borrador nuevo se queda afuera.
+cv_*.txt
+cv_*.docx
+cv_*.pdf
+/borradores/
+/privado/
+
+# --- Dependencias y artefactos ------------------------------------------
+node_modules/
+dist/
+build/
+*.log
