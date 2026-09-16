@@ -522,6 +522,22 @@
   margin-top: 18px;
 }
 
+/* Varios certificados: el mismo filete que separa los proyectos. */
+.cert + .cert {
+  margin-top: clamp(36px, 5vw, 60px);
+  padding-top: clamp(36px, 5vw, 60px);
+  border-top: 1px solid var(--rule);
+}
+
+.cert-skills {
+  margin-top: 18px;
+  line-height: 1.9;
+}
+
+.cert-links {
+  margin-top: 22px;
+}
+
 /* ---------- Dialogos: espaciado propio ---------- */
 
 .dialog-lead {
