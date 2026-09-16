@@ -280,6 +280,22 @@
   color: var(--ink-2);
 }
 
+/* Enlace a la credencial: mismo trazo que los enlaces de proyecto. Al guardar
+   como PDF desde el navegador el vinculo se conserva y sigue siendo clicable. */
+.cv-verify {
+  display: inline-block;
+  margin-top: 6px;
+  padding-block: 3px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+
+.cv-verify:hover {
+  color: var(--ink);
+}
+
 .cv-note {
   margin-bottom: 16px;
   font-family: var(--font-mono);
