@@ -1,10 +1,15 @@
 /* Internacionalizacion ES / EN.
+   El espanol vive en un solo lugar: el propio HTML. Al cargar, antes de
+   traducir nada, se toma una copia de cada texto marcado y esa copia es el
+   diccionario espanol. El archivo de datos solo trae el ingles, mas las pocas
+   cadenas en espanol que no estan en el HTML (mensajes que arma el JS).
    No usa innerHTML en ningun momento: el marcado enfatizado (**texto**) se
-   construye con nodos de texto y elementos <b> creados con la API del DOM. */
+   construye con nodos de texto y elementos <strong> creados con la API del DOM. */
 (function () {
   "use strict";
 
   var DICT = window.PF_TRANSLATIONS || {};
+  DICT.es = DICT.es || {};
   var STORE_KEY = "portfolio_lang";
   var SUPPORTED = ["es", "en"];
 
@@ -50,6 +55,48 @@
     el.replaceChildren(frag);
   }
 
+  /* Inverso de renderRich: vuelve a escribir los <strong> como **texto**. */
+  function readRich(el) {
+    var out = "";
+    el.childNodes.forEach(function (node) {
+      if (node.nodeType === 1 && (node.tagName === "STRONG" || node.tagName === "B")) {
+        out += "**" + node.textContent + "**";
+      } else {
+        out += node.textContent;
+      }
+    });
+    return out;
+  }
+
+  /* Copia el espanol del HTML al diccionario. Lo que ya esta en el
+     diccionario no se pisa. Los espacios se normalizan: el HTML corta las
+     lineas largas y eso no es parte del texto. */
+  function snapshot(selector, dataKey, read) {
+    document.querySelectorAll(selector).forEach(function (el) {
+      var key = el.dataset[dataKey];
+      if (!key || Object.prototype.hasOwnProperty.call(DICT.es, key)) return;
+      var value = read(el);
+      if (value !== null) DICT.es[key] = String(value).replace(/\s+/g, " ").trim();
+    });
+  }
+
+  snapshot("[data-i18n]", "i18n", function (el) {
+    return el.textContent;
+  });
+  snapshot("[data-i18n-rich]", "i18nRich", readRich);
+  snapshot("[data-i18n-placeholder]", "i18nPlaceholder", function (el) {
+    return el.getAttribute("placeholder");
+  });
+  snapshot("[data-i18n-alt]", "i18nAlt", function (el) {
+    return el.getAttribute("alt");
+  });
+  snapshot("[data-i18n-caption]", "i18nCaption", function (el) {
+    return el.getAttribute("data-caption");
+  });
+  snapshot("[data-i18n-aria]", "i18nAria", function (el) {
+    return el.getAttribute("aria-label");
+  });
+
   function applyAttr(selector, dataKey, apply) {
     document.querySelectorAll(selector).forEach(function (el) {
       var value = t(el.dataset[dataKey]);
@@ -82,6 +129,7 @@
       toggle.setAttribute("aria-label", t("lang_aria") || "");
     });
 
+    document.documentElement.classList.remove("lang-pending");
     document.dispatchEvent(new CustomEvent("pf:langchange", { detail: { lang: lang } }));
   }
 

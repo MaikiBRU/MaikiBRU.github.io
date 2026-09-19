@@ -1,7 +1,7 @@
 name: Seguridad
 
 # El repositorio es exactamente lo que se publica: cualquier cosa que entre
-# queda servida en aaronbrumat.com.ar. Este workflow es la puerta.
+# queda servido en aaronbrumat.com.ar. Este workflow es la puerta.
 
 on:
   push:
@@ -110,28 +110,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Cloudflare Pages aplica _headers; GitHub Pages lo ignora. Por eso cada
-      # pagina lleva ademas su propia CSP en <meta>. Las dos tienen que existir.
+      # El sitio se sirve solo desde Cloudflare Pages, que aplica _headers.
       - name: _headers declara las cabeceras minimas
         run: |
           set -euo pipefail
-          for cabecera in \
-            "Content-Security-Policy" \
-            "Strict-Transport-Security" \
-            "X-Content-Type-Options" \
-            "X-Frame-Options" \
-            "Referrer-Policy" \
-            "Permissions-Policy"
+          for cabecera in Content-Security-Policy Strict-Transport-Security X-Content-Type-Options \
+            X-Frame-Options Referrer-Policy Permissions-Policy
           do
             grep -q "$cabecera" _headers || { echo "::error::Falta $cabecera en _headers"; exit 1; }
           done
           echo "OK: _headers completo."
 
-      - name: Cada pagina lleva su CSP de respaldo
+      - name: Existe la pagina 404
         run: |
           set -euo pipefail
-          for pagina in index.html cv.html; do
-            grep -q 'http-equiv="Content-Security-Policy"' "$pagina" \
-              || { echo "::error::$pagina no tiene CSP en <meta> (queda sin politica en GitHub Pages)"; exit 1; }
-          done
-          echo "OK: CSP de respaldo en las dos paginas."
+          test -f 404.html || { echo "::error::Falta 404.html: Cloudflare devolveria la portada con 200"; exit 1; }
+          echo "OK: 404.html presente."
+
+  traducciones:
+    name: Textos traducidos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # El espanol vive en el HTML y el ingles en js/*-data.js. Si se agrega un
+      # texto y no su traduccion, en ingles quedaria en espanol sin avisar.
+      - name: Cada clave del HTML tiene su ingles
+        run: |
+          set -euo pipefail
+          node - <<'EOF'
+          const fs = require("fs");
+          const pares = [["index.html", "js/i18n-data.js"], ["cv.html", "js/cv-data.js"]];
+          let faltan = 0;
+          for (const [html, datos] of pares) {
+            global.window = {};
+            eval(fs.readFileSync(datos, "utf8"));
+            const en = window.PF_TRANSLATIONS.en;
+            const texto = fs.readFileSync(html, "utf8");
+            const claves = new Set([...texto.matchAll(/data-i18n(?:-rich|-placeholder|-alt|-caption|-aria)?="([^"]+)"/g)].map((m) => m[1]));
+            for (const clave of claves) {
+              if (!(clave in en)) {
+                console.log(`::error::${html}: falta el ingles de "${clave}" en ${datos}`);
+                faltan += 1;
+              }
+            }
+          }
+          if (faltan) process.exit(1);
+          console.log("OK: todas las claves tienen su ingles.");
+          EOF

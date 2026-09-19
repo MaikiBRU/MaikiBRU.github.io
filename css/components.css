@@ -44,7 +44,7 @@
 .nav-links {
   display: flex;
   align-items: baseline;
-  gap: 30px;
+  gap: 26px;
 }
 
 .nav-links a {
@@ -75,6 +75,7 @@
   color: var(--sig-live);
 }
 
+.nav-links a[href="#infraestructura"] sup,
 .nav-links a[href="#stack"] sup,
 .nav-links a[href="#perfil"] sup {
   color: var(--sig-tech);
@@ -120,6 +121,7 @@
   box-shadow: 0 0 8px var(--sig-live-soft);
 }
 
+.nav-links a[href="#infraestructura"].is-active::after,
 .nav-links a[href="#stack"].is-active::after,
 .nav-links a[href="#perfil"].is-active::after {
   background: var(--sig-tech);
@@ -241,6 +243,7 @@
   color: var(--sig-live);
 }
 
+.mobile-link[href="#infraestructura"] .num,
 .mobile-link[href="#stack"] .num,
 .mobile-link[href="#perfil"] .num {
   color: var(--sig-tech);
@@ -294,13 +297,6 @@
 .spec-row .spec-val strong {
   color: var(--ink);
   font-weight: 500;
-}
-
-/* Variante con numero de orden a la izquierda */
-.spec--numbered .spec-row {
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 12px 28px;
-  align-items: baseline;
 }
 
 /* ---------- Figuras e imagenes ---------- */
@@ -679,8 +675,7 @@
 }
 
 @media (max-width: 560px) {
-  .spec-row,
-  .spec--numbered .spec-row {
+  .spec-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
     padding: 18px 0;

@@ -17,6 +17,15 @@
 
 /* Se lee como una frase, no como tres columnas: al angostarse debe envolver
    como texto corrido en lugar de repartirse en items flex. */
+/* Dos columnas en escritorio: a la izquierda quien soy, a la derecha donde
+   encajo y la prueba de que lo que muestro esta andando. */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  align-items: end;
+  gap: clamp(40px, 6vw, 88px);
+}
+
 .hero-kicker {
   display: block;
   margin-bottom: clamp(26px, 4vw, 44px);
@@ -57,7 +66,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px 32px;
-  margin-top: clamp(52px, 8vw, 96px);
+  margin-top: clamp(44px, 6vw, 72px);
   padding-top: 22px;
   border-top: 1px solid var(--rule);
 }
@@ -91,34 +100,121 @@
   }
 }
 
-/* ---------- Color por tema de seccion ----------
-   El numero de la seccion y el de la navegacion comparten color, asi que lo
-   que pertenece al mismo tema se agrupa sin necesidad de explicarlo.
-     verde   proyectos y contacto  -> verificable / accionable ahora
-     azul    stack y perfil        -> capacidad tecnica
-     violeta trayectoria           -> recorrido en curso                      */
+.hero-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-left: clamp(28px, 3vw, 40px);
+  border-left: 1px solid var(--rule);
+}
 
-#proyectos .section-head .num,
-#contacto .section-head .num {
+.hero-block .kicker {
+  margin-bottom: 12px;
+}
+
+/* Donde encajo: cuatro filas de titulo y evidencia, separadas por filete */
+.fit {
+  border-top: 1px solid var(--rule);
+}
+
+.fit-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fit dt {
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.fit dd {
+  margin-top: 3px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+
+/* Estado de servicios: se lee como la salida de systemctl, y cada linea
+   abre la aplicacion. */
+.status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.01em;
+  border-top: 1px solid var(--rule);
+}
+
+.status li {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+/* Host a la izquierda, estado siempre alineado a la derecha en la misma fila */
+.status a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 0;
+  color: var(--ink-2);
+  transition: color 0.3s var(--ease), padding-left 0.3s var(--ease);
+}
+
+.status a:hover,
+.status a:focus-visible {
+  color: var(--ink);
+  padding-left: 6px;
+}
+
+.status-host {
+  overflow-wrap: anywhere;
+}
+
+/* En un telefono el dominio mas largo no entra junto al estado: pasa abajo
+   en lugar de cortar el dominio a mitad de palabra. */
+@media (max-width: 440px) {
+  .status a {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+.status-foot {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+  color: var(--ink-3);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-aside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 36px 56px;
+    padding-left: 0;
+    padding-top: 34px;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+  }
+}
+
+/* ---------- Senal en texto ----------
+   Estas etiquetas llevan color de tema, pero la regla de su contenedor es mas
+   especifica que .sig-*: sin estos selectores quedarian grises. */
+.hero-status.sig-live,
+.cert .cert-kicker.sig-live {
   color: var(--sig-live);
 }
 
-#stack .section-head .num,
-#perfil .section-head .num {
-  color: var(--sig-tech);
-}
-
-#trayectoria .section-head .num {
-  color: var(--sig-next);
-}
-
-/* Etiquetas con punto de senal (aprendiendo, en desarrollo, en curso) */
 .spec-row dt.sig-next,
-.spec-row dt.sig-tech,
-.spec-row dt.sig-live {
-  display: flex;
-  align-items: baseline;
-  gap: 9px;
+.cert .cert-kicker.sig-next {
+  color: var(--sig-next);
 }
 
 /* ---------- Proyectos ---------- */
@@ -158,15 +254,8 @@
   color: var(--ink-3);
 }
 
-.project-index .num {
-  font-size: 1.05em;
-}
-
 .project-index .live {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink-2);
+  color: var(--sig-live);
 }
 
 .project h3 {
@@ -233,7 +322,7 @@
   margin-bottom: clamp(44px, 6vw, 72px);
 }
 
-/* Decisiones tecnicas: bloques numerados separados por filete */
+/* Decisiones tecnicas: bloques separados por filete */
 .notes {
   border-top: 1px solid var(--rule);
 }
@@ -262,19 +351,11 @@
 }
 
 .note {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 14px 28px;
   padding: 28px 0;
   border-bottom: 1px solid var(--rule);
 }
 
-.note .num {
-  padding-top: 5px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-}
-
+.note h4,
 .note h5 {
   margin-bottom: 10px;
 }
@@ -321,7 +402,7 @@
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-4);
+  color: var(--ink-3);
 }
 
 /* La grilla es auto-fit: con un solo item la columna ocupa todo el ancho.
@@ -363,6 +444,101 @@
   line-height: 1.9;
 }
 
+/* ---------- Infraestructura ---------- */
+
+/* Arquitectura: cinco nodos en fila, unidos por flechas. En pantallas
+   angostas pasa a columna y la flecha apunta hacia abajo. Es HTML y no un
+   SVG para que se traduzca y se lea con lector de pantalla. */
+.arch {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 34px;
+  border-top: 1px solid var(--rule);
+}
+
+.arch-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 0 24px;
+}
+
+.arch-node + .arch-node::before {
+  content: "\2192";
+  position: absolute;
+  top: 44px;
+  left: -26px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--ink-4);
+}
+
+.arch-k {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--sig-tech);
+}
+
+.arch-node strong {
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.arch-v {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+@media (max-width: 960px) {
+  .arch {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arch-node {
+    display: grid;
+    grid-template-columns: minmax(0, 180px) minmax(0, 1fr);
+    gap: 4px 40px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .arch-node .arch-k {
+    grid-row: span 2;
+    padding-top: 4px;
+  }
+
+  .arch-node + .arch-node::before {
+    content: "\2193";
+    top: -12px;
+    left: auto;
+    right: 0;
+    padding-inline: 6px;
+    background: var(--bg);
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 560px) {
+  .arch-node {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arch-node .arch-k {
+    grid-row: auto;
+    padding-top: 0;
+  }
+}
+
+.process-line span[data-i18n="deploy_label"] {
+  margin-right: 4px;
+  color: var(--ink-2);
+}
+
 /* ---------- Perfil ---------- */
 
 .about {
@@ -394,6 +570,58 @@
 
 .about-side .mono {
   line-height: 1.9;
+}
+
+/* Hoja de ruta: estado a la izquierda, paso a la derecha. El estado es el
+   unico dato con color: violeta para lo que esta en curso. */
+.roadmap {
+  border-top: 1px solid var(--rule);
+}
+
+.road-step {
+  display: grid;
+  grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
+  gap: 8px 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.road-state {
+  padding-top: 3px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.road-step strong {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.road-step p {
+  max-width: 62ch;
+  margin-top: 4px;
+  color: var(--ink-2);
+}
+
+.road-step.is-now .road-state {
+  color: var(--sig-next);
+}
+
+.road-step.is-next strong,
+.road-step.is-next p {
+  color: var(--ink-3);
+}
+
+@media (max-width: 560px) {
+  .road-step {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding: 18px 0;
+  }
 }
 
 /* ---------- Contacto ---------- */
@@ -538,6 +766,53 @@
   margin-top: 22px;
 }
 
+.cert-kicker {
+  margin-bottom: 10px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+/* Certificacion sin imagen: la segunda columna es la lista de cursos */
+.cert--text {
+  align-items: start;
+}
+
+.courses {
+  border-top: 1px solid var(--rule);
+}
+
+.courses li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-2);
+}
+
+/* Curso menor: una sola linea, sin imagen, con el certificado a un clic */
+.cert-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  margin-top: clamp(36px, 5vw, 60px);
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+}
+
+.cert-line .link {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+}
+
+.other-line {
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+
 /* ---------- Dialogos: espaciado propio ---------- */
 
 .dialog-lead {
@@ -547,6 +822,26 @@
 
 .mail-status {
   margin-top: 20px;
+}
+
+/* ---------- Pagina 404 ---------- */
+
+.not-found .kicker {
+  margin-bottom: clamp(26px, 4vw, 44px);
+}
+
+.not-found h1 {
+  margin-bottom: clamp(26px, 4vw, 48px);
+}
+
+.not-found .hero-lead {
+  max-width: 48ch;
+  font-size: var(--fs-lead);
+  color: var(--ink-2);
+}
+
+.not-found-en {
+  margin-top: 14px;
 }
 
 /* ---------- Pie ---------- */
@@ -599,15 +894,6 @@
 }
 
 @media (max-width: 560px) {
-  .note {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-  }
-
-  .note .num {
-    padding-top: 0;
-  }
-
   .hero-foot {
     flex-direction: column-reverse;
     align-items: flex-start;

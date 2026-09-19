@@ -1,5 +1,7 @@
 /* ============================================================
-   CV — misma tinta monocroma en pantalla, hoja clara al imprimir.
+   CV — misma estructura que el PDF.
+   En pantalla usa la tinta monocroma del portfolio; al imprimir pasa a la
+   hoja clara del PDF: titulos en azul con filete y todo en una pagina A4.
    Reutiliza los tokens de base.css y los componentes de components.css.
    ============================================================ */
 
@@ -13,7 +15,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 14px 26px;
-  width: min(880px, 100% - 2 * var(--gutter));
+  width: min(900px, 100% - 2 * var(--gutter));
   margin: 0 auto 40px;
   padding-bottom: 18px;
   border-bottom: 1px solid var(--rule-soft);
@@ -23,322 +25,244 @@
 }
 
 .cv {
-  width: min(880px, 100% - 2 * var(--gutter));
+  --cv-accent: var(--sig-tech);
+  width: min(900px, 100% - 2 * var(--gutter));
   margin-inline: auto;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.cv a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sep {
+  margin-inline: 6px;
+  color: var(--ink-4);
 }
 
 /* ---------- Cabecera ---------- */
 
 .cv-head {
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr) minmax(0, 268px);
-  gap: 26px 32px;
-  align-items: start;
-  padding-bottom: 34px;
-  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
 }
 
-.cv-photo {
-  width: 76px;
-  height: 76px;
-  object-fit: cover;
-  border: 1px solid var(--rule);
-}
-
-.cv-ident h1 {
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
+.cv-head h1 {
   margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-size: clamp(1.9rem, 5vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .cv-role {
-  margin-bottom: 14px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
-.cv-summary {
-  max-width: 54ch;
-  color: var(--ink-2);
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--cv-accent);
 }
 
 .cv-contact {
-  display: grid;
-  gap: 7px;
-  font-size: var(--fs-small);
-}
-
-.cv-contact li {
-  display: grid;
-  grid-template-columns: 74px minmax(0, 1fr);
-  gap: 10px;
-  align-items: baseline;
-}
-
-.cv-contact span {
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
   color: var(--ink-3);
-}
-
-.cv-contact a,
-.cv-contact b {
-  color: var(--ink);
-  font-weight: 400;
-  /* break-word, no anywhere: parte entre palabras antes que a mitad del correo */
   overflow-wrap: break-word;
 }
 
-.cv-contact a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.cv-contact b {
+  font-weight: 500;
+  color: var(--cv-accent);
 }
 
 /* ---------- Secciones ---------- */
 
 .cv-section {
-  margin-top: 34px;
-  padding-top: 34px;
-  border-top: 1px solid var(--rule);
-}
-
-.cv-section:first-of-type {
-  border-top: 0;
+  margin-top: 22px;
 }
 
 .cv-section h2 {
-  margin-bottom: 18px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  font-weight: 400;
-  letter-spacing: 0.14em;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--cv-accent);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cv-h2-note {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--ink-3);
 }
 
 .cv-section > p {
-  max-width: 76ch;
   color: var(--ink-2);
 }
 
-.cv-cols {
+/* Habilidades: etiqueta en negrita a la izquierda, valores a la derecha */
+.cv-skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: 30px 48px;
+  gap: 3px;
 }
 
-.cv-cols > div > h2 ~ h2 {
-  margin-top: 28px;
+.cv-skills div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.cv-skills dt {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cv-skills dd {
+  color: var(--ink-2);
+}
+
+.cv-bullets {
+  display: grid;
+  gap: 3px;
+}
+
+.cv-bullets li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--ink-2);
+}
+
+.cv-bullets li::before {
+  content: "\2022";
+  position: absolute;
+  left: 2px;
+  color: var(--ink-3);
 }
 
 /* ---------- Proyectos ---------- */
 
 .cv-project + .cv-project {
-  margin-top: 26px;
-  padding-top: 26px;
-  border-top: 1px solid var(--rule-soft);
+  margin-top: 14px;
 }
 
 .cv-project-head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 8px 16px;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  gap: 2px 16px;
 }
 
 .cv-project-head h3 {
-  font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
-.cv-meta {
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.06em;
-  color: var(--ink-3);
-}
-
-.cv-project > p {
-  max-width: 78ch;
-  color: var(--ink-2);
-}
-
-.cv-bullets {
-  display: grid;
-  gap: 7px;
-  margin-top: 14px;
-}
-
-.cv-bullets li {
-  position: relative;
-  padding-left: 18px;
-  font-size: var(--fs-small);
-  color: var(--ink-2);
-}
-
-.cv-bullets li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 8px;
-  height: 1px;
-  background: var(--ink-4);
+.cv-live {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--cv-accent);
 }
 
 .cv-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  margin-top: 14px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.04em;
+  gap: 6px;
   color: var(--ink-4);
 }
 
 .cv-links a {
   /* Relleno vertical para llegar al objetivo tactil de 24px sin cambiar el dibujo. */
   padding-block: 3px;
-  color: var(--ink-2);
-  overflow-wrap: anywhere;
+  font-weight: 500;
+  color: var(--cv-accent);
 }
 
-.cv-links a:hover {
-  color: var(--ink);
-}
-
-/* ---------- Listas ---------- */
-
-.cv-skills {
-  display: grid;
-  gap: 12px;
-}
-
-.cv-skills li {
-  display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  gap: 12px;
-  font-size: var(--fs-small);
+.cv-project > p {
   color: var(--ink-2);
 }
 
-.cv-skills b {
-  padding-top: 3px;
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.cv-project .cv-bullets {
+  margin-top: 2px;
+}
+
+.cv-stack {
   color: var(--ink-3);
 }
 
-.cv-plain {
-  display: grid;
-  gap: 6px;
-  font-size: var(--fs-small);
-  color: var(--ink-2);
-}
-
-.cv-plain li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.cv-plain li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 7px;
-  height: 1px;
-  background: var(--ink-4);
-}
-
-.cv-entry + .cv-entry {
-  margin-top: 18px;
-}
-
-.cv-entry b {
-  display: block;
+.cv-stack b {
   font-weight: 500;
   color: var(--ink);
 }
 
-.cv-entry .cv-meta {
-  display: block;
-  margin-top: 3px;
-}
-
-.cv-entry p {
-  margin-top: 6px;
-  font-size: var(--fs-small);
+/* Formacion y experiencia: una linea por entrada, como en el PDF */
+.cv-lines {
+  display: grid;
+  gap: 3px;
   color: var(--ink-2);
 }
 
-/* Enlace a la credencial: mismo trazo que los enlaces de proyecto. Al guardar
-   como PDF desde el navegador el vinculo se conserva y sigue siendo clicable. */
-.cv-verify {
-  display: inline-block;
-  margin-top: 6px;
-  padding-block: 3px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.04em;
-  color: var(--ink-2);
-}
-
-.cv-verify:hover {
+.cv-lines b {
+  font-weight: 500;
   color: var(--ink);
 }
 
-.cv-note {
-  margin-bottom: 16px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  color: var(--ink-3);
+.cv-lines a {
+  padding-block: 3px;
+  color: var(--cv-accent);
 }
 
-@media (max-width: 720px) {
-  .cv-head {
-    grid-template-columns: 64px minmax(0, 1fr);
-  }
+.cv-inline {
+  color: var(--ink-2);
+}
 
-  .cv-contact {
-    grid-column: 1 / -1;
-  }
-
-  .cv-skills li {
+@media (max-width: 640px) {
+  .cv-skills div {
     grid-template-columns: minmax(0, 1fr);
-    gap: 3px;
+    gap: 0;
+  }
+
+  .cv-skills div + div {
+    margin-top: 6px;
   }
 }
 
-/* ---------- Impresion: hoja clara, sin adornos ---------- */
+/* ---------- Impresion: la hoja del PDF ---------- */
 
 @media print {
   @page {
-    margin: 13mm;
+    size: A4;
+    margin: 11mm 13mm;
   }
 
   :root {
-    --ink: #101114;
-    --ink-2: #33363c;
-    --ink-3: #5f636b;
-    --ink-4: #8a8e96;
+    --ink: #111418;
+    --ink-2: #2b2f36;
+    --ink-3: #555a63;
+    --ink-4: #9aa0a8;
     --rule: #d7dade;
-    --rule-soft: #e6e8eb;
   }
 
   html,
   body {
     background: #fff !important;
-    color: #101114;
-    font-size: 10.5pt;
+    color: #111418;
+  }
+
+  .cv {
+    --cv-accent: #1f4e8c;
+    width: 100%;
+    max-width: none;
+    font-size: 8.6pt;
+    line-height: 1.45;
   }
 
   .cv-toolbar {
@@ -349,27 +273,47 @@
     padding: 0;
   }
 
-  .cv {
-    width: 100%;
-    max-width: none;
+  .cv-head h1 {
+    font-size: 20pt;
+    margin-bottom: 2px;
   }
 
-  .cv-photo {
-    border-color: #c8ccd1;
+  .cv-role {
+    font-size: 10.5pt;
+    margin-bottom: 4px;
+  }
+
+  .cv-section {
+    margin-top: 10px;
+  }
+
+  .cv-section h2 {
+    margin-bottom: 5px;
+    font-size: 8pt;
+  }
+
+  .cv-project + .cv-project {
+    margin-top: 7px;
+  }
+
+  .cv-project-head h3 {
+    font-size: 9pt;
+  }
+
+  .cv-live {
+    font-size: 7.4pt;
+  }
+
+  .cv-skills div {
+    grid-template-columns: 34mm minmax(0, 1fr);
   }
 
   .cv-section,
-  .cv-project,
-  .cv-entry {
+  .cv-project {
     break-inside: avoid;
   }
 
-  a {
-    color: #101114 !important;
+  .cv a:hover {
     text-decoration: none;
-  }
-
-  .cv-links a {
-    color: #33363c !important;
   }
 }
