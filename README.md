@@ -149,5 +149,10 @@ cacheados una semana en el borde de Cloudflare. Por eso las referencias llevan
 todas las paginas, o el navegador seguira usando el archivo viejo hasta que
 expire el cache.
 
+Lo que esta en `assets/` se cachea un ano como inmutable y no lleva version:
+una imagen que cambia tiene que cambiar de nombre (por ejemplo
+`og-image-2026-09.png`). Si se reemplaza conservando el nombre, Cloudflare y
+los navegadores siguen mostrando la vieja; el CI lo rechaza en cada PR.
+
 La version es la fecha del cambio en formato `AAAAMMDD`, con una letra al final
 cuando hay mas de un cambio el mismo dia. La actual es `20260919`.

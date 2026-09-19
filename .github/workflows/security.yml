@@ -39,6 +39,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # assets/ se cachea un ano como inmutable (ver _headers). Si una imagen
+      # se reemplaza conservando el nombre, Cloudflare y los navegadores siguen
+      # sirviendo la vieja. Un asset que cambia tiene que cambiar de nombre.
+      - name: Ningun asset reemplazado con el mismo nombre
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          pisados=$(git diff --name-only --diff-filter=M "origin/${{ github.base_ref }}...HEAD" -- assets/ || true)
+          if [ -n "$pisados" ]; then
+            echo "::error::Assets modificados sin cambiar el nombre (quedarian cacheados en su version vieja):"
+            echo "$pisados"
+            exit 1
+          fi
+          echo "OK: ningun asset pisado."
 
       - name: Ningun archivo de credenciales rastreado
         run: |
