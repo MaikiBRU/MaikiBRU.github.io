@@ -1,17 +1,15 @@
-# Cabeceras aplicadas por Cloudflare Pages. GitHub Pages las ignora sin romper
-# nada, y por eso cada pagina lleva ademas su propia CSP en <meta>: la politica
-# viaja con el HTML y vale en los dos alojamientos.
+# Cabeceras de seguridad y cache que aplica Cloudflare Pages.
 #
 # script-src y connect-src permiten explicitamente el beacon de Cloudflare Web
 # Analytics, que Cloudflare inyecta en la respuesta. Sin esas dos excepciones la
 # politica lo bloquea y las visitas no se registran.
 #
-# No se declara Cross-Origin-Embedder-Policy: require-corp bloquearia la hoja de
-# estilos de Google Fonts, que no se sirve con CORS. Se deja anotado en lugar de
-# ponerlo y romper la tipografia.
+# Las tipografias se sirven desde el propio dominio (assets/fonts), asi que
+# style-src y font-src quedan en 'self': ningun tercero puede inyectar estilos
+# ni fuentes.
 
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff

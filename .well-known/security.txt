@@ -2,7 +2,8 @@
 # Vulnerability disclosure channel (RFC 9116).
 #
 # Alcance / Scope: aaronbrumat.com.ar y sus subdominios
-# (datacenter.aaronbrumat.com.ar, barberapp.aaronbrumat.com.ar).
+# (datacenter.aaronbrumat.com.ar, barberapp.aaronbrumat.com.ar,
+# stockarg.aaronbrumat.com.ar).
 
 Contact: mailto:aaronbru.dev@gmail.com
 Expires: 2027-09-02T00:00:00.000Z

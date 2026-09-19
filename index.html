@@ -3,22 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Politica de seguridad de contenido de respaldo. Cloudflare Pages la
-         manda como cabecera desde _headers; GitHub Pages ignora ese archivo,
-         asi que la politica viaja tambien en el HTML y vale en los dos
-         alojamientos. frame-ancestors no se aplica desde <meta>: contra el
-         enmarcado actua X-Frame-Options, que si llega por cabecera. -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-src 'none'; child-src 'none'; worker-src 'none'; object-src 'none'; media-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; upgrade-insecure-requests"
-    />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <title>Aaron Brumat — Software Developer | Backend, APIs y Datos</title>
+    <title>Aaron Brumat — Desarrollador de Software | Linux, Infraestructura IT y Soporte</title>
     <meta
       name="description"
-      content="Software Developer en Rosario, Argentina. Full-stack con Python, FastAPI, PostgreSQL y Next.js. Data Center y BarberApp, en producción y con demo sin registro."
+      content="Desarrollador de software en Rosario, Argentina. Construyo, despliego y opero aplicaciones web en producción —Data Center, BarberApp y StockARG— con Python, PostgreSQL, Next.js, Docker y servidores Linux en AWS."
     />
     <meta name="author" content="Aaron Brumat" />
     <meta name="theme-color" content="#0d0d0f" />
@@ -29,35 +19,38 @@
     <meta property="og:site_name" content="Aaron Brumat" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content="https://aaronbrumat.com.ar/" />
-    <meta property="og:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
+    <meta property="og:title" content="Aaron Brumat — Desarrollador de Software | Linux, Infraestructura IT y Soporte" />
     <meta
       property="og:description"
-      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp, en producción y con demo sin registro."
+      content="Construyo, despliego y opero aplicaciones web en producción: Python, PostgreSQL y Next.js sobre servidores Ubuntu en AWS con Docker y Caddy. Data Center, BarberApp y StockARG, con demo sin registro."
     />
     <meta property="og:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Aaron Brumat — Software Developer. Backend, APIs y datos." />
+    <meta property="og:image:alt" content="Aaron Brumat — Desarrollador de Software. Linux, Infraestructura IT y Soporte." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aaron Brumat — Software Developer | Backend, APIs y Datos" />
+    <meta name="twitter:title" content="Aaron Brumat — Desarrollador de Software | Linux, Infraestructura IT y Soporte" />
     <meta
       name="twitter:description"
-      content="Aplicaciones full-stack con Python, FastAPI, PostgreSQL, Next.js y Docker. Data Center y BarberApp en producción, con demo sin registro."
+      content="Construyo, despliego y opero aplicaciones web en producción: Python, PostgreSQL y Next.js sobre servidores Ubuntu en AWS. Data Center, BarberApp y StockARG, con demo sin registro."
     />
     <meta name="twitter:image" content="https://aaronbrumat.com.ar/assets/og-image.png" />
 
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
-    />
-    <link rel="stylesheet" href="css/base.css?v=20260916" />
-    <link rel="stylesheet" href="css/components.css?v=20260916" />
-    <link rel="stylesheet" href="css/sections.css?v=20260916" />
+    <!-- Las fuentes del primer pantallazo se piden en paralelo con el CSS -->
+    <link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/fonts.css?v=20260919" />
+    <link rel="stylesheet" href="css/base.css?v=20260919" />
+    <link rel="stylesheet" href="css/components.css?v=20260919" />
+    <link rel="stylesheet" href="css/sections.css?v=20260919" />
+
+    <!-- Sincronico a proposito: decide el idioma antes del primer pintado para
+         que un visitante en ingles no vea el texto en espanol y despues el salto. -->
+    <script src="js/lang-boot.js?v=20260919"></script>
 
     <script type="application/ld+json">
       {
@@ -65,7 +58,8 @@
         "@type": "Person",
         "name": "Aaron Brumat",
         "url": "https://aaronbrumat.com.ar/",
-        "jobTitle": "Software Developer",
+        "jobTitle": "Desarrollador de Software",
+        "description": "Desarrollador de software con perfil en Linux, infraestructura IT y soporte. Construye, despliega y opera aplicaciones web en producción.",
         "email": "mailto:aaronbru.dev@gmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -85,14 +79,25 @@
         "knowsAbout": [
           "Python",
           "FastAPI",
-          "SQL",
           "PostgreSQL",
+          "SQL",
           "TypeScript",
           "Next.js",
-          "Docker",
-          "Linux",
           "REST APIs",
-          "Data Quality"
+          "Linux",
+          "Ubuntu Server",
+          "Bash",
+          "systemd",
+          "Docker",
+          "Docker Compose",
+          "AWS EC2",
+          "Caddy",
+          "Cloudflare",
+          "TCP/IP",
+          "DNS",
+          "TLS",
+          "Web Application Security",
+          "IT Support"
         ]
       }
     </script>
@@ -107,17 +112,18 @@
 
         <nav class="nav-links" id="nav-links" aria-label="Secciones">
           <a href="#proyectos" data-nav><sup>01</sup><span data-i18n="nav_projects">Proyectos</span></a>
-          <a href="#stack" data-nav><sup>02</sup><span data-i18n="nav_stack">Stack</span></a>
-          <a href="#perfil" data-nav><sup>03</sup><span data-i18n="nav_about">Perfil</span></a>
-          <a href="#trayectoria" data-nav><sup>04</sup><span data-i18n="nav_track">Trayectoria</span></a>
-          <a href="#contacto" data-nav><sup>05</sup><span data-i18n="nav_contact">Contacto</span></a>
+          <a href="#infraestructura" data-nav><sup>02</sup><span data-i18n="nav_infra">Infraestructura</span></a>
+          <a href="#stack" data-nav><sup>03</sup><span data-i18n="nav_stack">Stack</span></a>
+          <a href="#perfil" data-nav><sup>04</sup><span data-i18n="nav_about">Perfil</span></a>
+          <a href="#trayectoria" data-nav><sup>05</sup><span data-i18n="nav_track">Trayectoria</span></a>
+          <a href="#contacto" data-nav><sup>06</sup><span data-i18n="nav_contact">Contacto</span></a>
         </nav>
 
         <div class="nav-actions">
           <button class="link link--quiet is-desktop" id="lang-toggle" type="button">EN</button>
           <a class="link link--quiet is-desktop" href="cv.html" data-i18n="nav_cv">CV</a>
           <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-            <span data-i18n="nav_menu">Menu</span><i aria-hidden="true"></i>
+            <span data-i18n="nav_menu">Menú</span><i aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -125,10 +131,11 @@
 
     <div class="mobile-menu" id="mobile-menu" hidden>
       <a class="mobile-link" href="#proyectos"><span class="num">01</span><span data-i18n="nav_projects">Proyectos</span></a>
-      <a class="mobile-link" href="#stack"><span class="num">02</span><span data-i18n="nav_stack">Stack</span></a>
-      <a class="mobile-link" href="#perfil"><span class="num">03</span><span data-i18n="nav_about">Perfil</span></a>
-      <a class="mobile-link" href="#trayectoria"><span class="num">04</span><span data-i18n="nav_track">Trayectoria</span></a>
-      <a class="mobile-link" href="#contacto"><span class="num">05</span><span data-i18n="nav_contact">Contacto</span></a>
+      <a class="mobile-link" href="#infraestructura"><span class="num">02</span><span data-i18n="nav_infra">Infraestructura</span></a>
+      <a class="mobile-link" href="#stack"><span class="num">03</span><span data-i18n="nav_stack">Stack</span></a>
+      <a class="mobile-link" href="#perfil"><span class="num">04</span><span data-i18n="nav_about">Perfil</span></a>
+      <a class="mobile-link" href="#trayectoria"><span class="num">05</span><span data-i18n="nav_track">Trayectoria</span></a>
+      <a class="mobile-link" href="#contacto"><span class="num">06</span><span data-i18n="nav_contact">Contacto</span></a>
       <div class="mobile-foot">
         <a class="link link--quiet" href="cv.html" data-i18n="nav_cv">CV</a>
         <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -140,39 +147,86 @@
     <main id="contenido">
       <!-- ============ HERO ============ -->
       <section class="hero wrap" id="inicio">
-        <p class="kicker hero-kicker">
-          <span data-i18n="hero_role_a">Software Developer</span>
-          <span aria-hidden="true">—</span>
-          <span data-i18n="hero_role_b">Backend, APIs y datos</span>
-        </p>
+        <div class="hero-grid">
+          <div class="hero-main">
+            <p class="kicker hero-kicker" data-i18n="hero_kicker">Desarrollador de Software · Linux · Infraestructura IT · Soporte</p>
 
-        <h1>Aaron<br /><em>Brumat</em></h1>
+            <h1>Aaron<br /><em>Brumat</em></h1>
 
-        <p class="hero-lead" data-i18n-rich="hero_pitch">Construyo aplicaciones completas con Python y TypeScript: APIs REST, modelos de datos en PostgreSQL y frontends en Next.js. Es decir, el motor que procesa la información, la base donde queda guardada y la pantalla desde la que se usa. Estoy terminando la carrera de <strong>Técnico Desarrollador de Software</strong> y llevo cada proyecto hasta dejarlo desplegado, probado y funcionando.</p>
+            <p class="hero-lead" data-i18n-rich="hero_pitch">Estudiante del último año de la **Tecnicatura en Desarrollo de Software**. Hago aplicaciones web completas y también me ocupo de lo que las mantiene funcionando: los servidores donde corren, su seguridad y qué hacer cuando algo falla. Tres de ellas están en uso real y se pueden probar sin registrarse.</p>
 
-        <div class="link-row hero-links">
-          <a class="link" href="#proyectos"><span data-i18n="hero_cta_projects">Ver proyectos</span><span class="arrow" aria-hidden="true">↓</span></a>
-          <a class="link link--live" href="https://datacenter.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">
-            <span data-i18n="hero_cta_demo">Probar Data Center</span><span class="arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">
-            GitHub<span class="arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="link link--quiet" href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">
-            LinkedIn<span class="arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="link link--quiet" href="cv.html"><span data-i18n="hero_link_cv">CV</span></a>
+            <div class="link-row hero-links">
+              <a class="link" href="#proyectos"><span data-i18n="hero_cta_projects">Ver proyectos</span><span class="arrow" aria-hidden="true">↓</span></a>
+              <a class="link link--quiet" href="#infraestructura"><span data-i18n="hero_cta_infra">Ver infraestructura</span><span class="arrow" aria-hidden="true">↓</span></a>
+              <a class="link link--quiet" href="https://github.com/MaikiBRU" target="_blank" rel="noopener noreferrer">
+                GitHub<span class="arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="link link--quiet" href="https://www.linkedin.com/in/aaronbrumat/" target="_blank" rel="noopener noreferrer">
+                LinkedIn<span class="arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="link link--quiet" href="cv.html"><span data-i18n="hero_link_cv">CV</span></a>
+            </div>
+          </div>
+
+          <!-- Lado derecho: que puestos puedo cubrir y la evidencia de que lo que
+               muestro esta andando. Las lineas de estado son un dato: si un
+               servicio deja de estar en produccion, hay que sacarlo de aca. -->
+          <aside class="hero-aside" aria-label="Perfil y servicios en producción" data-i18n-aria="hero_aside_aria">
+            <div class="hero-block">
+              <p class="kicker" data-i18n="fit_title">Dónde encajo</p>
+              <dl class="fit">
+                <div class="fit-row">
+                  <dt data-i18n="fit_1_title">Desarrollo de software</dt>
+                  <dd data-i18n="fit_1_text">3 aplicaciones full-stack en producción y más de 900 pruebas automatizadas.</dd>
+                </div>
+                <div class="fit-row">
+                  <dt data-i18n="fit_2_title">Administración de sistemas</dt>
+                  <dd data-i18n="fit_2_text">Servidores Ubuntu en AWS EC2: SSH, usuarios, permisos, UFW y systemd. Linux Essentials de Cisco.</dd>
+                </div>
+                <div class="fit-row">
+                  <dt data-i18n="fit_3_title">Infraestructura / DevOps</dt>
+                  <dd data-i18n="fit_3_text">Docker Compose, Caddy con HTTPS, Cloudflare y despliegues con backup y migraciones.</dd>
+                </div>
+                <div class="fit-row">
+                  <dt data-i18n="fit_4_title">Soporte / Help desk</dt>
+                  <dd data-i18n="fit_4_text">Diagnóstico por logs, redes en curso con Cisco y experiencia real de atención al cliente.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="hero-block">
+              <p class="kicker" data-i18n="status_title">Servicios en producción</p>
+              <ul class="status">
+                <li>
+                  <a href="https://datacenter.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">
+                    <span class="status-host">datacenter.aaronbrumat.com.ar</span>
+                    <span class="status-state sig-live">active (running)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://barberapp.aaronbrumat.com.ar/demo" target="_blank" rel="noopener noreferrer">
+                    <span class="status-host">barberapp.aaronbrumat.com.ar</span>
+                    <span class="status-state sig-live">active (running)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://stockarg.aaronbrumat.com.ar" target="_blank" rel="noopener noreferrer">
+                    <span class="status-host">stockarg.aaronbrumat.com.ar</span>
+                    <span class="status-state sig-live">active (running)</span>
+                  </a>
+                </li>
+              </ul>
+              <p class="status-foot">Ubuntu · AWS EC2 · Caddy · Docker Compose · PostgreSQL 16</p>
+            </div>
+          </aside>
         </div>
 
         <div class="hero-foot">
           <p class="hero-stack">
-            <b>Python</b> · <b>FastAPI</b> · <b>PostgreSQL</b> · <b>SQL</b> · <b>TypeScript</b> · <b>Next.js</b> ·
-            <b>Docker</b> · <b>Linux</b> · <b>Git</b>
+            <b>Python</b> · <b>FastAPI</b> · <b>PostgreSQL</b> · <b>TypeScript</b> · <b>Next.js</b> · <b>Linux</b> ·
+            <b>Docker</b> · <b>AWS EC2</b> · <b data-i18n="hero_stack_net">Redes</b>
           </p>
-          <p class="hero-status">
-            <span class="dot dot--pulse" aria-hidden="true"></span>
-            <span data-i18n="hero_tag">Rosario, Argentina — disponible para trabajar</span>
-          </p>
+          <p class="hero-status sig-live" data-i18n="hero_tag">Rosario, Argentina — disponible para trabajar</p>
         </div>
       </section>
 
@@ -180,30 +234,30 @@
       <section class="section" id="proyectos">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">01</span><span data-i18n="projects_eyebrow">Proyectos</span></p>
+            <p class="kicker" data-i18n="projects_eyebrow">Proyectos</p>
             <h2 data-i18n="projects_title">Sistemas que construí de punta a punta</h2>
             <p class="lead" data-i18n="projects_lead">
               Cada uno arranca en un problema concreto y termina en algo que funciona: modelo de datos, API, interfaz,
-              pruebas y despliegue. Los enlaces llevan al código real y, cuando existe, a la aplicación en vivo.
+              pruebas, despliegue y operación en un servidor propio. Los enlaces llevan al código real y a la aplicación
+              en vivo.
             </p>
           </div>
 
           <div class="projects">
-            <!-- ---------- 01 · Data Center ---------- -->
+            <!-- ---------- Data Center ---------- -->
             <article class="project" aria-labelledby="p-dc-title">
               <div class="project-head reveal">
                 <div>
                   <p class="project-index">
-                    <span class="num sig-live">01</span>
                     <span data-i18n="p_dc_kind">Full-stack · Calidad de datos</span>
-                    <span class="live sig-live"><span class="dot dot--pulse" aria-hidden="true"></span><span data-i18n="badge_live">En producción</span></span>
+                    <span class="live sig-live" data-i18n="badge_live">En producción</span>
                   </p>
                   <h3 id="p-dc-title">Data Center</h3>
-                  <p class="project-lead" data-i18n="p_dc_tagline">Plataforma de monitoreo de calidad de datos para operaciones de ecommerce y logística: analiza datasets, detecta anomalías y convierte los hallazgos en incidencias con responsable y SLA. En concreto, revisa archivos de pedidos y envíos, encuentra los registros mal cargados y genera una tarea para que alguien los corrija.</p>
+                  <p class="project-lead" data-i18n="p_dc_tagline">Una plataforma que revisa los datos de pedidos y envíos de un negocio online, encuentra los que están mal cargados y los convierte en tareas para que alguien los corrija, con responsable y fecha límite. Está hecha con Python y Next.js, y se puede probar sin crear una cuenta.</p>
                   <p class="project-figures">
-                    <span><b>226</b> <span data-i18n="p_dc_fig_1">tests automatizados</span></span>
-                    <span><b>50+</b> <span data-i18n="p_dc_fig_2">endpoints REST</span></span>
-                    <span><b>45 min</b> <span data-i18n="p_dc_fig_3">sandbox sin registro</span></span>
+                    <span><b>226</b> <span data-i18n="p_dc_fig_1">pruebas automatizadas</span></span>
+                    <span><b>50+</b> <span data-i18n="p_dc_fig_2">funciones en su API</span></span>
+                    <span><b>45 min</b> <span data-i18n="p_dc_fig_3">de demo sin registrarse</span></span>
                   </p>
                 </div>
                 <div class="project-actions">
@@ -259,34 +313,30 @@
               <div class="project-story reveal">
                 <div>
                   <h4 data-i18n="label_problem">El problema</h4>
-                  <p data-i18n="p_dc_problem">
-                    Un pedido con precio negativo, una dirección sin número o un peso imposible no rompen nada hasta que
-                    rompen la operación. Sin una vista única de la calidad de cada dataset, esos registros aparecen
-                    tarde, nadie queda a cargo de corregirlos y no hay forma de saber si la situación mejora o empeora.
-                  </p>
+                  <p data-i18n="p_dc_problem">Un pedido con precio negativo, una dirección sin número o un peso imposible parecen detalles, hasta que frenan una entrega o un cobro. Si nadie los ve a tiempo y nadie queda a cargo de corregirlos, los errores se acumulan y no hay forma de saber si la situación mejora o empeora.</p>
                 </div>
                 <div>
                   <h4 data-i18n="label_solution">La solución</h4>
-                  <p data-i18n="p_dc_solution">Un motor de reglas por dominio valida cada dataset, puntúa su calidad, detecta valores estadísticamente extremos y transforma los hallazgos en incidencias con severidad, responsable y plazo. Para que cualquiera pueda evaluarlo sin fricción, la ruta pública crea un sandbox temporal y aislado —una copia de prueba que no toca los datos reales— ya poblada con datos analizados, que se borra sola al expirar.</p>
+                  <p data-i18n="p_dc_solution">Cada archivo que se carga pasa por un control automático: se revisan las reglas del negocio, se marcan los valores que no tienen sentido y cada problema se convierte en una tarea con prioridad, responsable y plazo. Un panel muestra cómo evoluciona la calidad de los datos. Para probarla, la demo crea un espacio propio con datos de ejemplo que se borra solo al terminar.</p>
                 </div>
               </div>
 
               <dl class="spec project-spec reveal">
                 <div class="spec-row">
                   <dt data-i18n="spec_dc_1_k">Datasets</dt>
-                  <dd data-i18n="spec_dc_1_v">Carga de CSV o generación, validación de esquema contra el dominio, vista previa y corridas de calidad con historial. Antes de analizar nada, el sistema comprueba que el archivo tenga las columnas que dice tener.</dd>
+                  <dd data-i18n="spec_dc_1_v">Carga de archivos CSV, control de que tengan las columnas esperadas, vista previa e historial de cada revisión.</dd>
                 </div>
                 <div class="spec-row">
                   <dt data-i18n="spec_dc_2_k">Calidad y anomalías</dt>
-                  <dd data-i18n="spec_dc_2_v">Reglas por dominio con severidad declarada y detección de outliers por z-score modificado. Además de lo que rompe una regla, marca los valores que se apartan tanto del resto que casi seguro son un error de carga.</dd>
+                  <dd data-i18n="spec_dc_2_v">Reglas por tipo de dato, cada una con su gravedad, más un detector de valores atípicos que marca los registros que casi seguro son un error de carga.</dd>
                 </div>
                 <div class="spec-row">
                   <dt data-i18n="spec_dc_3_k">Casos</dt>
-                  <dd data-i18n="spec_dc_3_v">Workflow de incidentes con estados, SLA, timeline, notas y exportes. Cada problema detectado se convierte en una tarea con responsable, plazo e historial de lo que se hizo.</dd>
+                  <dd data-i18n="spec_dc_3_v">Cada problema se convierte en una tarea con estado, plazo, responsable, notas e historial, y se puede exportar.</dd>
                 </div>
                 <div class="spec-row">
                   <dt data-i18n="spec_dc_4_k">Acceso</dt>
-                  <dd data-i18n="spec_dc_4_v">Autenticación local y con Google, roles, auditoría de usuarios y sandbox anónimo en paralelo. Cada persona ve solo lo que le corresponde, y quien entra sin cuenta trabaja en un espacio aparte.</dd>
+                  <dd data-i18n="spec_dc_4_v">Inicio de sesión con usuario o con Google, roles y registro de lo que hace cada usuario. Quien entra a la demo trabaja en un espacio separado de los datos reales.</dd>
                 </div>
                 <div class="spec-row">
                   <dt data-i18n="label_backend">Backend</dt>
@@ -305,50 +355,46 @@
               <div class="notes reveal">
                 <div class="notes-head">
                   <h4 data-i18n="label_decisions">Decisiones técnicas</h4>
-                  <p data-i18n="p_dc_decisions_note">Tres cambios que cambiaron lo que el sistema afirma.</p>
+                  <p data-i18n="p_dc_decisions_note">Tres cambios para que lo que muestra el sistema sea confiable.</p>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">01</span>
                   <div>
-                    <h5 data-i18n="p_dc_note_1_title">Métricas auditables en lugar de estimadas</h5>
-                    <p data-i18n="p_dc_note_1_text">El dashboard mostraba un impacto en dólares calculado con constantes sin origen y un score de riesgo que llegaba a 100 sobre un dataset mayormente limpio. Los reemplacé por conteos de filas distintas. Dicho simple: antes el panel mostraba una cifra que nadie podía comprobar; ahora todo lo que muestra se puede contar a mano en el archivo.</p>
-                    <code data-i18n="p_dc_note_1_code">quality = 100 x (1 - filas_afectadas / filas_totales)</code>
+                    <h5 data-i18n="p_dc_note_1_title">Números que se pueden comprobar</h5>
+                    <p data-i18n="p_dc_note_1_text">El panel mostraba un impacto en dólares y un puntaje de riesgo que salían de valores inventados: sobre un archivo casi limpio, el riesgo daba 100. Los reemplacé por conteos simples de filas con problemas. Ahora cada número del panel se puede verificar a mano contra el archivo.</p>
+                    <code data-i18n="p_dc_note_1_code">calidad = % de filas sin ningún problema</code>
                   </div>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">02</span>
                   <div>
-                    <h5 data-i18n="p_dc_note_2_title">Mediana y MAD en vez de media y desvío</h5>
-                    <p data-i18n="p_dc_note_2_text">El detector de anomalías calculaba media y desvío sobre la muestra ya contaminada, así que los propios valores extremos inflaban el umbral y quedaban dentro. Con z-score modificado sobre mediana y MAD la detección se mantiene estable aunque un tercio de los datos esté contaminado. En otras palabras: el método anterior se dejaba engañar por los errores que tenía que encontrar.</p>
-                    <code data-i18n="p_dc_note_2_code">z = (x - mediana) / (1.4826 x MAD) — |z| &gt;= 3.5</code>
+                    <h5 data-i18n="p_dc_note_2_title">Un detector que no se deja engañar</h5>
+                    <p data-i18n="p_dc_note_2_text">El detector de valores raros comparaba cada dato contra el promedio, y el promedio se deformaba justamente por los errores que tenía que encontrar: cuantos más errores había, menos detectaba. Lo cambié para que compare contra la mediana, que no se mueve por unos pocos valores extremos, y ahora sigue funcionando aunque una parte grande de los datos esté mal.</p>
+                    <code data-i18n="p_dc_note_2_code">promedio → mediana: los errores ya no esconden a otros errores</code>
                   </div>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">03</span>
                   <div>
-                    <h5 data-i18n="p_dc_note_3_title">Un sandbox público que falla cerrado</h5>
-                    <p data-i18n="p_dc_note_3_text">La demo comparte base con la aplicación autenticada, así que el aislamiento no puede depender de recordar protegerlo. La partición vive en columnas del modelo y la dependencia de sesión rechaza los tokens de demo. La idea: si mañana agrego una función y me olvido de protegerla, queda cerrada por defecto en lugar de quedar expuesta.</p>
+                    <h5 data-i18n="p_dc_note_3_title">Una demo pública que no puede tocar los datos reales</h5>
+                    <p data-i18n="p_dc_note_3_text">La demo usa la misma base que la aplicación real, así que el aislamiento no podía depender de acordarme de protegerlo en cada función nueva. La separación está en el propio modelo de datos y el acceso de la demo está denegado por defecto: si mañana agrego algo y me olvido de protegerlo, queda cerrado en vez de expuesto.</p>
                     <code data-i18n="p_dc_note_3_code">404, no 403: la respuesta no confirma ids ajenos</code>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- ---------- 02 · BarberApp ---------- -->
+            <!-- ---------- BarberApp ---------- -->
             <article class="project" aria-labelledby="p-ba-title">
               <div class="project-head reveal">
                 <div>
                   <p class="project-index">
-                    <span class="num sig-live">02</span>
                     <span data-i18n="p_ba_kind">Full-stack · Reservas y agenda</span>
-                    <span class="live sig-live"><span class="dot dot--pulse" aria-hidden="true"></span><span data-i18n="badge_live">En producción</span></span>
+                    <span class="live sig-live" data-i18n="badge_live">En producción</span>
                   </p>
                   <h3 id="p-ba-title">BarberApp</h3>
-                  <p class="project-lead" data-i18n="p_ba_tagline">Plataforma de turnos para una barbería: el cliente reserva sobre disponibilidad calculada en el momento, el barbero trabaja su agenda del día y el dueño administra servicios, personal y horarios. En concreto, reemplaza la ida y vuelta por mensajes con una grilla que solo ofrece horarios que están realmente libres.</p>
+                  <p class="project-lead" data-i18n="p_ba_tagline">Un sistema de turnos para barberías: el cliente reserva online eligiendo entre horarios que están realmente libres, el barbero ve su agenda del día y el dueño administra servicios, personal y horarios. Reemplaza la coordinación por mensajes, que termina en turnos pisados. Hecho con Python y Next.js, y se puede probar sin registrarse.</p>
                   <p class="project-figures">
                     <span><b>143</b> <span data-i18n="p_ba_fig_1">pruebas automatizadas</span></span>
                     <span><b>3</b> <span data-i18n="p_ba_fig_2">roles con permisos distintos</span></span>
-                    <span><b>45 min</b> <span data-i18n="p_ba_fig_3">sandbox sin registro</span></span>
+                    <span><b>45 min</b> <span data-i18n="p_ba_fig_3">de demo sin registrarse</span></span>
                   </p>
                 </div>
                 <div class="project-actions">
@@ -415,7 +461,7 @@
                 </div>
                 <div>
                   <h4 data-i18n="label_solution">La solución</h4>
-                  <p data-i18n="p_ba_solution">El servidor calcula qué horarios quedan libres a partir de los horarios de atención, la duración del servicio con sus extras, los turnos ya tomados y las ausencias del barbero. Al confirmar vuelve a validar el horario elegido, y si dos personas lo piden a la vez la propia base de datos rechaza la segunda. Para poder probarlo sin registrarse, la ruta pública crea una barbería temporal y aislada, ya poblada, que se borra sola al expirar.</p>
+                  <p data-i18n="p_ba_solution">El sistema calcula qué horarios quedan libres según el horario de atención, cuánto dura cada servicio, los turnos ya tomados y las ausencias del barbero. Si dos personas intentan reservar el mismo horario al mismo tiempo, solo una lo consigue. La demo crea una barbería de prueba, con datos, que se borra sola al terminar.</p>
                 </div>
               </div>
 
@@ -453,10 +499,9 @@
               <div class="notes reveal">
                 <div class="notes-head">
                   <h4 data-i18n="label_decisions">Decisiones técnicas</h4>
-                  <p data-i18n="p_ba_decisions_note">Tres decisiones sobre dónde tiene que vivir una garantía.</p>
+                  <p data-i18n="p_ba_decisions_note">Dos reglas que no dependen de que la pantalla las respete.</p>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">01</span>
                   <div>
                     <h5 data-i18n="p_ba_note_1_title">El solapamiento lo rechaza la base, no el código</h5>
                     <p data-i18n="p_ba_note_1_text">Verificar antes de insertar deja una ventana: dos reservas simultáneas pueden pasar la comprobación y escribirse las dos. Una restricción de exclusión sobre el rango de tiempo cierra esa ventana dentro del motor, y el servicio traduce el rechazo en un mensaje. Dicho simple: aunque el código tuviera un error, la base no acepta dos turnos pisados para el mismo barbero.</p>
@@ -464,39 +509,29 @@
                   </div>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">02</span>
                   <div>
                     <h5 data-i18n="p_ba_note_2_title">El cliente no decide de quién es el turno</h5>
                     <p data-i18n="p_ba_note_2_text">La versión anterior aceptaba el identificador del cliente y la duración dentro del pedido, así que cualquiera podía reservar a nombre de otro o pedir un turno de cinco minutos para un servicio de una hora. Ahora el dueño sale del token y la duración se calcula del catálogo. En otras palabras: el navegador dejó de poder afirmar cosas que le convienen.</p>
                     <code data-i18n="p_ba_note_2_code">duración = servicio + extras · dueño = token, no el cuerpo</code>
                   </div>
                 </div>
-                <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">03</span>
-                  <div>
-                    <h5 data-i18n="p_ba_note_3_title">Un error que SQLite no podía encontrar</h5>
-                    <p data-i18n="p_ba_note_3_text">La columna que identifica al inquilino era de 36 caracteres, medida para un UUID, pero el identificador de una demo tiene 43. Las pruebas corren sobre SQLite, que ignora el largo de los textos, así que las 143 pasaban y el error apareció recién en la primera sesión en producción. Agregué una prueba que compara el identificador generado contra el largo real de la columna.</p>
-                    <code data-i18n="p_ba_note_3_code">shop_id VARCHAR(36) → VARCHAR(64)</code>
-                  </div>
-                </div>
               </div>
             </article>
 
-            <!-- ---------- 03 · StockARG ---------- -->
+            <!-- ---------- StockARG ---------- -->
             <article class="project" aria-labelledby="p-sa-title">
               <div class="project-head reveal">
                 <div>
                   <p class="project-index">
-                    <span class="num sig-live">03</span>
                     <span data-i18n="p_sa_kind">Full-stack · Comercio y punto de venta</span>
-                    <span class="live sig-live"><span class="dot dot--pulse" aria-hidden="true"></span><span data-i18n="badge_live">En producción</span></span>
+                    <span class="live sig-live" data-i18n="badge_live">En producción</span>
                   </p>
                   <h3 id="p-sa-title">StockARG</h3>
-                  <p class="project-lead" data-i18n="p_sa_tagline">Sistema de gestión para un comercio: punto de venta con lector de código de barras, stock con alertas, clientes, proveedores, compras y reportes, con tres roles. En concreto, reemplaza las planillas sueltas por un mostrador que cobra, descuenta el stock y deja registro de cada movimiento.</p>
+                  <p class="project-lead" data-i18n="p_sa_tagline">Un sistema de gestión para comercios: cobra en el mostrador con lector de código de barras, descuenta el stock solo, avisa lo que se está por terminar o vencer y deja registro de cada movimiento. Reemplaza las planillas sueltas. Hecho con Python y Next.js, y se puede probar sin registrarse.</p>
                   <p class="project-figures">
-                    <span><b>537</b> <span data-i18n="p_sa_fig_1">tests automatizados</span></span>
+                    <span><b>537</b> <span data-i18n="p_sa_fig_1">pruebas automatizadas</span></span>
                     <span><b>3</b> <span data-i18n="p_sa_fig_2">roles con permisos propios</span></span>
-                    <span><b>45 min</b> <span data-i18n="p_sa_fig_3">sandbox sin registro</span></span>
+                    <span><b>45 min</b> <span data-i18n="p_sa_fig_3">de demo sin registrarse</span></span>
                   </p>
                 </div>
                 <div class="project-actions">
@@ -557,7 +592,7 @@
                 </div>
                 <div>
                   <h4 data-i18n="label_solution">La solución</h4>
-                  <p data-i18n="p_sa_solution">Una aplicación web con una API propia. Las reglas viven en el servidor y no en la pantalla: el total de cada venta lo calcula la API con los precios de lista, la venta y el descuento de stock se guardan juntos o no se guarda nada, y cada rol ve solo lo que puede usar. Para probarla sin registro, cada visitante recibe un comercio de ejemplo propio y aislado, que se borra solo al vencer.</p>
+                  <p data-i18n="p_sa_solution">Todo pasa por un solo sistema con tres perfiles —dueño, encargado y vendedor— y cada uno ve solo lo que le corresponde. Los precios y los totales los decide el sistema, no la pantalla, así que nadie puede cobrar de menos editando la página. Cada visitante de la demo recibe un comercio de ejemplo propio que se borra solo al terminar.</p>
                 </div>
               </div>
 
@@ -598,7 +633,6 @@
                   <p data-i18n="p_sa_decisions_note">Tres reglas que no dependen de que la pantalla las respete.</p>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">01</span>
                   <div>
                     <h5 data-i18n="p_sa_note_1_title">El total lo calcula el servidor</h5>
                     <p data-i18n="p_sa_note_1_text">El navegador manda solo qué productos y cuántos. El precio sale de la lista, el descuento del vendedor tiene un tope configurable y un total enviado desde afuera se rechaza con un error visible. Dicho simple: nadie puede cobrar menos editando la página.</p>
@@ -606,7 +640,6 @@
                   </div>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">02</span>
                   <div>
                     <h5 data-i18n="p_sa_note_2_title">Dos cerrojos para la demo pública</h5>
                     <p data-i18n="p_sa_note_2_text">Cada consulta filtra por la partición de la demo, y además la capa de datos agrega ese filtro sola y aborta cualquier escritura que cruce de partición. Si mañana una ruta nueva se olvida de filtrar, un visitante igual no puede ver ni tocar los datos reales.</p>
@@ -614,11 +647,10 @@
                   </div>
                 </div>
                 <div class="note">
-                  <span class="num sig-tech" aria-hidden="true">03</span>
                   <div>
-                    <h5 data-i18n="p_sa_note_3_title">"Hoy" es el día del comercio</h5>
-                    <p data-i18n="p_sa_note_3_text">Entre las 21 y las 24 de Argentina el día UTC ya es otro, así que las ventas de la noche caían en el reporte del día siguiente. Las fechas del negocio salen de la zona horaria del comercio, y hay tests que lo comprueban en ese horario.</p>
-                    <code data-i18n="p_sa_note_3_code">hoy = now(America/Argentina/Buenos_Aires).date()</code>
+                    <h5 data-i18n="p_sa_note_3_title">Dos cajas, una sola unidad</h5>
+                    <p data-i18n="p_sa_note_3_text">Si dos cajas venden la última unidad de un producto al mismo tiempo, las dos pueden ver que hay stock y descontarlo, y el comercio termina con stock negativo. Cada venta bloquea los productos que toca hasta terminar: la segunda espera, ve el stock real y se rechaza si ya no alcanza. La venta y el descuento se guardan juntos o no se guarda nada.</p>
+                    <code data-i18n="p_sa_note_3_code">SELECT … FOR UPDATE en la misma transacción que la venta</code>
                   </div>
                 </div>
               </div>
@@ -629,19 +661,121 @@
           <div class="minor reveal">
             <div class="minor-item">
               <h4><span data-i18n="p_pf_title">Este portfolio</span><span class="tag" data-i18n="badge_web">Sitio web</span></h4>
-              <p data-i18n="p_pf_text">HTML, CSS y JavaScript sin frameworks ni dependencias de terceros: todo lo que se sirve está en el repositorio, sin nada que compilar. Bilingüe español e inglés, imágenes en WebP y navegación accesible por teclado.</p>
+              <p data-i18n="p_pf_text">HTML, CSS y JavaScript sin frameworks ni dependencias de terceros: todo lo que se sirve está en el repositorio, incluidas las tipografías, sin nada que compilar. Bilingüe español e inglés, imágenes en WebP y navegación accesible por teclado.</p>
               <p class="mono minor-label" data-i18n="p_pf_sec_label">Seguridad</p>
               <ul class="minor-features">
                 <li data-i18n="p_pf_sec_1">Cabeceras propias: CSP, HSTS, nosniff, X-Frame-Options y Permissions-Policy.</li>
-                <li data-i18n="p_pf_sec_2">Cero dependencias de terceros: ningún paquete que auditar ni vulnerabilidad heredada.</li>
+                <li data-i18n="p_pf_sec_2">Cero dependencias de terceros: ningún paquete que auditar ni vulnerabilidad heredada, y ninguna fuente pedida a otro dominio.</li>
                 <li data-i18n="p_pf_sec_3">Formulario saneado contra inyección de encabezados, con campo trampa y tiempo mínimo de completado contra bots.</li>
                 <li data-i18n="p_pf_sec_4">Secretos fuera del repositorio, con escaneo de toda la historia de Git en cada push.</li>
-                <li data-i18n="p_pf_sec_5">HTTPS forzado y canal de reporte en /.well-known/security.txt.</li>
+                <li data-i18n="p_pf_sec_5">HTTPS forzado, 404 real y canal de reporte en /.well-known/security.txt.</li>
               </ul>
-              <span class="mono">HTML · CSS · JavaScript · Cloudflare Pages · GitHub Pages</span>
+              <span class="mono">HTML · CSS · JavaScript · Cloudflare Pages · GitHub Actions</span>
               <a class="link link--quiet" href="https://github.com/MaikiBRU/MaikiBRU.github.io" target="_blank" rel="noopener noreferrer">
                 <span data-i18n="btn_code">Ver código</span><span class="arrow" aria-hidden="true">↗</span>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ INFRAESTRUCTURA ============ -->
+      <section class="section" id="infraestructura">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="kicker" data-i18n="infra_eyebrow">Infraestructura y operación</p>
+            <h2 data-i18n="infra_title">Los servidores donde corren mis proyectos</h2>
+            <p class="lead" data-i18n="infra_lead">
+              Las tres aplicaciones corren en servidores Ubuntu que administro yo, en AWS EC2. No hay una plataforma que
+              lo resuelva por mí: el sistema operativo, el firewall, los servicios, el proxy con HTTPS, los respaldos y
+              los despliegues son parte del trabajo.
+            </p>
+          </div>
+
+          <div class="reveal">
+            <div class="notes-head">
+              <h3 data-i18n="arch_title">Arquitectura</h3>
+              <p data-i18n="arch_note">El recorrido de una petición, desde el navegador hasta la base de datos.</p>
+            </div>
+            <ol class="arch">
+              <li class="arch-node">
+                <span class="arch-k" data-i18n="arch_1_k">Visitante</span>
+                <strong data-i18n="arch_1_title">Navegador</strong>
+                <span class="arch-v" data-i18n="arch_1_v">HTTPS a cada subdominio: datacenter, barberapp y stockarg.</span>
+              </li>
+              <li class="arch-node">
+                <span class="arch-k" data-i18n="arch_2_k">Borde</span>
+                <strong>Cloudflare</strong>
+                <span class="arch-v" data-i18n="arch_2_v">DNS y TLS. El frontend Next.js corre en Workers y reenvía /api al servidor.</span>
+              </li>
+              <li class="arch-node">
+                <span class="arch-k" data-i18n="arch_3_k">Servidor</span>
+                <strong>AWS EC2 · Ubuntu</strong>
+                <span class="arch-v" data-i18n="arch_3_v">Acceso por SSH, usuarios y permisos, actualizaciones con apt y firewall con UFW.</span>
+              </li>
+              <li class="arch-node">
+                <span class="arch-k" data-i18n="arch_4_k">Proxy</span>
+                <strong>Caddy</strong>
+                <span class="arch-v" data-i18n="arch_4_v">Proxy inverso con HTTPS: cada subdominio llega a su aplicación.</span>
+              </li>
+              <li class="arch-node">
+                <span class="arch-k" data-i18n="arch_5_k">Servicios</span>
+                <strong>Docker Compose</strong>
+                <span class="arch-v" data-i18n="arch_5_v">API FastAPI y PostgreSQL 16, con base y usuario propios por aplicación.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="ops_title">Cómo lo opero</h3>
+              <p data-i18n="ops_note">Lo que hago en los servidores, con las mismas herramientas que un equipo de sistemas.</p>
+            </div>
+            <dl class="spec">
+              <div class="spec-row">
+                <dt data-i18n="ops_1_k">Sistema</dt>
+                <dd data-i18n="ops_1_v">Administro servidores Ubuntu en AWS EC2: acceso por SSH, usuarios y permisos, actualizaciones con apt y firewall con UFW.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="ops_2_k">Servicios</dt>
+                <dd data-i18n="ops_2_v">Gestiono los servicios con systemd y Docker Compose: qué corre, cómo arranca y cómo se reinicia después de un cambio.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="ops_3_k">Diagnóstico</dt>
+                <dd data-i18n="ops_3_v">Cuando algo falla, primero leo: logs del sistema con journalctl y logs de cada contenedor. Busco la causa antes de tocar nada.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="ops_4_k">Red y seguridad</dt>
+                <dd data-i18n="ops_4_v">DNS y proxy en Cloudflare, HTTPS con Caddy, solo los puertos necesarios abiertos y cabeceras CSP y HSTS en cada aplicación.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="ops_5_k">Respaldos</dt>
+                <dd data-i18n="ops_5_v">Backup de la base antes de cada despliegue, para poder volver a la versión anterior si algo sale mal.</dd>
+              </div>
+            </dl>
+            <p class="mono process-line">
+              <span data-i18n="deploy_label">Despliegue:</span>
+              <span data-i18n="deploy_1">backup de la base</span>
+              <span aria-hidden="true">&rarr;</span>
+              <span data-i18n="deploy_2">build de las imágenes</span>
+              <span aria-hidden="true">&rarr;</span>
+              <span data-i18n="deploy_3">migraciones con Alembic</span>
+              <span aria-hidden="true">&rarr;</span>
+              <span data-i18n="deploy_4">arranque de los servicios</span>
+              <span aria-hidden="true">&rarr;</span>
+              <span data-i18n="deploy_5">revisión de logs</span>
+            </p>
+          </div>
+
+          <div class="notes block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="diag_title">Fallas que diagnostiqué</h3>
+              <p data-i18n="diag_note">Síntoma, causa y arreglo de un problema real de producción.</p>
+            </div>
+            <div class="note">
+              <h4 data-i18n="diag_1_title">La demo de BarberApp fallaba solo en producción</h4>
+              <p data-i18n="diag_1_text">Las 143 pruebas pasaban, pero la primera sesión de demo en el servidor devolvía error. El log de la API mostraba que PostgreSQL rechazaba el identificador de la demo: medía 43 caracteres y la columna admitía 36. Las pruebas corrían sobre SQLite, que no controla el largo de los textos. Amplié la columna con una migración y agregué una prueba que compara el identificador contra el largo real.</p>
+              <code data-i18n="diag_1_code">value too long for type character varying(36) → VARCHAR(64)</code>
             </div>
           </div>
         </div>
@@ -651,37 +785,42 @@
       <section class="section" id="stack">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">02</span><span data-i18n="stack_eyebrow">Stack</span></p>
-            <h2 data-i18n="stack_title">Tecnologías que usé para construir estos sistemas</h2>
+            <p class="kicker" data-i18n="stack_eyebrow">Stack</p>
+            <h2 data-i18n="stack_title">Con qué construyo y opero estos sistemas</h2>
             <p class="lead" data-i18n="stack_lead">
-              Solo lo que aparece en el código de mis proyectos o en el despliegue que los sostiene.
+              Solo lo que aparece en el código de mis proyectos, en los servidores que los sostienen o en una
+              certificación.
             </p>
           </div>
 
           <dl class="spec reveal">
             <div class="spec-row">
-              <dt data-i18n="stack_lang">Lenguajes</dt>
-              <dd data-i18n="stack_lang_v">Python, TypeScript, JavaScript, SQL, HTML, CSS</dd>
+              <dt data-i18n="stack_linux">Sistemas Linux</dt>
+              <dd data-i18n="stack_linux_v">Ubuntu Server · SSH · Bash · apt · systemd · journalctl · usuarios y permisos · servicios · UFW · backups</dd>
             </div>
             <div class="spec-row">
-              <dt data-i18n="stack_backend">Backend y APIs</dt>
-              <dd data-i18n="stack_backend_v">FastAPI, SQLAlchemy, Pydantic, Alembic, REST, JWT, OAuth 2.0, pytest</dd>
+              <dt data-i18n="stack_cloud">Cloud / DevOps</dt>
+              <dd data-i18n="stack_cloud_v">AWS EC2 · Docker · Docker Compose · Git y GitHub · despliegues con migraciones (Alembic)</dd>
             </div>
             <div class="spec-row">
-              <dt data-i18n="stack_data">Datos</dt>
-              <dd data-i18n="stack_data_v">PostgreSQL, MySQL, modelado relacional, migraciones, validación de esquemas, detección de anomalías</dd>
+              <dt data-i18n="stack_net">Redes</dt>
+              <dd data-i18n="stack_net_v">TCP/IP · DNS · HTTP/HTTPS · TLS · proxy inverso (Caddy) · Cloudflare</dd>
             </div>
             <div class="spec-row">
-              <dt data-i18n="stack_frontend">Frontend</dt>
-              <dd data-i18n="stack_frontend_v">Next.js, React, Tailwind CSS, Recharts, JavaScript</dd>
+              <dt data-i18n="stack_sec">Seguridad</dt>
+              <dd data-i18n="stack_sec_v">JWT · OAuth 2.0 · roles y permisos · bcrypt · cookies HttpOnly · CSP y HSTS · CORS · escaneo de secretos</dd>
             </div>
             <div class="spec-row">
-              <dt data-i18n="stack_infra">Infraestructura</dt>
-              <dd data-i18n="stack_infra_v">Docker, Docker Compose, Linux (Ubuntu), AWS EC2, Caddy, Cloudflare, Git, GitHub</dd>
+              <dt data-i18n="stack_dev">Desarrollo</dt>
+              <dd data-i18n="stack_dev_v">Python (FastAPI, SQLAlchemy, Pydantic) · TypeScript (Next.js, React) · APIs REST · pytest</dd>
             </div>
             <div class="spec-row">
-              <dt class="sig-next"><span class="dot dot--next" aria-hidden="true"></span><span data-i18n="stack_learning">Aprendiendo</span></dt>
-              <dd data-i18n="stack_learning_v">Data Engineering, Machine Learning, IA aplicada, pandas, administración de servidores, infraestructura Linux y redes</dd>
+              <dt data-i18n="stack_db">Bases de datos</dt>
+              <dd data-i18n="stack_db_v">PostgreSQL · MySQL · SQL · modelado relacional</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="sig-next" data-i18n="stack_now">En curso</dt>
+              <dd data-i18n="stack_now_v">Network Technician Career Path de Cisco: redes, direccionamiento, troubleshooting y seguridad</dd>
             </div>
           </dl>
 
@@ -696,15 +835,15 @@
       <section class="section" id="perfil">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">03</span><span data-i18n="about_eyebrow">Perfil</span></p>
+            <p class="kicker" data-i18n="about_eyebrow">Perfil</p>
             <h2 data-i18n="about_title">Me interesa la parte que no se ve</h2>
           </div>
 
           <div class="about">
             <div class="about-prose prose reveal">
-              <p data-i18n-rich="about_p1">Vivo en Rosario, Santa Fe. Estoy terminando la carrera de <strong>Técnico Desarrollador de Software</strong> y trabajo sobre todo con Python y SQL. Lo que más me atrae es lo que no se ve desde la pantalla: cómo se modelan los datos, cómo se diseña una API y cómo se sostiene un sistema una vez que ya está desplegado.</p>
-              <p data-i18n-rich="about_p2">Mis proyectos son la forma en que aprendo. Data Center empezó siendo un dashboard y terminó siendo el lugar donde tuve que decidir <strong>qué métricas eran defendibles</strong>, por qué un detector de anomalías fallaba en silencio y cómo aislar un espacio de prueba público de los datos reales de la aplicación sin depender de acordarme de protegerlo.</p>
-              <p data-i18n-rich="about_p3">Ahora estoy orientando esa base hacia <strong>Data Engineering, Machine Learning e IA aplicada</strong>, y hacia la <strong>administración de servidores: infraestructura Linux y redes</strong>. Desplegar Data Center en un servidor propio —configurar el sistema operativo, el proxy que atiende las conexiones y los certificados— fue la parte del proyecto que más me interesó, y es donde quiero seguir.</p>
+              <p data-i18n-rich="about_p1">Vivo en Rosario, Santa Fe, y estoy en el último año de la **Tecnicatura en Desarrollo de Software**. Soy desarrollador, pero lo que más me atrae es lo que no se ve desde la pantalla: cómo se modelan los datos, cómo se protege una API y cómo se sostiene un sistema una vez que ya está en producción.</p>
+              <p data-i18n-rich="about_p2">Mis proyectos son la forma en que aprendo. Data Center empezó siendo un dashboard y terminó siendo el lugar donde tuve que decidir **qué métricas eran defendibles**, por qué un detector de anomalías fallaba en silencio y cómo aislar un espacio de prueba público de los datos reales sin depender de acordarme de protegerlo.</p>
+              <p data-i18n-rich="about_p3">Desplegarlos en servidores propios —configurar el sistema operativo, el firewall, el proxy y los certificados, y encontrar en los logs por qué algo falla— me llevó a la **infraestructura y la seguridad**. Por eso me certifiqué en Linux Essentials, estoy cursando redes con Cisco y apunto a la **ciberseguridad**, con las bases bien firmes primero.</p>
             </div>
 
             <aside class="about-side reveal">
@@ -722,51 +861,80 @@
             </aside>
           </div>
 
-          <dl class="spec about-focus reveal">
-            <div class="spec-row">
-              <dt data-i18n="focus_1_title">Backend y APIs</dt>
-              <dd data-i18n="focus_1_text">Endpoints REST, autenticación, roles y permisos que fallan cerrados: si algo no está explícitamente permitido, queda bloqueado.</dd>
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="roles_title">Cómo puedo aportar</h3>
+              <p data-i18n="roles_note">Busco sumarme a un equipo IT. Esto es lo que ya hice en cada tipo de puesto.</p>
             </div>
-            <div class="spec-row">
-              <dt data-i18n="focus_2_title">Datos</dt>
-              <dd data-i18n="focus_2_text">Modelo relacional, migraciones versionadas y métricas auditables: cada cifra que se muestra se puede rastrear hasta el dato que la produjo.</dd>
-            </div>
-            <div class="spec-row">
-              <dt data-i18n="focus_3_title">Servidores y despliegue</dt>
-              <dd data-i18n="focus_3_text">Docker, Linux y despliegues con respaldo previo: dejar el sistema andando en un servidor y poder volver a la versión anterior si algo sale mal.</dd>
-            </div>
-          </dl>
+            <dl class="spec">
+              <div class="spec-row">
+                <dt data-i18n="fit_1_title">Desarrollo de software</dt>
+                <dd data-i18n="roles_1_text">Aplicaciones completas —interfaz, API y base de datos— con pruebas automatizadas y reglas de negocio que viven en el servidor. Tres sistemas en producción, con demo pública y código abierto.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="fit_2_title">Administración de sistemas</dt>
+                <dd data-i18n="roles_2_text">Servidores Ubuntu propios: acceso por SSH, usuarios y permisos, actualizaciones, firewall y servicios con systemd. Certificado en Linux Essentials, con 24 laboratorios sobre un sistema real.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="fit_3_title">Infraestructura / DevOps</dt>
+                <dd data-i18n="roles_3_text">Contenedores con Docker Compose, proxy inverso con HTTPS, DNS en Cloudflare y despliegues con backup previo y migraciones automáticas.</dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="fit_4_title">Soporte / Help desk</dt>
+                <dd data-i18n="roles_4_text">Diagnostico fallas a partir de logs, estoy formándome en redes y troubleshooting con Cisco y tengo experiencia real atendiendo clientes, con caja, terminales de cobro y stock.</dd>
+              </div>
+            </dl>
+          </div>
 
           <div class="block-gap reveal">
             <div class="notes-head">
-              <h3 data-i18n="build_title">Lo que puedo construir</h3>
-              <p data-i18n="build_note">Tipos de trabajo para los que ya tengo el recorrido hecho.</p>
+              <h3 data-i18n="road_title">Hacia dónde voy</h3>
+              <p data-i18n="road_note">Mi objetivo es la ciberseguridad. Para llegar bien, primero las bases que la sostienen.</p>
             </div>
-            <ul class="spec spec--numbered">
-              <li class="spec-row">
-                <span class="spec-key" aria-hidden="true">01</span>
-                <span class="spec-val"><strong data-i18n="build_1_title">Aplicaciones web full-stack</strong> — <span data-i18n="build_1_text">Interfaz, API y base de datos, desplegadas y con pruebas.</span></span>
+            <ol class="roadmap">
+              <li class="road-step is-done">
+                <span class="road-state" data-i18n="road_state_done">Hecho</span>
+                <div>
+                  <strong data-i18n="road_1_title">Desarrollo de software</strong>
+                  <p data-i18n="road_1_text">Tres aplicaciones en producción: APIs, bases de datos, autenticación, roles y pruebas automatizadas.</p>
+                </div>
               </li>
-              <li class="spec-row">
-                <span class="spec-key" aria-hidden="true">02</span>
-                <span class="spec-val"><strong data-i18n="build_2_title">APIs REST y backends</strong> — <span data-i18n="build_2_text">Endpoints, autenticación, roles y migraciones de esquema.</span></span>
+              <li class="road-step is-done">
+                <span class="road-state" data-i18n="road_state_done">Hecho</span>
+                <div>
+                  <strong data-i18n="road_2_title">Linux</strong>
+                  <p data-i18n="road_2_text">Linux Essentials de Cisco aprobado y servidores Ubuntu propios en producción.</p>
+                </div>
               </li>
-              <li class="spec-row">
-                <span class="spec-key" aria-hidden="true">03</span>
-                <span class="spec-val"><strong data-i18n="build_3_title">Sistemas de gestión</strong> — <span data-i18n="build_3_text">ABM, reglas de negocio, reportes y exportación de datos.</span></span>
+              <li class="road-step is-done">
+                <span class="road-state" data-i18n="road_state_practice">En práctica</span>
+                <div>
+                  <strong data-i18n="road_3_title">Arquitectura y despliegues</strong>
+                  <p data-i18n="road_3_text">Docker, proxy inverso con HTTPS, backups y migraciones en cada despliegue, en cada proyecto.</p>
+                </div>
               </li>
-              <li class="spec-row">
-                <span class="spec-key" aria-hidden="true">04</span>
-                <span class="spec-val"><strong data-i18n="build_4_title">Procesamiento de datos</strong> — <span data-i18n="build_4_text">Validación, limpieza, métricas y automatización de tareas repetitivas.</span></span>
+              <li class="road-step is-now">
+                <span class="road-state" data-i18n="road_state_now">En curso</span>
+                <div>
+                  <strong data-i18n="road_4_title">Redes</strong>
+                  <p data-i18n="road_4_text">Network Technician Career Path de Cisco Networking Academy: redes, direccionamiento, troubleshooting y seguridad.</p>
+                </div>
               </li>
-            </ul>
-            <p class="mono process-line">
-              <span data-i18n="process_1">Entender el problema y el modelo de datos</span>
-              <span aria-hidden="true">&rarr;</span>
-              <span data-i18n="process_2">construir y probar</span>
-              <span aria-hidden="true">&rarr;</span>
-              <span data-i18n="process_3">desplegar y medir</span>
-            </p>
+              <li class="road-step is-now">
+                <span class="road-state" data-i18n="road_state_now">En curso</span>
+                <div>
+                  <strong data-i18n="road_5_title">Ciberseguridad práctica</strong>
+                  <p data-i18n="road_5_text">Laboratorios en TryHackMe, más videos y documentación para entender cómo se ataca y cómo se defiende un sistema.</p>
+                </div>
+              </li>
+              <li class="road-step is-next">
+                <span class="road-state" data-i18n="road_state_next">Próximo</span>
+                <div>
+                  <strong data-i18n="road_6_title">Ciberseguridad con Cisco</strong>
+                  <p data-i18n="road_6_text">Introduction to Cybersecurity y Ethical Hacker, de Cisco Networking Academy.</p>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
@@ -775,36 +943,29 @@
       <section class="section" id="trayectoria">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">04</span><span data-i18n="track_eyebrow">Trayectoria</span></p>
+            <p class="kicker" data-i18n="track_eyebrow">Trayectoria</p>
             <h2 data-i18n="track_title">Formación y experiencia</h2>
           </div>
 
           <div class="reveal">
             <div class="notes-head">
-              <h3 data-i18n="track_edu_title">Educación</h3>
-              <p data-i18n="track_edu_note">Formación técnica en curso, con foco en desarrollo y buenas prácticas.</p>
+              <h3 data-i18n="track_edu_title">Formación</h3>
+              <p data-i18n="track_edu_note">La carrera, más lo que aprendo por mi cuenta para cubrir lo que la cursada no toca.</p>
             </div>
             <dl class="spec">
               <div class="spec-row">
-                <dt class="sig-next"><span class="dot dot--next" aria-hidden="true"></span><span data-i18n="edu_1_meta">2024 — en curso</span></dt>
+                <dt class="sig-next" data-i18n="edu_1_meta">2024 — actualidad</dt>
                 <dd>
-                  <strong data-i18n="edu_1_title">Técnico Desarrollador de Software</strong><br />
+                  <strong data-i18n="edu_1_title">Tecnicatura en Desarrollo de Software</strong><br />
                   <span class="mono" data-i18n="edu_1_place">Terciario Urquiza, Rosario</span><br />
-                  <span data-i18n="edu_1_text">Cursando el último año. Programación, bases de datos, análisis de sistemas y desarrollo de aplicaciones. Título aún no obtenido.</span>
-                </dd>
-              </div>
-              <div class="spec-row">
-                <dt data-i18n="edu_2_meta">2019 — 2023</dt>
-                <dd>
-                  <strong data-i18n="edu_2_title">Secundaria completa</strong><br />
-                  <span class="mono" data-i18n="edu_2_place">María Bicecci, Rosario</span>
+                  <span data-i18n="edu_1_text">Último año en curso. Programación, bases de datos, análisis de sistemas y desarrollo de aplicaciones.</span>
                 </dd>
               </div>
               <div class="spec-row">
                 <dt data-i18n="edu_3_meta">Continuo</dt>
                 <dd>
                   <strong data-i18n="edu_3_title">Aprendizaje autodidacta</strong><br />
-                  <span data-i18n="edu_3_text">Lo que no cubre la cursada lo aprendo construyendo: Docker, despliegue en Linux, testing y diseño de APIs salieron de necesitarlos en un proyecto real.</span>
+                  <span data-i18n="edu_3_text">Docker, despliegue en Linux, testing y diseño de APIs salieron de necesitarlos en un proyecto real. Hoy sumo seguridad con laboratorios en TryHackMe, videos y documentación.</span>
                 </dd>
               </div>
             </dl>
@@ -812,49 +973,16 @@
 
           <div class="block-gap reveal">
             <div class="notes-head">
-              <h3 data-i18n="track_exp_title">Experiencia laboral</h3>
-              <p data-i18n="track_exp_note">Mi experiencia laboral está fuera de IT. La incluyo porque explica cómo trabajo: procesos, registros y responsabilidad diaria. La parte técnica está arriba, en Proyectos.</p>
-            </div>
-            <dl class="spec">
-              <div class="spec-row">
-                <dt data-i18n="exp_1_meta">03/2025 — 11/2025</dt>
-                <dd>
-                  <strong data-i18n="exp_1_title">Vendedor y atención al cliente</strong><br />
-                  <span class="mono" data-i18n="exp_1_place">Local de ropa KINGU</span><br />
-                  <span data-i18n="exp_1_text">Atención personalizada, manejo de caja, cobros y cierres. Orden operativo y trabajo en equipo.</span>
-                </dd>
-              </div>
-              <div class="spec-row">
-                <dt data-i18n="exp_2_meta">02/2024 — 12/2024</dt>
-                <dd>
-                  <strong data-i18n="exp_2_title">Vendedor y control de stock</strong><br />
-                  <span class="mono" data-i18n="exp_2_place">Almacén Tina</span><br />
-                  <span data-i18n="exp_2_text">Control de mercadería y registro de existencias. De acá salió la idea de StockARG.</span>
-                </dd>
-              </div>
-              <div class="spec-row">
-                <dt data-i18n="exp_3_meta">11/2023 — 12/2023</dt>
-                <dd>
-                  <strong data-i18n="exp_3_title">Pasantía administrativa</strong><br />
-                  <span class="mono" data-i18n="exp_3_place">S.I.S.O SRL</span><br />
-                  <span data-i18n="exp_3_text">Carga y corrección de datos en software contable. Primer contacto con la calidad de los datos como problema real.</span>
-                </dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="block-gap reveal">
-            <div class="notes-head">
-              <h3 data-i18n="cert_title">Certificaciones</h3>
+              <h3 data-i18n="cert_title">Certificaciones y cursos</h3>
             </div>
             <div class="cert">
               <div>
+                <p class="mono cert-kicker sig-live" data-i18n="cert_la_status">Certificado · Septiembre 2026</p>
                 <h4 class="cert-title">Linux Essentials</h4>
-                <p data-i18n="cert_la_text">Programa de Cisco Networking Academy desarrollado junto con NDG y acreditado con un examen integral. Se trabaja sobre un sistema Linux real en máquina virtual, a lo largo de 24 laboratorios: administración desde la línea de comandos, gestión de archivos, usuarios, grupos y permisos, seguridad del sistema, respaldo y restauración, y automatización con scripts de shell. En la práctica, es la misma terminal desde la que despliego y mantengo Data Center y BarberApp en un servidor Ubuntu.</p>
+                <p data-i18n="cert_la_text">Programa de Cisco Networking Academy desarrollado junto con NDG y acreditado con un examen integral. Se trabaja sobre un sistema Linux real en máquina virtual, a lo largo de 24 laboratorios: administración desde la línea de comandos, gestión de archivos, usuarios, grupos y permisos, seguridad del sistema, respaldo y restauración, y automatización con scripts de shell. En la práctica, es la misma terminal desde la que despliego y mantengo Data Center, BarberApp y StockARG en servidores Ubuntu.</p>
                 <p class="mono cert-skills" data-i18n="cert_la_skills">Línea de comandos · Archivos · Usuarios y grupos · Permisos · Seguridad · Respaldos · Scripting</p>
                 <p class="mono cert-meta">
-                  Cisco Networking Academy · NDG · <span data-i18n="cert_la_date">Septiembre 2026</span> ·
-                  <span data-i18n="cert_la_labs">24 laboratorios</span>
+                  Cisco Networking Academy · NDG · <span data-i18n="cert_la_labs">24 laboratorios</span>
                 </p>
                 <div class="link-row cert-links">
                   <a class="link link--live" href="https://www.credly.com/badges/3ec39984-788f-4aab-8b8f-57a252ca5f82/public_url" target="_blank" rel="noopener noreferrer">
@@ -874,30 +1002,69 @@
                 />
               </button>
             </div>
-            <div class="cert">
+
+            <div class="cert cert--text">
               <div>
-                <h4 class="cert-title" data-i18n="cert_1_title">Certificado de Iniciación al Desarrollo con IA</h4>
-                <p data-i18n="cert_1_text">
-                  Jornadas formativas "Desarrollo con IA: de 0 a Producción", dictadas por BIG school. El certificado
-                  completo está a la vista: no hay código de verificación público emitido para este curso.
-                </p>
-                <p class="mono cert-meta">
-                  BIG school · <span data-i18n="cert_meta_date">Marzo 2026</span> ·
-                  <span data-i18n="cert_meta_dur">6 horas</span>
-                </p>
+                <p class="mono cert-kicker sig-next" data-i18n="cert_nt_status">En curso</p>
+                <h4 class="cert-title">Network Technician Career Path</h4>
+                <p data-i18n="cert_nt_text">Ruta de Cisco Networking Academy para trabajar como técnico de redes: cómo se arma y se configura una red, cómo se direcciona, cómo se encuentra una falla y cómo se protege. Es la base de redes que sostiene el soporte, la administración de sistemas y la ciberseguridad.</p>
+                <p class="mono cert-meta">Cisco Networking Academy · <span data-i18n="cert_nt_count">4 cursos</span></p>
               </div>
-              <button class="figure" type="button" data-lightbox="cert" data-src="assets/certificado.webp" data-caption="Certificado de Iniciación al Desarrollo con IA — BIG school" data-i18n-caption="cert_caption">
-                <img
-                  src="assets/certificado.webp"
-                  width="960"
-                  height="742"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Certificado de Iniciación al Desarrollo con IA otorgado a Aaron Brumat por BIG school."
-                  data-i18n-alt="cert_alt"
-                />
-              </button>
+              <ul class="courses">
+                <li>Networking Basics</li>
+                <li>Networking Devices and Initial Configuration</li>
+                <li>Network Addressing and Basic Troubleshooting</li>
+                <li>Network Support and Security</li>
+              </ul>
             </div>
+
+            <p class="cert-line">
+              <span data-i18n="cert_1_title">Iniciación al Desarrollo con IA</span>
+              <span class="mono">BIG school · <span data-i18n="cert_meta_date">Marzo 2026</span> · <span data-i18n="cert_meta_dur">6 horas</span></span>
+              <button class="link link--quiet" type="button" data-lightbox="cert" data-src="assets/certificado.webp" data-caption="Certificado de Iniciación al Desarrollo con IA — BIG school" data-i18n-caption="cert_caption">
+                <span data-i18n="cert_view">Ver certificado</span>
+              </button>
+            </p>
+          </div>
+
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="track_exp_title">Experiencia laboral</h3>
+              <p data-i18n="track_exp_note">Fuera de IT, pero con mucho de soporte: atender personas, resolver en el momento, operar terminales de cobro y llevar registros exactos.</p>
+            </div>
+            <dl class="spec">
+              <div class="spec-row">
+                <dt data-i18n="exp_1_meta">03/2025 — 11/2025</dt>
+                <dd>
+                  <strong data-i18n="exp_1_title">Vendedor y atención al cliente</strong><br />
+                  <span class="mono" data-i18n="exp_1_place">KINGU, Rosario</span><br />
+                  <span data-i18n="exp_1_text">Atención al cliente, caja y terminales de cobro, control de stock.</span>
+                </dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="exp_2_meta">02/2024 — 12/2024</dt>
+                <dd>
+                  <strong data-i18n="exp_2_title">Vendedor y control de stock</strong><br />
+                  <span class="mono" data-i18n="exp_2_place">Almacén Tina, Rosario</span><br />
+                  <span data-i18n="exp_2_text">Reposición de mercadería, registro de existencias y cobros. De acá salió la idea de StockARG.</span>
+                </dd>
+              </div>
+              <div class="spec-row">
+                <dt data-i18n="exp_3_meta">11/2023 — 12/2023</dt>
+                <dd>
+                  <strong data-i18n="exp_3_title">Pasantía administrativa</strong><br />
+                  <span class="mono" data-i18n="exp_3_place">S.I.S.O SRL, Rosario</span><br />
+                  <span data-i18n="exp_3_text">Carga y corrección de datos en software contable.</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="block-gap reveal">
+            <div class="notes-head">
+              <h3 data-i18n="other_title">Idiomas y otros datos</h3>
+            </div>
+            <p class="mono other-line" data-i18n="other_line">Español nativo · Inglés avanzado · Licencia de conducir B1 con movilidad propia · Microsoft 365 y Excel · Atención al cliente</p>
           </div>
         </div>
       </section>
@@ -906,11 +1073,12 @@
       <section class="section" id="contacto">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="kicker"><span class="num">05</span><span data-i18n="contact_eyebrow">Contacto</span></p>
+            <p class="kicker" data-i18n="contact_eyebrow">Contacto</p>
             <h2 data-i18n="contact_title">Hablemos</h2>
             <p class="lead" data-i18n="contact_lead">
-              Busco sumarme a un equipo de desarrollo. Escribime por el medio que te resulte más cómodo: respondo en
-              24 a 48 horas.
+              Busco sumarme a un equipo IT, en desarrollo, administración de sistemas, infraestructura o soporte. Full
+              time, presencial en Rosario, híbrido o remoto. Escribime por el medio que te resulte más cómodo: respondo
+              en 24 a 48 horas.
             </p>
           </div>
 
@@ -960,7 +1128,7 @@
               <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
               <button class="action" type="submit" data-i18n="form_submit">Preparar mensaje</button>
               <p class="form-note" data-i18n="form_note">
-                No hay servidor detrás: el formulario arma el correo y elige tu cliente. También podes escribir directo
+                No hay servidor detrás: el formulario arma el correo y elige tu cliente. También podés escribir directo
                 a aaronbru.dev@gmail.com.
               </p>
             </form>
@@ -1022,11 +1190,11 @@
       </div>
     </div>
 
-    <script defer src="js/i18n-data.js?v=20260916"></script>
-    <script defer src="js/i18n.js?v=20260916"></script>
-    <script defer src="js/nav.js?v=20260916"></script>
-    <script defer src="js/reveal.js?v=20260916"></script>
-    <script defer src="js/lightbox.js?v=20260916"></script>
-    <script defer src="js/contact.js?v=20260916"></script>
+    <script defer src="js/i18n-data.js?v=20260919"></script>
+    <script defer src="js/i18n.js?v=20260919"></script>
+    <script defer src="js/nav.js?v=20260919"></script>
+    <script defer src="js/reveal.js?v=20260919"></script>
+    <script defer src="js/lightbox.js?v=20260919"></script>
+    <script defer src="js/contact.js?v=20260919"></script>
   </body>
 </html>

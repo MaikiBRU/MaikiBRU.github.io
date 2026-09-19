@@ -97,6 +97,9 @@
   function labelTriggers() {
     var prefix = (window.PF && window.PF.t("lb_expand")) || "";
     triggers.forEach(function (trigger) {
+      /* Un boton con texto visible ("Ver certificado") ya tiene nombre: pisarlo
+         haria que lo que se lee no coincida con lo que se ve. */
+      if (!trigger.querySelector("img")) return;
       var text = captionFor(trigger);
       trigger.setAttribute("aria-label", prefix ? prefix + ": " + text : text);
     });
