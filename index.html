@@ -487,64 +487,65 @@
               <div class="project-head reveal">
                 <div>
                   <p class="project-index">
-                    <span class="num sig-tech">03</span>
-                    <span data-i18n="p_sa_kind">Escritorio · Gestión y base de datos</span>
+                    <span class="num sig-live">03</span>
+                    <span data-i18n="p_sa_kind">Full-stack · Comercio y punto de venta</span>
+                    <span class="live sig-live"><span class="dot dot--pulse" aria-hidden="true"></span><span data-i18n="badge_live">En producción</span></span>
                   </p>
                   <h3 id="p-sa-title">StockARG</h3>
-                  <p class="project-lead" data-i18n="p_sa_tagline">
-                    Sistema de gestión de stock, ventas, clientes y proveedores para un comercio, con base de datos
-                    MySQL y reportes exportables.
-                  </p>
+                  <p class="project-lead" data-i18n="p_sa_tagline">Sistema de gestión para un comercio: punto de venta con lector de código de barras, stock con alertas, clientes, proveedores, compras y reportes, con tres roles. En concreto, reemplaza las planillas sueltas por un mostrador que cobra, descuenta el stock y deja registro de cada movimiento.</p>
                   <p class="project-figures">
-                    <span><b>7</b> <span data-i18n="p_sa_fig_1">entidades en el modelo</span></span>
-                    <span><b>4</b> <span data-i18n="p_sa_fig_2">módulos unificados</span></span>
-                    <span><b>CSV · PDF</b> <span data-i18n="p_sa_fig_3">exportación</span></span>
+                    <span><b>537</b> <span data-i18n="p_sa_fig_1">tests automatizados</span></span>
+                    <span><b>3</b> <span data-i18n="p_sa_fig_2">roles con permisos propios</span></span>
+                    <span><b>45 min</b> <span data-i18n="p_sa_fig_3">sandbox sin registro</span></span>
                   </p>
                 </div>
                 <div class="project-actions">
-                  <a class="link" href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noopener noreferrer">
+                  <a class="link link--live" href="https://stockarg.aaronbrumat.com.ar" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="btn_app">Ver aplicación</span><span class="arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a class="link link--quiet" href="https://github.com/MaikiBRU/Stock_ARG" target="_blank" rel="noopener noreferrer">
                     <span data-i18n="btn_code">Ver código</span><span class="arrow" aria-hidden="true">↗</span>
                   </a>
                 </div>
               </div>
 
               <div class="project-media reveal">
-                <button class="figure" type="button" data-lightbox="sa" data-src="assets/sa-reportes.webp">
+                <button class="figure" type="button" data-lightbox="sa" data-src="assets/sa-panel.webp">
                   <img
-                    src="assets/sa-reportes.webp"
-                    width="1500"
-                    height="844"
+                    src="assets/sa-panel.webp"
+                    width="1800"
+                    height="1125"
                     loading="lazy"
                     decoding="async"
-                    alt="Reportes de StockARG: estado del stock por producto y reporte de ventas por rango de fechas, con exportación a PDF y CSV."
-                    data-i18n-alt="p_sa_shot_rep_alt"
-                    data-caption="Reportes de stock y ventas, exportables a CSV y PDF"
-                    data-i18n-caption="p_sa_shot_rep"
+                    alt="Panel de StockARG: ventas del día, tickets, ticket promedio, ganancia del mes, gráfico de ventas, cobros por medio de pago, más vendidos y estado del stock."
+                    data-i18n-alt="p_sa_shot_panel_alt"
+                    data-caption="Panel del día: ventas, cobros por medio, más vendidos y estado del stock"
+                    data-i18n-caption="p_sa_shot_panel"
                   />
                 </button>
                 <p class="figure-caption">
-                  <span data-i18n="p_sa_shot_rep">Reportes de stock y ventas, exportables a CSV y PDF</span>
-                  <span aria-hidden="true">Python · Tkinter · MySQL</span>
+                  <span data-i18n="p_sa_shot_panel">Panel del día: ventas, cobros por medio, más vendidos y estado del stock</span>
+                  <span aria-hidden="true">Next.js · FastAPI · PostgreSQL</span>
                 </p>
 
                 <div class="strip">
-                  <button type="button" data-lightbox="sa" data-src="assets/sa-stock.webp" data-caption="Control de stock por nivel" data-i18n-caption="p_sa_shot_stock">
-                    <img class="is-centered" src="assets/sa-stock.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de control de stock de StockARG con estados por color y busqueda." data-i18n-alt="p_sa_shot_stock_alt" />
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-vender.webp" data-caption="Punto de venta con lector y atajos" data-i18n-caption="p_sa_shot_vender">
+                    <img class="is-centered" src="assets/sa-vender.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Punto de venta de StockARG con el ticket armado, medios de pago y total." data-i18n-alt="p_sa_shot_vender_alt" />
                   </button>
-                  <button type="button" data-lightbox="sa" data-src="assets/sa-ventas.webp" data-caption="Ventas con descuento de stock" data-i18n-caption="p_sa_shot_ventas">
-                    <img class="is-centered" src="assets/sa-ventas.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de ventas de StockARG." data-i18n-alt="p_sa_shot_ventas_alt" />
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-ventas.webp" data-caption="Historial de ventas con anulación" data-i18n-caption="p_sa_shot_ventas">
+                    <img class="is-centered" src="assets/sa-ventas.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Historial de ventas de StockARG con filtros, cliente, vendedor y medio de pago." data-i18n-alt="p_sa_shot_ventas_alt" />
                   </button>
-                  <button type="button" data-lightbox="sa" data-src="assets/sa-productos.webp" data-caption="ABM de productos" data-i18n-caption="p_sa_shot_productos">
-                    <img class="is-centered" src="assets/sa-productos.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de productos de StockARG." data-i18n-alt="p_sa_shot_productos_alt" />
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-productos.webp" data-caption="Catálogo con margen y nivel de stock" data-i18n-caption="p_sa_shot_productos">
+                    <img class="is-centered" src="assets/sa-productos.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Catálogo de productos de StockARG con precio, margen y nivel de stock." data-i18n-alt="p_sa_shot_productos_alt" />
                   </button>
-                  <button type="button" data-lightbox="sa" data-src="assets/sa-clientes.webp" data-caption="ABM de clientes" data-i18n-caption="p_sa_shot_clientes">
-                    <img class="is-centered" src="assets/sa-clientes.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de clientes de StockARG." data-i18n-alt="p_sa_shot_clientes_alt" />
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-stock.webp" data-caption="Stock por nivel y movimientos" data-i18n-caption="p_sa_shot_stock">
+                    <img class="is-centered" src="assets/sa-stock.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Stock de StockARG: resumen por nivel e historial de movimientos." data-i18n-alt="p_sa_shot_stock_alt" />
                   </button>
-                  <button type="button" data-lightbox="sa" data-src="assets/sa-proveedores.webp" data-caption="ABM de proveedores" data-i18n-caption="p_sa_shot_proveedores">
-                    <img class="is-centered" src="assets/sa-proveedores.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Módulo de proveedores de StockARG." data-i18n-alt="p_sa_shot_proveedores_alt" />
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-reportes.webp" data-caption="Reportes del período, exportables" data-i18n-caption="p_sa_shot_rep">
+                    <img class="is-centered" src="assets/sa-reportes.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Reportes de StockARG: facturación, evolución de las ventas, ranking y medios de pago." data-i18n-alt="p_sa_shot_rep_alt" />
                   </button>
-                  <button type="button" data-lightbox="sa" data-src="assets/sa-movimientos.webp" data-caption="Historial de movimientos" data-i18n-caption="p_sa_shot_mov">
-                    <img class="is-centered" src="assets/sa-movimientos.webp" width="1500" height="844" loading="lazy" decoding="async" alt="Historial de movimientos de stock de StockARG." data-i18n-alt="p_sa_shot_mov_alt" />
+                  <button type="button" data-lightbox="sa" data-src="assets/sa-compras.webp" data-caption="Compras que reponen stock" data-i18n-caption="p_sa_shot_compras">
+                    <img class="is-centered" src="assets/sa-compras.webp" width="1500" height="937" loading="lazy" decoding="async" alt="Historial de compras a proveedores de StockARG." data-i18n-alt="p_sa_shot_compras_alt" />
                   </button>
                 </div>
               </div>
@@ -552,40 +553,75 @@
               <div class="project-story reveal">
                 <div>
                   <h4 data-i18n="label_problem">El problema</h4>
-                  <p data-i18n="p_sa_problem">
-                    Clientes, productos, stock y ventas vivían en planillas separadas. Sin trazabilidad de los
-                    movimientos ni reportes para el control diario, cada corrección dependía de recordar dónde estaba
-                    el dato correcto.
-                  </p>
+                  <p data-i18n="p_sa_problem">En un comercio chico, clientes, productos, stock y ventas suelen vivir en planillas separadas. Sin registro de los movimientos, un faltante aparece recién en el conteo, nadie sabe qué vendió cada uno y cada corrección depende de recordar dónde estaba el dato correcto.</p>
                 </div>
                 <div>
                   <h4 data-i18n="label_solution">La solución</h4>
-                  <p data-i18n="p_sa_solution">Una aplicación de escritorio en Python sobre MySQL que unifica los cuatro módulos. Las reglas de integridad viven en la lógica de negocio, no en la interfaz: las validaciones no dependen de que la pantalla las recuerde, están en el código que ejecuta la operación. No se puede vender sin stock suficiente, ni cargar cantidades o precios negativos, ni duplicar códigos de producto, y cada alta, venta o ajuste deja un movimiento registrado.</p>
+                  <p data-i18n="p_sa_solution">Una aplicación web con una API propia. Las reglas viven en el servidor y no en la pantalla: el total de cada venta lo calcula la API con los precios de lista, la venta y el descuento de stock se guardan juntos o no se guarda nada, y cada rol ve solo lo que puede usar. Para probarla sin registro, cada visitante recibe un comercio de ejemplo propio y aislado, que se borra solo al vencer.</p>
                 </div>
               </div>
 
               <dl class="spec project-spec reveal">
                 <div class="spec-row">
-                  <dt data-i18n="spec_sa_1_k">Gestión</dt>
-                  <dd data-i18n="spec_sa_1_v">ABM completo de clientes, proveedores y productos, con validaciones y control de duplicados.</dd>
+                  <dt data-i18n="spec_sa_1_k">Punto de venta</dt>
+                  <dd data-i18n="spec_sa_1_v">Búsqueda en vivo, lector de código de barras y atajos de teclado; cliente, descuento, vuelto y comprobante en PDF. Un precio o un total enviado desde el navegador se rechaza: lo que se cobra lo decide el servidor.</dd>
                 </div>
                 <div class="spec-row">
-                  <dt data-i18n="spec_sa_2_k">Ventas</dt>
-                  <dd data-i18n="spec_sa_2_v">Detalle por línea que descuenta stock y bloquea la operación si no alcanza. La venta no se registra a medias: o descuenta todo lo que corresponde, o no se hace.</dd>
+                  <dt data-i18n="spec_sa_2_k">Stock</dt>
+                  <dd data-i18n="spec_sa_2_v">Niveles por color, alertas de mínimo y de vencimiento, ajustes por conteo, bajas con motivo y compras que reponen. Cada cambio deja un movimiento con quién, cuándo y el stock resultante.</dd>
                 </div>
                 <div class="spec-row">
-                  <dt data-i18n="spec_sa_3_k">Reportes</dt>
-                  <dd data-i18n="spec_sa_3_v">Movimientos e informes exportables a CSV y PDF, con panel de estado por nivel de stock.</dd>
+                  <dt data-i18n="spec_sa_3_k">Gestión y reportes</dt>
+                  <dd data-i18n="spec_sa_3_v">Clientes, proveedores y compras, con importación CSV que primero muestra qué va a pasar. Facturación, ranking, medios de pago y rentabilidad del período, exportables a CSV y PDF.</dd>
                 </div>
                 <div class="spec-row">
                   <dt data-i18n="spec_sa_4_k">Acceso</dt>
-                  <dd data-i18n="spec_sa_4_v">Email y contraseña hasheada con bcrypt, o inicio de sesión con Google. Esquema versionado con migraciones SQL.</dd>
+                  <dd data-i18n="spec_sa_4_v">Propietario, encargado y vendedor, sesión en cookie HttpOnly, verificación por correo y auditoría de las acciones sensibles. El vendedor no ve costos ni márgenes.</dd>
                 </div>
                 <div class="spec-row">
-                  <dt data-i18n="label_stack">Stack</dt>
-                  <dd class="mono">Python · Tkinter · MySQL 8 · bcrypt · Google OAuth · ReportLab · pytest</dd>
+                  <dt data-i18n="label_backend">Backend</dt>
+                  <dd class="mono">FastAPI · SQLAlchemy 2 · Pydantic v2 · Alembic · PostgreSQL 16 · pytest</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_frontend">Frontend</dt>
+                  <dd class="mono">Next.js 16 · React 19 · TypeScript · Tailwind CSS 4</dd>
+                </div>
+                <div class="spec-row">
+                  <dt data-i18n="label_infra">Infraestructura</dt>
+                  <dd class="mono" data-i18n="spec_sa_infra_v">Cloudflare Worker (Next.js) → EC2 Ubuntu · Caddy → Docker: FastAPI + PostgreSQL 16. Base y usuario propios dentro del servidor compartido, respaldo antes de cada despliegue y correo transaccional por SMTP.</dd>
                 </div>
               </dl>
+
+              <div class="notes reveal">
+                <div class="notes-head">
+                  <h4 data-i18n="label_decisions">Decisiones técnicas</h4>
+                  <p data-i18n="p_sa_decisions_note">Tres reglas que no dependen de que la pantalla las respete.</p>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">01</span>
+                  <div>
+                    <h5 data-i18n="p_sa_note_1_title">El total lo calcula el servidor</h5>
+                    <p data-i18n="p_sa_note_1_text">El navegador manda solo qué productos y cuántos. El precio sale de la lista, el descuento del vendedor tiene un tope configurable y un total enviado desde afuera se rechaza con un error visible. Dicho simple: nadie puede cobrar menos editando la página.</p>
+                    <code data-i18n="p_sa_note_1_code">total = Σ precio_de_lista × cantidad − descuento (con tope por rol)</code>
+                  </div>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">02</span>
+                  <div>
+                    <h5 data-i18n="p_sa_note_2_title">Dos cerrojos para la demo pública</h5>
+                    <p data-i18n="p_sa_note_2_text">Cada consulta filtra por la partición de la demo, y además la capa de datos agrega ese filtro sola y aborta cualquier escritura que cruce de partición. Si mañana una ruta nueva se olvida de filtrar, un visitante igual no puede ver ni tocar los datos reales.</p>
+                    <code data-i18n="p_sa_note_2_code">FugaDeParticion: la transacción se aborta, no se cruza el dato</code>
+                  </div>
+                </div>
+                <div class="note">
+                  <span class="num sig-tech" aria-hidden="true">03</span>
+                  <div>
+                    <h5 data-i18n="p_sa_note_3_title">"Hoy" es el día del comercio</h5>
+                    <p data-i18n="p_sa_note_3_text">Entre las 21 y las 24 de Argentina el día UTC ya es otro, así que las ventas de la noche caían en el reporte del día siguiente. Las fechas del negocio salen de la zona horaria del comercio, y hay tests que lo comprueban en ese horario.</p>
+                    <code data-i18n="p_sa_note_3_code">hoy = now(America/Argentina/Buenos_Aires).date()</code>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
 
